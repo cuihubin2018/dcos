@@ -26,6 +26,6 @@
 
 在Storm/Mesos集群中，资源不被Storm集群独占，仅在拓扑部署时，根据拓扑需要的资源，Storm调度器从Mesos提供的资源池中调配出需要的资源，并将Executor传递到选定的这些资源的节点上，这个资源调配过程需要额外的时间。因此，通常需要调整Nimbus的两个配置参数加大相应的时间配置，否则可能出现类似：`Executor example_top:[1 1] not alive`的异常。
 
-* nimbus.task.launch.secs: Executor在调度节点上的启动时间，默认值为120秒。
+* `nimbus.task.launch.secs`: Executor在调度节点上的启动时间，默认值为120秒。
 
-* nimbus.task.timeout.secs：Nimbus检查Executor是否正常的心跳超时时间，默认值为30秒。
+* `nimbus.task.timeout.secs`：Nimbus检查Executor是否正常的心跳超时时间，默认值为30秒。
