@@ -6,7 +6,7 @@ Marathon支持两种运行Docker容器镜像的方式：
 
 * Docker容器化，使用Docker引擎运行容器镜像。
 
-* Mesos容器化，使用通用容器运行时运行容器镜像。
+* Mesos容器化，使用通用容器运行时(UCR)运行容器镜像。
 
 
 ### Docker容器化
@@ -253,7 +253,7 @@ Marathon 自0.7.6版本开始，新增了两个字段：privileged 和 parameter
 
 ### Mesos容器化
 
-Marathon自1.3.0版本开始不再依赖原生的Docker引擎来运行docker容器镜像。Mesos容器化使用通用容器运行时（2016年7月发布的Mesos 1.0版本）来运行docker容器镜像。通用容器运行时直接使用原生的操作系统特性配置和启动Docker或[AppC](https://github.com/appc/spec)容器镜像并提供隔离。
+Marathon自1.3.0版本开始不再依赖原生的Docker引擎来运行docker容器镜像。Mesos容器化使用通用容器运行时UCR（2016年7月发布的Mesos 1.0版本）来运行docker容器镜像。通用容器运行时UCR直接使用原生的操作系统特性配置和启动Docker或[AppC](https://github.com/appc/spec)容器镜像并提供隔离。
 
 Mesos容器化提供了新的属性字段“credential”定义访问容器镜像仓库的身份凭据：
 
