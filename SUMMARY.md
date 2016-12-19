@@ -134,6 +134,7 @@
     * [应用打包与镜像构建](dcos-usage-cicd-build-by-maven.md)
     * [持续集成与构建](dcos-usage-cicd-integration.md)
     * [持续部署](dcos-usage-cicd-deploy.md)
+* [微服务](dcos-usage-microservice.md)
 
 ## DCOS之开发
 * [Docker Swarm vs Mesos vs Kubernetties](dcos-theory-solutions-martrix.md)
