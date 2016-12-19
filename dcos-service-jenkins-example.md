@@ -302,4 +302,6 @@ Tomcat服务在DCOS中部署后，查看其中的一个服务实例：
 
 2. 通过自定义标签进行实例分组和过滤。
 
+3. 将Jenkins的$BUILD_ID参数作为生成的Docker镜像的Tag，可以通过DC/OS WEB控制台调整服务的Tag，实现服务的降级回滚。
+
 
