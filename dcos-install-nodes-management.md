@@ -75,7 +75,13 @@
 
 ### 删除节点
 
-可以从当前DC/OS集群中删除单个节点，具体操作步骤如下：
+移除Agent节点前，首先SSH登录到Agent节点主机，执行下述命令从Mesos注销并清理停止的任务：
+
+```
+systemctl kill -s SIGUSR1 dcos-mesos-slave
+```
+
+然后按下述步骤删除该节点，具体操作如下：
 
 ```
 sudo -i  /opt/mesosphere/bin/pkgpanda uninstall
