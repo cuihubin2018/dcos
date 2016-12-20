@@ -16,6 +16,7 @@
     * [备份集群安装文件](dcos-install-backup-installer-file.md)
     * [集群节点管理](dcos-install-nodes-management.md)
     * [集群卸载](dcos-install-m-uninstall-all.md)
+    * [集群升级](dcos-install-upgrading.md)
 * [FAQ](dcos-install-faq.md)
 
 ## DC\/OS之原理
