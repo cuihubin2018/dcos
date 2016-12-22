@@ -334,7 +334,7 @@ mesos-1496ba51-737c-4b12-8aee-ab757a3c6eee-S11.1b46c555-cd7c-4e5b-9316-2f6e77f24
 这种名称在图形界面展示时，用户无法区分该容器的业务属性，因此需要cAdvisor从Docker容器中获取额外的信息如：MARATHON_APP_ID。可以通过给args参数传递如下配置实现：
 
   ```
---docker_metadata_env=MESOS_TASK_ID,MARATHON_APP_ID,MARATHON_APP_VERSION
+--docker_env_metadata_whitelist=MESOS_TASK_ID,MARATHON_APP_ID,MARATHON_APP_VERSION
 ```
 
 ### 应用指标采集
