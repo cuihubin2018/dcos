@@ -112,6 +112,67 @@ Marathon有一个内部事件总线，用于捕获所有API请求并发布对应
 }
 ```
 
+```json
+{
+  "eventType": "unsubscribe_event",
+  "timestamp": "2014-03-01T23:29:30.158Z",
+  "clientIp": "1.2.3.4",
+  "callbackUrl": "http://subscriber.acme.org/callbacks"
+}
+```
+
+#### Health Checks
+
+属性**`eventType`**的可选值为：
+
+- add_health_check_event
+- remove_health_check_event
+- failed_health_check_event
+- health_status_changed_event
+- unhealthy_task_kill_event
+
+示例如下：
+
+```json
+{
+  "eventType": "add_health_check_event",
+  "timestamp": "2014-03-01T23:29:30.158Z",
+  "appId": "/my-app",
+  "healthCheck": {
+    "protocol": "HTTP",
+    "path": "/health",
+    "portIndex": 0,
+    "gracePeriodSeconds": 5,
+    "intervalSeconds": 10,
+    "timeoutSeconds": 10,
+    "maxConsecutiveFailures": 3
+  }
+}
+```
+
+
+
+#### Deployments
+
+属性**`eventType`**的可选值为：
+
+- group_change_success
+- group_change_failed
+- deployment_success
+- deployment_failed
+- deployment_info
+- deployment_step_success
+- deployment_step_failure
+
+```json
+{
+  "eventType": "group_change_success",
+  "timestamp": "2014-03-01T23:29:30.158Z",
+  "groupId": "/product-a/backend",
+  "version": "2014-04-04T06:26:23.051Z"
+}
+```
+
 ### 参考
 
 https:\/\/mesosphere.github.io\/marathon\/docs\/event-bus.html
