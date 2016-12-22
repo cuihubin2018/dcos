@@ -164,6 +164,8 @@ Marathon有一个内部事件总线，用于捕获所有API请求并发布对应
 - deployment_step_success
 - deployment_step_failure
 
+示例如下：
+
 ```json
 {
   "eventType": "group_change_success",
