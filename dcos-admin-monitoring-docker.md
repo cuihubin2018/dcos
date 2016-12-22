@@ -326,6 +326,17 @@ cAdvisor服务的Marathon应用程序JSON定义如下：
 
 2. 在DC/OS中，可以直接部署Universe中预先打包的cAdvisor版本（该版本支持InfluxDB）。
 
+3. 默认情况下，cAdvisor会采集Docker容器的容器名称属性，但是在DC/OS集群中，容器名称是由Mesos自动生成的，例如：
+
+  ```
+mesos-1496ba51-737c-4b12-8aee-ab757a3c6eee-S11.1b46c555-cd7c-4e5b-9316-2f6e77f2408e
+```
+这种名称在图形界面展示时，用户无法区分该容器的业务属性，因此需要cAdvisor从Docker容器中获取额外的信息如：MARATHON_APP_ID。可以通过给args参数传递如下配置实现：
+
+  ```
+--docker_metadata_env=MESOS_TASK_ID,MARATHON_APP_ID,MARATHON_APP_VERSION
+```
+
 ### 应用指标采集
 
 cAdvisor除了可采集容器运行指标之外，还可以采集容器内应用的应用指标。关于cAdvisor采集应用指标的详细信息请参考[官方文档](https://github.com/google/cadvisor/blob/master/docs/application_metrics.md)。
