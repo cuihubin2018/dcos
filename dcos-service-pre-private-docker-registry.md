@@ -197,6 +197,12 @@ FROM 192.168.0.1/base/docker-tomcat-base
 
 另外，除了前述提到的DnD需要映射主机的`/etc/docker/certs.d`来使用私有容器的签名证书外，对于一些由服务动态创建的容器也需要添加映射配置，如Jenkins动态创建的Slave容器主机。否则，可能会碰到类似`x509: certificate signed by unknown authority`的异常。
 
+__注意__，使用自签名证书时，要在DC/OS集群内部访问镜像仓库，因为Marathon使用__CURL__拉取镜像，因此必须将自签名证书附加到所有Agent节点的：
+
+```
+/opt/mesosphere/active/python-requests/lib/python3.5/site-packages/requests/cacert.pem
+```
+
 ### 在集群外部访问容器仓库
 
 因为DCOS集群内部使用VIP“192.168.0.1”来访问容器仓库，VIP“192.168.0.1”对集群外部环境来说是无法访问的，那么集群外部如何访问该私有容器仓库？
