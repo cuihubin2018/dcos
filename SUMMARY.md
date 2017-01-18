@@ -142,6 +142,7 @@
     * [持续集成与构建](dcos-usage-cicd-integration.md)
     * [持续部署](dcos-usage-cicd-deploy.md)
 * [微服务](dcos-usage-microservice.md)
+* [Gitbook文档](dcos-usage-gitbook.md)
 
 ## DCOS之开发
 * [Docker Swarm vs Mesos vs Kubernetties](dcos-theory-solutions-martrix.md)
