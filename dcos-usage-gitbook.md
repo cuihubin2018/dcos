@@ -4,7 +4,7 @@
 
 编写的Markdown文档可以通过`gitbook build`命令直接编译为静态页面，然后通过Nginx托管。
 
-本文通过下述流程将整个编写及发布的过程自动化起来并最终部署到DC/OS中：
+本文通过下述流程将整个编写及发布的过程自动化起来并最终部署到DC/OS集群中：
 
 __
 Gitbook Editor ---> Gitlab ---> Jenkins ---> Docker(Nginx Image) ---> DC/OS
@@ -31,6 +31,8 @@ __
 FROM nginx:1.11.8-alpine
 COPY _book/* /usr/share/nginx/html
 ```
+
+后续可以看到如何在文档变更时触发Jenkins的任务自动编译和发布Gitbook文档。
 
 ### Jenkins
 
@@ -82,7 +84,7 @@ RUN npm --registry=https://registry.npm.taobao.org install --global gitbook-cli 
 
 ```
 
-镜像构建并编译完成后可以发布到Docker Hub仓库或[本地私有仓库](/dcos-service-pre-private-docker-registry.md)。
+镜像构建并编译完成后可以发布到Docker Hub仓库或[本地私有仓库](/dcos-service-pre-private-docker-registry.md)。上述Dockerfile可以从[Github仓库](https://github.com/christtrc/docker-jenkins-gitbook-agent)找到。
 
 配置DC/OS中的[Jenkins](/dcos-service-jenkins.md)，添加新的Jenkins Slave镜像并设置标签为“`gitbook`”。
 
