@@ -153,10 +153,10 @@ curl -i -H "Content-type: application/json" -X PUT http://192.168.1.69:8080/v2/a
 
 ### 补充
 
-可以在Gitlab中配置该任务的URL（见下图），在文档代码提交时自动触发任务执行。
+在Jenkins的Job任务中可以看到如下图所示用于触发该任务的URL，Gitlab可以在文档代码提交时通过该URL自动触发任务执行。
 ![](/assets/dcos_gitbook_job_trigger.png)
 
-在Gitlab的docs-dev仓库`Webhooks`下添加如下配置：
+在Gitlab的文档代码仓库的`Webhooks`下添加如下配置：
 ![](/assets/dcos_gitbook_gitlab_webhooks.png)
 
-__注意__，在DC/OS中，这两处的URL地址稍有不同，使用后面的地址，即使Jenkins重新部署，在DC/OS集群的Master节点未变化时，此URL地址不变。
+__注意__，在DC/OS中，这两处的URL地址稍有不同，推荐使用类似后面的地址，即使Jenkins重新部署，在DC/OS集群的Master节点未变化时，此URL地址不变。
