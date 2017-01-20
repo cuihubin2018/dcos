@@ -149,4 +149,6 @@
 * [Universe Package 开发](dcos-dev-universe-package.md)
 * [指标采集](dcos-dev-metrics.md)
     * [Prometheus指标采集](dcos-dev-metrics-prometheus.md)
+* [Mesos框架开发](dcos-dev-frameworks.md)
+    * [dcos-dev-frameworks-highly-available](dcos-dev-frameworks-highly-available.md)
 
