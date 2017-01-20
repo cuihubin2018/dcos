@@ -88,4 +88,6 @@ dcos marathon app remove /blue-myapp
 
 ### 金丝雀部署（Canary Deployment）
 
+十七世纪的矿工
+
 ### 参考
