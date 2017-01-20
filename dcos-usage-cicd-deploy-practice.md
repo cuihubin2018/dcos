@@ -126,7 +126,7 @@ $ ./zdd.py -j 1-nginx.json -m http://master.mesos:8080 -f -l http://marathon-lb.
 
 当前只支持一次流量分割，因此只有当应用程序的所有实例具有相同版本（完全蓝色或完全绿色）时，才可以指定新实例的数量（与流量分流比成正比）。这意味着不能在混合模式中指定`-new-instances`参数来更改流量拆分比例（实例比），因为当前更新Marathon标签（HAPROXY_DEPLOYMENT_NEW_INSTANCES）会触发新的部署。目前对于上述示例，服务实例拆分比是100:0 -> 80:20 -> 0:100，其中两个版本同时存在服务实例时的中间过渡状态只有一次。
 
-上述实例的Marathon应用JSON定义示例：
+上述示例的Marathon应用JSON定义示例：
 
 ```json
 {
