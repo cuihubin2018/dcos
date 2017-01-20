@@ -104,6 +104,65 @@ Marathon-LB针对上述部署方法提供了一个部署脚本[zdd.py](https://g
 
 执行ZDD脚本时，通过参数`--new-instances`可以指定创建新版本应用程序的实例数并同时删除相同数量的旧版本应用程序实例（设定值等于旧应用程序实例数时，就是创建所有新应用程序实例并删除所有旧应用程序实例），以确保新应用程序和旧应用程序中的实例数之和等于`HAPROXY_DEPLOYMENT_TARGET_INSTANCES`的设定值。
 
+示例：考虑相同的Nginx应用程序示例，其中有10个Nginx运行镜像版本`v1`的实例，现在我们可以使用ZDD创建版本`v2`的2个实例，并保留`v1`的8个实例，以便流量以比例80:20（旧：新）分割。
+
+创建2个新应用程序实例并自动删除2个旧应用程序实例，可以使用如下命令：
+
+```
+$ ./zdd.py -j 1-nginx.json -m http://master.mesos:8080 -f -l http://marathon-lb.marathon.mesos:9090 --syslog-socket /dev/null --new-instances 2
+```
+
+同时存在同一个应用程序的旧版本和新版本的实例的状态称之为__混合状态__。
+
+当部署处于混合状态时，在部署任何其他版本之前，需要将其全部转换为新版本或全部为旧版本。这可以通过ZDD提供的`--complete-cur`(`-c`)和`--complete-prev`(`-p`)两个参数实现。
+
+运行以下命令时，它将所有实例转换为新版本，以便流量拆分比例变为0：100（旧：新），并删除旧应用程序。这个过程是优雅的，因为ZDD会等待任务/实例停止服务之后再删除它们。
+
+```
+$ ./zdd.py -j 1-nginx.json -m http://master.mesos:8080 -f -l http://marathon-lb.marathon.mesos:9090 --syslog-socket /dev/null --complete-cur
+```
+
+类似地，可以使用`--complete-prev`参数将所有实例转换为旧版本（这本质上是一个回滚），以便流量分流比变为100：0（旧：新），并删除新的应用程序。
+
+当前只支持一次流量分割，因此只有当应用程序的所有实例具有相同版本（完全蓝色或完全绿色）时，才可以指定新实例的数量（与流量分流比成正比）。这意味着不能在混合模式中指定`-new-instances`参数来更改流量拆分比例（实例比），因为当前更新Marathon标签（HAPROXY_DEPLOYMENT_NEW_INSTANCES）会触发新的部署。目前对于上述示例，服务实例拆分比是100:0 -> 80:20 -> 0:100，其中两个版本同时存在服务实例时的中间过渡状态只有一次。
+
+上述实例的Marathon应用JSON定义示例：
+
+```json
+{
+  "id": "nginx",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "brndnmtthws/nginx-echo-sleep",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "hostPort": 0, "containerPort": 8080, "servicePort": 10000 }
+      ],
+      "forcePullImage":true
+    }
+  },
+  "instances": 5,
+  "cpus": 0.1,
+  "mem": 65,
+  "healthChecks": [{
+      "protocol": "HTTP",
+      "path": "/",
+      "portIndex": 0,
+      "timeoutSeconds": 15,
+      "gracePeriodSeconds": 15,
+      "intervalSeconds": 3,
+      "maxConsecutiveFailures": 10
+  }],
+  "labels":{
+    "HAPROXY_DEPLOYMENT_GROUP":"nginx",
+    "HAPROXY_DEPLOYMENT_ALT_PORT":"10001",
+    "HAPROXY_GROUP":"external"
+  },
+  "acceptedResourceRoles":["*", "slave_public"]
+}
+```
+
 除了上述方案，也可以通过其他工具实现此过程，如[Vamp](http://vamp.io/)，[Swan](https://github.com/Dataman-Cloud/swan)，详细信息请参考后续章节。
 
 
