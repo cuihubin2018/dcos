@@ -142,9 +142,9 @@
     * [应用打包与镜像构建](dcos-usage-cicd-build-by-maven.md)
     * [持续集成与构建](dcos-usage-cicd-integration.md)
 * [持续部署](dcos-usage-cicd-deploy.md)
-    * [部署模式](dcos-usage-cicd-deploy-patterns.md)
-    * [部署实践](dcos-usage-cicd-deploy-practice.md)
-        * [基于Vamp的部署实践](dcos-usage-cicd-deploy-practice-vamp.md)
+    * [基于DC\/OS的部署](dcos-usage-cicd-deploy-practice.md)
+    * [基于Vamp的部署](dcos-usage-cicd-deploy-practice-vamp.md)
+    * [基于Swan的部署](基于swan的部署.md)
 * [Gitbook文档](dcos-usage-gitbook.md)
 
 ## DCOS之开发
