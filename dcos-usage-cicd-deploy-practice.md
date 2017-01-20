@@ -166,4 +166,8 @@ $ ./zdd.py -j 1-nginx.json -m http://master.mesos:8080 -f -l http://marathon-lb.
 除了上述方案，也可以通过其他工具实现此过程，如[Vamp](http://vamp.io/)，[Swan](https://github.com/Dataman-Cloud/swan)，详细信息请参考后续章节。
 
 
+### 参考
 
+- https://github.com/mesosphere/marathon/blob/master/docs/docs/blue-green-deploy.md
+
+- https://github.com/mesosphere/marathon-lb
