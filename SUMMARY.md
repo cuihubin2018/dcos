@@ -5,7 +5,6 @@
     * [DC\/OS概览](dcos概览.md)
     * [系统基础](dcos-basic-theory.md)
         * [名词术语](dcos-basic-theory-terminologies.md)
-    * [资源调度](dcos-theory-schedule-strategy.md)
 * [环境搭建](dcos-install.md)
     * [安装环境准备](dcos-install-default.md)
         * [在Centos上安装Docker](dcos-install-docker-on-centos.md)
@@ -21,7 +20,8 @@
 
 ## DC\/OS之原理
 * [理解DC\/OS](dcos-theory-overview.md)
-    * [DC\/OS内部端口](dcos-dcos-admin-ports.md)
+    * [资源调度](dcos-theory-schedule-strategy.md)
+    * [内部端口](dcos-dcos-admin-ports.md)
 * [Mesos](dcos-mesos.md)
     * [资源与属性](dcos-mesos-attributes-and-resources.md)
     * [角色（Roles）](dcos-mesos-roles.md)
