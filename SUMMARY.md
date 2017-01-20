@@ -131,6 +131,7 @@
 * [FAQ](dcos-admin-faq.md)
 
 ## DC\/OS之应用
+* [微服务](dcos-usage-microservice.md)
 * [容器与镜像](dcos-usage-dockers.md)
     * [Dockerfile](dcos-usage-docker-dockerfile.md)
     * [Docker GC](dcos-usage-docker-gc.md)
@@ -141,7 +142,6 @@
     * [应用打包与镜像构建](dcos-usage-cicd-build-by-maven.md)
     * [持续集成与构建](dcos-usage-cicd-integration.md)
     * [持续部署](dcos-usage-cicd-deploy.md)
-* [微服务](dcos-usage-microservice.md)
 * [Gitbook文档](dcos-usage-gitbook.md)
 
 ## DCOS之开发
