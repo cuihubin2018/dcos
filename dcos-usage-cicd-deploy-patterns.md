@@ -84,6 +84,8 @@ echo "{\"ids\":[\"<task_id>\"]}" | curl -H "Content-Type: application/json" -X P
 dcos marathon app remove /blue-myapp
 ```
 
+除了上述方案，也可以通过其他工具实现此过程，如[Vamp](http://vamp.io/)，[Swan](https://github.com/Dataman-Cloud/swan)，详细信息请参考后续章节。
+
 ### 金丝雀部署（Canary Deployment）
 
 ### 参考
