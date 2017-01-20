@@ -138,10 +138,15 @@
     * [单一容器多APP部署](dcos-usage-docker-multi-app-in-one.md)
     * [私有容器仓库](dcos-service-pre-private-docker-registry.md)
     * [存储驱动](dcos-usage-docker-storage-driver.md)
-* [持续集成与部署](dcos-usage-cicd.md)
+* [持续集成](dcos-usage-cicd.md)
     * [应用打包与镜像构建](dcos-usage-cicd-build-by-maven.md)
     * [持续集成与构建](dcos-usage-cicd-integration.md)
-    * [持续部署](dcos-usage-cicd-deploy.md)
+* [持续部署](dcos-usage-cicd-deploy.md)
+    * [部署模式](dcos-usage-cicd-deploy-patterns.md)
+    * [蓝-绿部署](dcos-usage-cicd-deploy-blue-green.md)
+    * [金丝雀部署](dcos-usage-cicd-deploy-canary.md)
+    * [部署实践](dcos-usage-cicd-deploy-practice.md)
+        * [基于Vamp的部署实践](dcos-usage-cicd-deploy-practice-vamp.md)
 * [Gitbook文档](dcos-usage-gitbook.md)
 
 ## DCOS之开发
