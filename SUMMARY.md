@@ -150,5 +150,5 @@
 * [指标采集](dcos-dev-metrics.md)
     * [Prometheus指标采集](dcos-dev-metrics-prometheus.md)
 * [Mesos框架开发](dcos-dev-frameworks.md)
-    * [dcos-dev-frameworks-highly-available](dcos-dev-frameworks-highly-available.md)
+    * [Mesos框架的高可用性设计](dcos-dev-frameworks-highly-available.md)
 
