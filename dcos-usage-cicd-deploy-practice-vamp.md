@@ -14,6 +14,28 @@ VAMP可以对持续改进环路的三个核心领域（部署编排和缩放，�
 
 ### Vamp组件及功能
 
+Vamp由一组服务器端和客户端组件组成，与用户的应用配合一起处理部署编排，路由，持久性和度量聚合。
+
+- VAMP UI
+
+ Vamp UI是一个用于在Web浏览器中管理Vamp的图形Web界面。它与Vamp组件一起打包部署。
+
+- VAMP CLI
+ 
+ Vamp CLI是一个通过命令行管理Vamp的工具并提供与（shell）脚本的集成。
+
+- VAMP
+
+- VAMP WORKFLOWS
+
+ Vamp Workflows是一些小应用或脚本（例如JavaScript或容器），可自动调整运行中的系统及其部署和网关。Vamp已经内置了一组工作流，例如健康和指标，Vamp UI使用这些工作流监控系统状态并启用自动缩放和自我修复。
+
+- VAMP GATEWAY AGENT (VGA)
+
+ VGA从ZooKeeper，etcd或Consul读取HAProxy配置，并在尽可能接近零客户端请求中断的情况下针对每个配置更改重新加载HAProxy。通常，应该有一个Vamp实例和一个或多个VGA实例。
+ 
+ VGA通过Socket读取来自HAProxy的日志，并通过UDP推送到Logstash。 VGA会处理和恢复ZooKeeper，etcd，Consul和Logstash的停机，而不中断HAProxy进程和客户端请求。
+
 ### 参考
 
 - http://vamp.io/
