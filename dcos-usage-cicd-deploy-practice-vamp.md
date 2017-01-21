@@ -45,15 +45,15 @@ Vamp不是实时应用程序，仅当被请求（响应式）时才更新部署�
 
 - 服务发现
 
-Vamp使用称为服务器端服务发现([microservices.io - server side discovery](http://microservices.io/patterns/server-side-discovery.html))的服务发现模式，可以无需更改代码或运行任何其他守护程序或代理而实现服务发现。除了服务发现之外，Vamp还可以用作服务注册表([microservices.io - service registry](http://microservices.io/patterns/service-registry.html))。
+  Vamp使用称为服务器端服务发现([microservices.io - server side discovery](http://microservices.io/patterns/server-side-discovery.html))的服务发现模式，可以无需更改代码或运行任何其他守护程序或代理而实现服务发现。除了服务发现之外，Vamp还可以用作服务注册表([microservices.io - service registry](http://microservices.io/patterns/service-registry.html))。
 
-采用这种模式的好处是：1）不会产生代码注入；2）不需要额外的库或代理依赖；3）对平台/语言无感知，只是HTTP；4）可以使用ENV环境变量轻松集成。
+  采用这种模式的好处是：1）不会产生代码注入；2）不需要额外的库或代理依赖；3）对平台/语言无感知，只是HTTP；4）可以使用ENV环境变量轻松集成。
 
 - 路由和负载
 
-Vamp使用经过测试的逆向代理HAProxy进行路由/代理和负载平衡。VGA负责管理HAProxy的配置，HAProxy将入站流量路由到端点（明确定义的外部网关）或处理内部服务间的路由。
+  Vamp使用经过测试的逆向代理HAProxy进行路由/代理和负载平衡。VGA负责管理HAProxy的配置，HAProxy将入站流量路由到端点（明确定义的外部网关）或处理内部服务间的路由。
 
- - 路由
+  - 路由
  
    Vamp首先查找是否为路由（Route）或网关（Gateway）设置了条件（conditions），条件可以零，一个或多个。如果条件匹配，Vamp会评估条件的强度百分比设置。100％设置意味着满足条件的所有请求都被发送到此路由。5％的设置意味着满足条件的所有请求的5％被发送到该路由，剩余的95％被返回到“桶”中并使用通用的权重设置来分发。
   
@@ -61,12 +61,11 @@ Vamp使用经过测试的逆向代理HAProxy进行路由/代理和负载平衡�
   
    Vamp的负载均衡对应用是透明的。基于正在运行的服务的规模设置，Vamp将确保所有实例都自动进行负载平衡。默认情况下，Vamp使用循环（round-robin）算法，但也支持其他的HAProxy负载机制。此外，Vamp还支持粘性路由。权重和条件百分比设置与应用运行的实例数量是分离的，例如，对于分别以四个和八个实例的规模运行的两个服务版本上的50:50的权重分布，Vamp调度的流量仍然按50％:50％分配。
 
-
-VGA的Docker镜像打包了具有特定logstash配置的HAProxy。在性能方面，HAProxy非常高效，并且使用很少的资源。即使使用非常复杂和组合的路由规则，总开销仍保持在微秒范围内。
+ VGA的Docker镜像打包了具有特定logstash配置的HAProxy。在性能方面，HAProxy非常高效，并且使用很少的资源。即使使用非常复杂和组合的路由规则，总开销仍保持在微秒范围内。
 
 - 事件和指标
 
-Vamp通过收集，存储和分析HTTP/TCP日志提供有效的反馈回路。日志的收集和存储是结合HAProxy，VGA和Logstash的设置完成的，日志最终存储在Elasticsearch中。
+  Vamp通过收集，存储和分析HTTP/TCP日志提供有效的反馈回路。日志的收集和存储是结合HAProxy，VGA和Logstash的设置完成的，日志最终存储在Elasticsearch中。
 
 ![](/assets/Vamp-events-and-metrics-flow.svg)
 
