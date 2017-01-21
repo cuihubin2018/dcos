@@ -28,3 +28,6 @@ RRDNS
 
 域名轮询服务（RRDNS）是一种在应用服务器之间分布负载的方法。它通过在DNS服务器的区域文件中创建具有相同名称和不同IP地址的多个A记录来实现。
 
+gRPC
+
+[gRPC](https://github.com/grpc)是Google开源的一个高性能、跨语言的RPC框架，基于HTTP2协议，基于Protobuf 3.x，基于Netty 4.x。
