@@ -29,4 +29,6 @@ Running mesosphere/dcos-genconf docker with BUILD_DIR set to /home/centos/gencon
 #### 4.点击“**Begin Installation**”开始安装
 
 
+### FAQ
 
+如果在安装过程中出现问题，查看错误日志，解决问题，删除`/opt/dcos_install_tmp`文件后重新执行，直至安装完成。
