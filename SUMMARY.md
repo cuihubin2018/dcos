@@ -22,6 +22,7 @@
 * [理解DC\/OS](dcos-theory-overview.md)
     * [资源调度](dcos-theory-schedule-strategy.md)
     * [内部端口](dcos-dcos-admin-ports.md)
+    * [启动顺序](dcos-dcos-arch-boot-sequence.md)
 * [Mesos](dcos-mesos.md)
     * [资源与属性](dcos-mesos-attributes-and-resources.md)
     * [角色（Roles）](dcos-mesos-roles.md)
