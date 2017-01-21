@@ -45,7 +45,7 @@ DC/OS的系统组件服务将在后续章节详细介绍。
 
 DC/OS的用户空间主要用来运行用户服务，这些服务可以是遵循DC\/OS服务规范的任意的应用或Docker容器镜像。常见的服务包括：Marathon，Cassandra，Kafka，
 
-### DC/OS的启动过程
+![](/assets/dcos-components-1.9.png)
 
 
 
