@@ -1,6 +1,6 @@
 ## 基于Swan的部署实践
 
-[Swan](https://github.com/Dataman-Cloud/swan)是国内[数人云](http://www.shurenyun.com/)公司采用Go语言开发的基于Mesos的调度器。Swan可以用来在DC/OS集群上部署应用程序，并管理应用程序的整个生命周期，对新版本应用进行滚动更新，控制应用程序的弹性伸缩，并且可以在应用程序不可用时对应用程序进行运行状况检查并自动故障转移。
+[Swan](https://github.com/Dataman-Cloud/swan)是[数人云](http://www.shurenyun.com/)公司采用Go语言开发的基于Mesos的调度器。Swan可以用来在DC/OS集群上部署应用程序，并管理应用程序的整个生命周期，对新版本应用进行滚动更新，控制应用程序的弹性伸缩，并且可以在应用程序不可用时对应用程序进行运行状况检查并自动故障转移。
 
 ### 功能特性
 
