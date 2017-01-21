@@ -26,13 +26,18 @@ Vamp由一组服务器端和客户端组件组成，与用户的应用配合一�
 
 - VAMP
 
+ Vamp是业务逻辑和服务协调器并对外提供核心API接口。Vamp与配置的容器管理器（Docker，Marathon，Kubernetes等）进行会话，并通过ZooKeeper，etcd或Consul（分布式键值存储）将其与VGA同步。Vamp可以使用Elasticsearch进行工件持久化和事件（例如部署中的更改）存储。
+ 
+ 通常，应该有一个Vamp实例和一个或多个VGA实例。
+Vamp不是实时应用程序，仅当被请求（响应式）时才更新部署和路由，因此不需要在HA模式下运行多个实例。
+
 - VAMP WORKFLOWS
 
  Vamp Workflows是一些小应用或脚本（例如JavaScript或容器），可自动调整运行中的系统及其部署和网关。Vamp已经内置了一组工作流，例如健康和指标，Vamp UI使用这些工作流监控系统状态并启用自动缩放和自我修复。
 
 - VAMP GATEWAY AGENT (VGA)
 
- VGA从ZooKeeper，etcd或Consul读取HAProxy配置，并在尽可能接近零客户端请求中断的情况下针对每个配置更改重新加载HAProxy。通常，应该有一个Vamp实例和一个或多个VGA实例。
+ VGA从ZooKeeper，etcd或Consul读取HAProxy配置，并在尽可能接近零客户端请求中断的情况下针对每个配置更改重新加载HAProxy。
  
  VGA通过Socket读取来自HAProxy的日志，并通过UDP推送到Logstash。 VGA会处理和恢复ZooKeeper，etcd，Consul和Logstash的停机，而不中断HAProxy进程和客户端请求。
 
