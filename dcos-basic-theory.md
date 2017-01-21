@@ -63,6 +63,14 @@ BASE是指基本可用（Basically Available）、软状态（ Soft State）、�
 
 参考：[关于分布式一致性的探究](http://www.hollischuang.com/archives/663)
 
+
+### 资源调度策略
+
+资源调度是指在一个规模集群内调度管理规模硬件集群的CPU、GPU、内存、磁盘和网络等资源的方案策略。当前主要有三种策略：一体化调度、两级调度和共享状态调度，如下图所示：
+
+![](/assets/cluster scheduler.png)
+
+
 ### CURL
 
 DC/OS系统自带了CURL，而且DC/OS系统内部大量使用了CURL。因此理解CURL的功能和作用是必要的。在访问HTTPS目标地址时，CURL默认会校验服务器证书。DC/OS中CURL使用的证书存放位置位于：

@@ -20,7 +20,8 @@
 
 ## DC\/OS之原理
 * [理解DC\/OS](dcos-theory-overview.md)
-    * [资源调度](dcos-theory-schedule-strategy.md)
+    * [节点类型](dcos-dcos-arch-node-types.md)
+    * [任务类型](dcos-dcos-arch-task-types.md)
     * [内部端口](dcos-dcos-admin-ports.md)
     * [启动顺序](dcos-dcos-arch-boot-sequence.md)
 * [Mesos](dcos-mesos.md)
