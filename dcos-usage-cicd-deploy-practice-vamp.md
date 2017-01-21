@@ -14,6 +14,8 @@ VAMP可以对持续改进环路的三个核心领域（部署编排和缩放，�
 
 ### Vamp组件及功能
 
-参考
+### 参考
 
-http://www.infoq.com/cn/news/2016/07/vamp-microservices-platform
+- http://vamp.io/
+
+- http://www.infoq.com/cn/news/2016/07/vamp-microservices-platform
