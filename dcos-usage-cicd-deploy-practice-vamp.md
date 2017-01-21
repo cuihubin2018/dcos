@@ -70,6 +70,10 @@ Vamp通过收集，存储和分析HTTP/TCP日志提供有效的反馈回路。�
 
 ![](/assets/Vamp-events-and-metrics-flow.svg)
 
+### 安装部署
+
+Vamp对DC/OS支持非常好。在DC/OS中部署Vamp可以通过Universe安装，手动部署和自定义部署等多种方式，详细安装步骤请参考[官方文档](http://vamp.io/documentation/installation/dcos/)。
+
 ### 参考
 
 - http://vamp.io/
