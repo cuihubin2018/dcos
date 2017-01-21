@@ -2,8 +2,6 @@
 
 VAMP是一种开源解决方案，能够为基于容器和微服务的系统提供简便易用的金丝雀测试和发布功能。此外它还提供了强大的工作流功能，例如自动缩放之后进行恰当的排空（Drain）。
 
-![](/assets/Vamp-architecture-and-components.png)
-
 ### Vamp概述
 
 VAMP本身并不是一个完整的微服务/容器类PaaS堆栈，而只是专注于专门为通用微服务/容器堆栈提供高层次的金丝雀测试/发布和自动缩放功能。VAMP能与很多容器和微服务平台集成，例如Mesosphere的Open DC/OS、Apache Mesos/Mesosphere Marathon、Docker Swarm以及（很快即将支持的）Kubernetes，当然还有诸如Cisco的Mantl、CapGemini的Apollo，或Rancher Labs的Rancher等堆栈，以及诸如MS Azure Container Service等容器云，这些容器的编排程序都能与VAMP进行集成。
@@ -15,6 +13,8 @@ VAMP可以对持续改进环路的三个核心领域（部署编排和缩放，�
 ### Vamp组件及功能
 
 Vamp由一组服务器端和客户端组件组成，与用户的应用配合一起处理部署编排，路由，持久性和度量聚合。
+
+![](/assets/Vamp-architecture-and-components.png)
 
 - VAMP UI
 
@@ -40,6 +40,20 @@ Vamp不是实时应用程序，仅当被请求（响应式）时才更新部署�
  VGA从ZooKeeper，etcd或Consul读取HAProxy配置，并在尽可能接近零客户端请求中断的情况下针对每个配置更改重新加载HAProxy。
  
  VGA通过Socket读取来自HAProxy的日志，并通过UDP推送到Logstash。 VGA会处理和恢复ZooKeeper，etcd，Consul和Logstash的停机，而不中断HAProxy进程和客户端请求。
+ 
+通过上述Vamp组件功能及构成可以看出，Vamp通过实现服务发现，路由控制和负载均衡，事件及度量指标服务为基于容器和微服务的系统提供简便易用的金丝雀测试和发布功能。
+
+- 服务发现
+
+Vamp使用称为服务器端服务发现([microservices.io - server side discovery](http://microservices.io/patterns/server-side-discovery.html))的服务发现模式，可以无需更改代码或运行任何其他守护程序或代理而实现服务发现。除了服务发现之外，Vamp还可以用作服务注册表([microservices.io - service registry](http://microservices.io/patterns/service-registry.html))。
+
+采用这种模式的好处是：1）不会产生代码注入；2）不需要额外的库或代理依赖；3）对平台/语言无感知，只是HTTP；4）可以使用ENV环境变量轻松集成。
+
+- 路由和负载
+
+
+
+- 事件和指标
 
 ### 参考
 
