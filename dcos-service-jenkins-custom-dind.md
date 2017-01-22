@@ -1,13 +1,31 @@
 ## Jenkins Slave环境维护
 
-修改Jenkins Slave镜像
+Jenkins on DC/OS 支持同时维护多种不同的Slave镜像环境，因此可以为Java，Node.js，Ruby等等构建不同的Slave主机环境镜像。这些镜像可以通过任务标签进行选择。
 
-添加`VOLUME "/etc/docker"`,让动态创建的Jenkins Slave可以使用Agent主机上配置的私有仓库的SSL证书信息。
+![](/assets/jenkins-dnd-image-labels.png)
 
-解决问题：`x509: certificate signed by unknown authority`
+### Jenkins Slave DnD镜像
 
-修改Jenkins Slave主机配置
+- Maven构建环境
 
+ https://github.com/christtrc/docker-jenkins-gitbook-agent
+
+- Gitbook构建环境
+
+ https://github.com/christtrc/docker-jenkins-gitbook-agent
+
+
+### Docker私有仓库配置
+
+Jenkins Slave主机以容器运行时，有些任务需要拉取私有仓库中的基础镜像并将编译后的镜像推送到私有仓库。因DnD模式的容器是动态构建的，如果私有仓库配置的是自签名证书，为了能够正确访问容器私有仓库，通常需要挂载Agent主机上的Docker配置。
+
+![](/assets/jenkins-dnd-docker-ssl.png)
+
+否则，在应用过程中可能会碰到`x509: certificate signed by unknown authority`的异常信息。
+
+### Maven环境
+
+当Jenkins的Job任务中存在Maven构建时，Maven会自动从中央仓库下载项目的依赖。由于DnD模式的容器是动态构建的
 
 ### SBT环境
 
@@ -25,4 +43,5 @@
   typesafe-ivy:https://dl.bintray.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
   clever-nexus-proxy-releases: http://192.168.1.54:8081/nexus/content/groups/public
 ```
+
 
