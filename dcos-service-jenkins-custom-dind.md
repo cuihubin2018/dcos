@@ -25,7 +25,11 @@ Jenkins Slave主机以容器运行时，有些任务需要拉取私有仓库中�
 
 ### Maven环境
 
-当Jenkins的Job任务中存在Maven构建时，Maven会自动从中央仓库下载项目的依赖。由于DnD模式的容器是动态构建的
+当Jenkins的Job任务中存在Maven构建时，Maven会自动从中央仓库下载项目的依赖。由于DnD模式的容器是动态构建的，Maven环境位于DnD容器中，每次任务执行都需要下载Maven的仓库依赖，这会严重影响带宽及项目构建速度，因此必须将Maven仓库挂载在DnD容器运行的Agent宿主机的磁盘上。
+
+另一个问题是DnD容器在DC/OS集群中是动态漂移的，所以选取的磁盘存储必须能够在所有Agent节点之间都能够共享访问，基本的方案是使用NFS存储，也可以选择采用GlusterFS，Ceph及其它SAN/SNS方案，参考：[存储策略与方案](/dcos-storage.md)。
+
+![](/assets/jenkins-dnd-maven-repo-external.png)
 
 ### SBT环境
 
