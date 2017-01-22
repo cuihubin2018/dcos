@@ -134,6 +134,8 @@
 
 ## DC\/OS之应用
 * [微服务](dcos-usage-microservice.md)
+    * [架构与模式](dcos-usage-microservice-arch-patterns.md)
+    * [微服务框架](dcos-usage-microservice-frameworks.md)
 * [容器与镜像](dcos-usage-dockers.md)
     * [Dockerfile](dcos-usage-docker-dockerfile.md)
     * [Docker GC](dcos-usage-docker-gc.md)
