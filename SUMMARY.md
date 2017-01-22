@@ -93,7 +93,7 @@
 * [有状态应用服务](dcos-service-stateful.md)
 * [服务的管理](dcos-service-management.md)
 * [Jenkins on DC\/OS](dcos-service-jenkins.md)
-    * [自定义Jenkins Slave容器镜像](dcos-service-jenkins-custom-dind.md)
+    * [Jenkins Slave环境](dcos-service-jenkins-custom-dind.md)
     * [示例：在Jenkins on DCOS上编译部署Tomcat应用](dcos-service-jenkins-example.md)
 * [Storm on DC\/OS](dcos-service-storm.md)
     * [Storm集群配置](dcos-service-storm-config.md)
