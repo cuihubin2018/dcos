@@ -101,9 +101,11 @@ Booststrap节点必须独立于集群之外。
 
 #### 4.6 压缩软件
 
-**范围：**集群节点
+**范围：** 集群节点
 
-    $ sudo yum install -y tar xz unzip curl ipset`
+```
+$ sudo yum install -y tar xz unzip curl ipset
+```
 
 #### 4.7 安全设置
 
