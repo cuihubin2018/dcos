@@ -102,6 +102,7 @@
 * [HDFS on DC\/OS](dcos-service-hdfs.md)
 * [Cassandra on DC\/OS](dcos-service-cassandra.md)
 * [Kafka on DC\/OS](dcos-service-kafka.md)
+* [Spark on DC\/OS](dcos-service-spark.md)
 
 ## DCOS之管理
 * [DCOS CLI](dcos-admin-cli.md)
@@ -136,7 +137,7 @@
 * [容器与镜像](dcos-usage-dockers.md)
     * [Dockerfile](dcos-usage-docker-dockerfile.md)
     * [Docker GC](dcos-usage-docker-gc.md)
-    * [单一容器多APP部署](dcos-usage-docker-multi-app-in-one.md)
+    * [单容器多应用](dcos-usage-docker-multi-app-in-one.md)
     * [私有容器仓库](dcos-service-pre-private-docker-registry.md)
     * [存储驱动](dcos-usage-docker-storage-driver.md)
 * [微服务](dcos-usage-microservice.md)
