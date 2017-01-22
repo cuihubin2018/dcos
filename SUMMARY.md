@@ -81,7 +81,7 @@
         * [增加NFS存储](dcos-storage-nfs-server.md)
     * [持久化卷](dcos-storage-persistent-volume.md)
         * [本地持久化卷](dcos-storage-persistent-volume-local.md)
-        * [外部持久化卷](外部持久化卷.md)
+        * [外部持久化卷](dcos-storage-external-volume.md)
     * [SAN\/SDS](dcos-storage-sansds.md)
         * [Rex-Ray](dcos-storage-sansds-rexray.md)
         * [Flocker](dcos-storage-sansds-flocker.md)
