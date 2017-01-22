@@ -27,3 +27,29 @@ Vamp对跨团队协作共同构建复杂的应用部署提供了良好的支持�
 - 可以引用其他人定义并在某个时间才填充的变量。
 
 Vamp只会在部署时检查这些引用。
+
+### Breeds
+
+### Deployments
+
+### Environment variables
+
+### Gateways
+
+### Conditions
+
+### Events
+
+### SLA(Service Level Agreement)
+
+### Escalations
+
+### Referencing artifacts
+
+### Workflows
+
+### Sticky Sessions
+
+### Service Discovery
+
+### Virtual Hosts

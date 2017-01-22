@@ -147,6 +147,7 @@
     * [基于DC\/OS的部署](dcos-usage-cicd-deploy-practice.md)
     * [基于Vamp的部署](dcos-usage-cicd-deploy-practice-vamp.md)
         * [深入理解Vamp](dcos-usage-cicd-deploy-practice-vamp-details.md)
+        * [Vamp on DC\/OS](dcos-usage-cicd-deploy-practice-vamp-on-dcos.md)
     * [基于Swan的部署](dcos-usage-cicd-deploy-practice-swan.md)
 * [Gitbook文档](dcos-usage-gitbook.md)
 
