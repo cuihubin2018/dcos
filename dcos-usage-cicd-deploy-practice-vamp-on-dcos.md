@@ -18,6 +18,8 @@ Vamp官方为多种场景提供了示例。通过这些场景示例，我们可�
 
 上述场景示例的详细信息请参考[官网文档](http://vamp.io/documentation/tutorials/overview/)。
 
+在实际场景需求中，Vamp往往需要配合其他系统一起实现完整的软件开发流程控制，下述简要介绍其与Jenkins及其它一些服务的整合。
+
 ### 与Jenkins整合
 
 ### 与Marathon-LB整合
