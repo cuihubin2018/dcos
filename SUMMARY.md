@@ -146,7 +146,7 @@
         * [Spring Boot\/Cloud](dcos-usage-microservice-frameworks-spring-cloud.md)
         * [Lagom](dcos-usage-microservice-frameworks-lagom.md)
 * [大数据](dcos-usage-bigdata.md)
-* [持续集成](dcos-usage-cicd.md)
+* [持续集成](dcos-usage-cicd.md)
     * [应用打包与镜像构建](dcos-usage-cicd-build-by-maven.md)
     * [持续集成与构建](dcos-usage-cicd-integration.md)
 * [持续部署](dcos-usage-cicd-deploy.md)
