@@ -12,7 +12,7 @@
 
 - Spring，Spring Boot 和 Spring Cloud
 
-  [Spring](https://spring.io)作为替代J2EE的轻量级企业应用开发框架占据着企业开发市场的统治地位。[Spring Boot](http://projects.spring.io/spring-boot/)是在微服务概念流行起来后，Spring公司开发一套快速开发Spring应用的框架。它本身并不提供Spring框架的核心特性以及扩展功能，只是用于快速、敏捷地开发新一代基于Spring框架的应用程序。Spring Boot集成了大量的第三方库，以“约定优先配置”（convention over configuration）的思想来摆脱Spring框架中各类纷繁复杂的配置，做到组件开箱即用，使开发者能够更加专注于业务逻辑。[Spring Cloud](http://cloud.spring.io/)是一个基于Spring Boot实现的云应用开发工具，它与[Netflix OSS](https://netflix.github.io/)技术体系整合为基于JVM的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。
+  [Spring](https://spring.io)作为替代J2EE的轻量级企业应用开发框架占据着企业开发市场的统治地位。[Spring Boot](http://projects.spring.io/spring-boot/)是在微服务概念流行起来后，Spring公司开发的一套快速开发Spring应用的框架。它本身并不提供Spring框架的核心特性以及扩展功能，只是用于快速、敏捷地开发新一代基于Spring框架的应用程序。Spring Boot集成了大量的第三方库，以“约定优先配置”（convention over configuration）的思想来摆脱Spring框架中各类纷繁复杂的配置，做到组件开箱即用，使开发者能够更加专注于业务逻辑。[Spring Cloud](http://cloud.spring.io/)是一个基于Spring Boot实现的云应用开发工具，它与[Netflix OSS](https://netflix.github.io/)技术体系整合为基于JVM的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。
 
 - Lightbend：Play，Akka，ConductR 和 Lagom
 
