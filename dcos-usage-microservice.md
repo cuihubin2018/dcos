@@ -26,7 +26,9 @@
 
   [Dropwizard](http://www.dropwizard.io/)是一个由社区驱动的项目。它是一个用于开发友好的，高性能的REST服务的Java框架。通过一组优化的Java库的集合，使构建企业级Java应用程序更容易。Dropwizard允许与挂接来自外部的非Dropwizards核心的项目，因此可以很容易的使用由社区开发的与Netflix OSS项目对接的模块。
 
-- 其它 
+Redmonk分析师Fintan Ryan发布了他的Java框架流行度调研结果，Spring仍然占据统治地位，Spring Boot的流行度呈指数增长，Netty和Play继续保持强劲的增长势头。
+
+![](/assets/redmonk-java-frameworks.png)
 
 ### 参考
 
