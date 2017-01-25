@@ -163,6 +163,8 @@ $ ./zdd.py -j 1-nginx.json -m http://master.mesos:8080 -f -l http://marathon-lb.
 }
 ```
 
+实际环境中，上述脚本可以结合CI/CD控制流程，实现一键或自动化部署，从而快速支持AB测试和灰度发布。
+
 除了上述方案，也可以通过其他工具实现此过程，如[Vamp](http://vamp.io/)，[Swan](https://github.com/Dataman-Cloud/swan) 和 [Linkerd](https://linkerd.io)等，详细信息请参考后续章节。
 
 
