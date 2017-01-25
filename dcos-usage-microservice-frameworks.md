@@ -10,8 +10,8 @@
 
 ![](/assets/msa-tech-stacks.png)
 
+微服务架构的关注点主要包括：配置管理（Config Management），API管理（API Management），服务发现（Service Discovery），负载均衡（Load Balance），数据管理（Data Management），日志聚合（Centralized ），指标聚合（Centralized Metrics），分布式追踪（Distributed Tracking），安全服务（Security Service），弹性和容错（Resilience & Fault Tolerance），调度部署（Deployment & Scheduling），自动伸缩与修复（Auto Scaling & Self Healing）等。
 
-
-
+本章后续内容将简要介绍各主流的微服务基础框架针对微服务架构关注点提供的基础设施，并与DC/OS提供的基础服务设施进行对比，最后以示例形式将微服务基础框架与DC/OS整合在一起，形成一个完整的解决方案。
 
 ### DC/OS对微服务的支持
