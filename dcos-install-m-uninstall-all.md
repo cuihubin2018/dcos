@@ -28,3 +28,4 @@ This will uninstall DC/OS on your cluster. You may need to manually remove /var/
 
 如果上述步骤输出结果出现错误，则需要重试或参照[删除单个节点](/dcos-install-nodes-management.md)的操作逐个移除所有节点。
 
+在1.8版本，完全清除DC/OS可能会碰到一些问题，具体请参考：[DCOS-250](https://dcosjira.atlassian.net/browse/DCOS-250) 和 [DCOS-192](https://dcosjira.atlassian.net/browse/DCOS-192)。
