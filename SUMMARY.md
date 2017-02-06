@@ -3,7 +3,7 @@
 ## DC/OS之导论
 
 * [导论](README.md)
-  * [DC\/OS概览](dcos概览.md)
+  * [DC/OS概览](dcos概览.md)
   * [系统基础](dcos-basic-theory.md)
     * [名词术语](dcos-basic-theory-terminologies.md)
 * [环境搭建](dcos-install.md)
