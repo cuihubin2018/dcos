@@ -134,4 +134,10 @@ $ path/to/mesos-agent --resources=file:///path/to/resources.txt ...
 * keys，  具有range类型的值1000~1500区间
 
 
+### DC/OS中的资源属性
 
+在DCOS中，通过在`/var/lib/dcos/mesos-slave-common`文件中添加下述配置为资源添加属性：
+
+```
+MESOS_ATTRIBUTES=<key>:<value>;<key>:<value>
+```

@@ -75,3 +75,5 @@ Mesos自0.27.0版本开始，如果未指定`--roles`，则角色白名单允许
 默认情况下，`slave_public`节点上的资源会分配给同名的Mesos角色：**`slave_public`**；`slave`节点上的资源会分配给Mesos角色：**“*”**。
 
 可以通过修改`/var/lib/dcos/mesos-resources`中的JSON定义，添加自定义的Mesos角色并预留静态资源。 如果需要动态预留资源，请参考[资源预留](/dcos-mesos-reservation.md)。
+
+#### 限定特定节点的资源角色
