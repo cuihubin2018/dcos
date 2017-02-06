@@ -63,4 +63,15 @@ rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 yum --enablerepo=elrepo-kernel install kernel-ml
 ```
 
+### 新增Agent节点运行正常但无法注册到Master
 
+所有的Agent节点服务都正常，时间也已经同步，但是Agent节点未显示在DC/OS WEB UI的Nodes列表中。查看Agent节点的dcos-mesos-slave.service服务的日志，看到如下信息：
+
+```
+mesos-agent[4086]: I0206 12:04:02.827376  4105 manager.cpp:179] Initializing overlay agent manager
+mesos-agent[4086]: I0206 12:04:02.827764  4103 manager.cpp:396] Detected new overlay master at overlay-master@192.168.88.31:5050
+```
+
+故障分析：在同一网段88.x中已使用默认的`dcos_overlay_network`配置部署了一个DC/OS集群，在同一网段部署另一个集群时未修改该配置导致上述问题。
+
+解决方案：调整genconf/config.yaml文件中的`dcos_overlay_network`配置，重新安装DC/OS集群。
