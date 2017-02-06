@@ -104,3 +104,5 @@ sudo rm -rf /var/lib/dcos /var/lib/mesos
 
 
 
+### 节点维护
+
