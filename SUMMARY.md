@@ -167,10 +167,13 @@
 
 ## DC/OS之开发
 
-* [Docker Swarm vs Mesos vs Kubernetties](dcos-theory-solutions-martrix.md)
 * [Universe Package 开发](dcos-dev-universe-package.md)
 * [指标采集](dcos-dev-metrics.md)
   * [Prometheus指标采集](dcos-dev-metrics-prometheus.md)
 * [Mesos框架开发](dcos-dev-frameworks.md)
   * [Mesos框架的高可用性设计](dcos-dev-frameworks-highly-available.md)
+
+## 附录
+
+* [Docker Swarm vs Mesos vs Kubernetties](dcos-theory-solutions-martrix.md)
 
