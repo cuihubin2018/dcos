@@ -134,10 +134,24 @@ $ path/to/mesos-agent --resources=file:///path/to/resources.txt ...
 * keys，  具有range类型的值1000~1500区间
 
 
-### DC/OS中的资源属性
+### DC/OS中的节点属性
 
-在DCOS中，通过在`/var/lib/dcos/mesos-slave-common`文件中添加下述配置为资源添加属性：
+通过Agent节点属性可以限定某些任务只在某些特定的节点上运行，如Spark的Job。
+
+在DCOS中，通过在`/var/lib/dcos/mesos-slave-common`文件（可能需要创建）中添加下述配置为资源添加属性：
 
 ```
 MESOS_ATTRIBUTES=<key>:<value>;<key>:<value>
 ```
+
+修改上述配置后必须重启节点服务：
+
+```
+systemctl stop dcos-mesos-slave
+rm -f /var/lib/mesos/slave/meta/slaves/latest
+systemctl start dcos-mesos-slave
+```
+
+### DC/OS中的节点资源
+
+在Mesos中，资源是与角色相关联的。关于角色请参考[下一节](/dcos-mesos-roles.md)；关于如何在DC/OS中为特定角色配置资源请参考[添加磁盘资源](/dcos-storage-mount-disk-resources.md)。

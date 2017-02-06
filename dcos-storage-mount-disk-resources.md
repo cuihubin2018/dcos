@@ -1,6 +1,6 @@
 ## 增加磁盘资源
 
-在DC\/OS集群的Agent节点上，可以使用文件路径以[Mesos支持的多种磁盘资源挂载方式](/dcos-storage-multi-disks.md)简单挂载存储资源。DC\/OS上的Agent节点在最初启动时，会扫描与`/dcos/volumeN`模式相匹配的卷（其中N是整数），如果扫描到，Agent节点会将这些路径上的存储资源添加到资源池并调度给其它服务使用。
+在DC/OS集群的Agent节点上，可以使用文件路径以[Mesos支持的多种磁盘资源挂载方式](/dcos-storage-multi-disks.md)简单挂载存储资源。DC/OS上的Agent节点在最初启动时，会扫描与`/dcos/volumeN`模式相匹配的卷（其中N是整数），如果扫描到，Agent节点会将这些路径上的存储资源添加到资源池并调度给其它服务使用。
 
 注意，这里的`/dcos/volumeN`实际指向的可以是loop设备，可以是NFS存储设备或其它文件存储设备。
 
@@ -18,7 +18,7 @@
 
 #### [loop设备](https://zh.wikipedia.org/wiki//dev/loop)
 
-创建一个200MB的loop设备，这仅适用于测试目的。挂载卷必须至少有200 MB可用空间。每个卷上的100 MB由DC\/OS保留，不能用于其他服务。
+创建一个200MB的loop设备，这仅适用于测试目的。挂载卷必须至少有200 MB可用空间。每个卷上的100 MB由DC/OS保留，不能用于其他服务。
 
 ```
 sudo mkdir -p /dcos/volume0
@@ -36,7 +36,7 @@ echo "/root/volume0.img /dcos/volume0 auto loop 0 2" | sudo tee -a /etc/fstab $ 
 
 ### 配置Agent节点加载资源
 
-1.检查当前Agent节点的资源状态，确保没有\/dcos\/volume0。
+1.检查当前Agent节点的资源状态，确保没有`/dcos/volume0`。
 
 ```
 $ cat /var/lib/dcos/mesos-resources 
