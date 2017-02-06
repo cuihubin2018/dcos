@@ -149,7 +149,7 @@
 * [微服务](dcos-usage-microservice.md)
   * [架构与模式](dcos-usage-microservice-arch-patterns.md)
   * [微服务框架](dcos-usage-microservice-frameworks.md)
-    * [Spring Boot\/Cloud](dcos-usage-microservice-frameworks-spring-cloud.md)
+    * [Spring Boot/Cloud](dcos-usage-microservice-frameworks-spring-cloud.md)
     * [Lagom](dcos-usage-microservice-frameworks-lagom.md)
 * [大数据](dcos-usage-bigdata.md)
 * [持续集成](dcos-usage-cicd.md)
