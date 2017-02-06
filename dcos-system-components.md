@@ -55,7 +55,7 @@ DC\/OS详细的主要系统服务说明列表如下：
 
 后续章节会详细分析这些系统服务。
 
-### DC\/OS系统服务版本
+### DC/OS系统服务版本
 
-DC\/OS有自己的版本发布路线图，那么，在决定部署或升级某一版本的DC\/OS系统时，如何确定当前版本中各系统服务的版本呢？当前，获取DC\/OS内部各个系统服务版本的方式是首先确定DC\/OS的版本，访问[https:\/\/github.com\/dcos\/dcos\/tree\/master\/packages](https://github.com/dcos/dcos/tree/master/packages)，切换到DC\/OS版本（如V1.8.5）对应的分支，找到对应的系统服务目录，如marathon，通过该目录下的`buildinfo.json`文件确定该版本DC\/OS中打包的Marathon的代码版本。
+DC/OS有自己的版本发布路线图，那么，在决定部署或升级某一版本的DC/OS系统时，如何确定当前版本中各系统服务的版本呢？当前，获取DC/OS内部各个系统服务版本的方式是首先确定DC/OS的版本，访问[https:\/\/github.com\/dcos\/dcos\/tree\/master\/packages](https://github.com/dcos/dcos/tree/master/packages)，切换到DC\/OS版本（如V1.8.5）对应的分支，找到对应的系统服务目录，如marathon，通过该目录下的`buildinfo.json`文件确定该版本DC\/OS中打包的Marathon的代码版本。
 
