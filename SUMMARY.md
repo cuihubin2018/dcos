@@ -1,6 +1,6 @@
 # Summary
 
-## DC\/OS之导论
+## DC/OS之导论
 
 * [导论](README.md)
   * [DC\/OS概览](dcos概览.md)
@@ -20,9 +20,9 @@
   * [集群升级](dcos-install-upgrading.md)
 * [FAQ](dcos-install-faq.md)
 
-## DC\/OS之原理
+## DC/OS之原理
 
-* [理解DC\/OS](dcos-theory-overview.md)
+* [理解DC/OS](dcos-theory-overview.md)
   * [节点类型](dcos-dcos-arch-node-types.md)
   * [任务类型](dcos-dcos-arch-task-types.md)
   * [内部端口](dcos-dcos-admin-ports.md)
@@ -92,26 +92,26 @@
 * [Universe](dcos-component-universe.md)
   * [应用的管理](dcos-component-universe-usage.md)
 
-## DC\/OS之服务
+## DC/OS之服务
 
 * [有状态应用服务](dcos-service-stateful.md)
 * [服务的管理](dcos-service-management.md)
-* [Jenkins on DC\/OS](dcos-service-jenkins.md)
+* [Jenkins on DC/OS](dcos-service-jenkins.md)
   * [Jenkins Slave环境](dcos-service-jenkins-custom-dind.md)
   * [示例：在Jenkins on DCOS上编译部署Tomcat应用](dcos-service-jenkins-example.md)
-* [Storm on DC\/OS](dcos-service-storm.md)
+* [Storm on DC/OS](dcos-service-storm.md)
   * [Storm集群配置](dcos-service-storm-config.md)
   * [部署Storm集群](dcos-service-storm-deploy.md)
   * [访问Storm集群](dcos-service-storm-clients.md)
-* [HDFS on DC\/OS](dcos-service-hdfs.md)
-* [Cassandra on DC\/OS](dcos-service-cassandra.md)
-* [Kafka on DC\/OS](dcos-service-kafka.md)
-* [Spark on DC\/OS](dcos-service-spark.md)
+* [HDFS on DC/OS](dcos-service-hdfs.md)
+* [Cassandra on DC/OS](dcos-service-cassandra.md)
+* [Kafka on DC/OS](dcos-service-kafka.md)
+* [Spark on DC/OS](dcos-service-spark.md)
 
-## DCOS之管理
+## DC/OS之管理
 
-* [DCOS CLI](dcos-admin-cli.md)
-* [DCOS 管理UI](dcos-admin-ui.md)
+* [DC/OS CLI](dcos-admin-cli.md)
+* [DC/OS 管理UI](dcos-admin-ui.md)
 * [监控管理](dcos-admin-monitoring.md)
   * [DC\/OS的监控](dcos-admin-monitoring-dcos.md)
   * [信息采集](dcos-admin-monitoring-collect.md)
@@ -138,7 +138,7 @@
   * [Ceph集群存储](dcos-admin-storage-ceph.md)
 * [FAQ](dcos-admin-faq.md)
 
-## DC\/OS之应用
+## DC/OS之应用
 
 * [容器与镜像](dcos-usage-dockers.md)
   * [Dockerfile](dcos-usage-docker-dockerfile.md)
@@ -163,7 +163,7 @@
   * [基于Swan的部署](dcos-usage-cicd-deploy-practice-swan.md)
 * [Gitbook文档](dcos-usage-gitbook.md)
 
-## DCOS之开发
+## DC/OS之开发
 
 * [Docker Swarm vs Mesos vs Kubernetties](dcos-theory-solutions-martrix.md)
 * [Universe Package 开发](dcos-dev-universe-package.md)
