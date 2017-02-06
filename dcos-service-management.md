@@ -44,5 +44,6 @@ docker run mesosphere/janitor /janitor.py -r <custom_role> -p <custom_principal>
 可以将服务配置保存到Git仓库（Gitlab）中，当服务配置发生变更时，可以使用Gitlab CI 或 Jenkins的任务部署变更的配置并调用Marathon的API重新启动服务。
 
 
+服务的无宕机部署
 
-
+关于服务的无宕机部署请参考[基于DC/OS的持续部署](/dcos-usage-cicd-deploy-practice.md)章节。

@@ -13,11 +13,7 @@
   * [通过CLI安装](dcos-install-by-cli.md)
   * [高级安装](dcos-install-by-advanced-mode.md)
     * [高级安装配置](dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.md)
-* [集群维护](dcos-install-maintainance.md)
-  * [备份集群安装文件](dcos-install-backup-installer-file.md)
-  * [集群节点管理](dcos-install-nodes-management.md)
-  * [集群卸载](dcos-install-m-uninstall-all.md)
-  * [集群升级](dcos-install-upgrading.md)
+  * [备份安装文件](dcos-install-backup-installer-file.md)
 * [FAQ](dcos-install-faq.md)
 
 ## DC/OS之原理
@@ -110,10 +106,15 @@
 
 ## DC/OS之管理
 
-* [DC/OS CLI](dcos-admin-cli.md)
-* [DC/OS 管理UI](dcos-admin-ui.md)
+* [管理概述](dcos-admin.md)
+  * [DC/OS CLI](dcos-admin-cli.md)
+  * [DC/OS 管理UI](dcos-admin-ui.md)
+* [集群维护](dcos-install-maintainance.md)
+  * [集群节点管理](dcos-install-nodes-management.md)
+  * [集群卸载](dcos-install-m-uninstall-all.md)
+  * [集群升级](dcos-install-upgrading.md)
 * [监控管理](dcos-admin-monitoring.md)
-  * [DC\/OS的监控](dcos-admin-monitoring-dcos.md)
+  * [DC/OS的监控](dcos-admin-monitoring-dcos.md)
   * [信息采集](dcos-admin-monitoring-collect.md)
     * [collectd](dcos-admin-monitoring-collectd.md)
       * [docker-collectd-plugin](dcos-admin-monitoring-collectd-docker.md)
@@ -156,10 +157,10 @@
   * [应用打包与镜像构建](dcos-usage-cicd-build-by-maven.md)
   * [持续集成与构建](dcos-usage-cicd-integration.md)
 * [持续部署](dcos-usage-cicd-deploy.md)
-  * [基于DC\/OS的部署](dcos-usage-cicd-deploy-practice.md)
+  * [基于DC/OS的部署](dcos-usage-cicd-deploy-practice.md)
   * [基于Vamp的部署](dcos-usage-cicd-deploy-practice-vamp.md)
     * [深入理解Vamp](dcos-usage-cicd-deploy-practice-vamp-details.md)
-    * [Vamp on DC\/OS](dcos-usage-cicd-deploy-practice-vamp-on-dcos.md)
+    * [Vamp on DC/OS](dcos-usage-cicd-deploy-practice-vamp-on-dcos.md)
   * [基于Swan的部署](dcos-usage-cicd-deploy-practice-swan.md)
 * [Gitbook文档](dcos-usage-gitbook.md)
 
