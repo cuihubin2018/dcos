@@ -72,12 +72,12 @@ CQL已经取代Thrift成为与Cassandra交互的标准接口。在了解CQL之�
 下面是一个名为**books**的表，仅有一个**title**主键：
 
 ```
-“CREATE TABLE books ( 
+CREATE TABLE books ( 
    title text, 
    author text, 
    year int, 
    PRIMARY KEY (title) 
-);”
+);
 ```
 
 通过下述语句插入两条数据：
@@ -114,4 +114,46 @@ Row Key: Patriot Games
 ```
 **注意**，这是旧的pre-3.0 CLI输出，仅用于理解概念，下述同。 
  
+#### Compound Keys
 
+下面看一个authors表，这个表使用name，year和title作为组合主键。
+
+```
+CREATE TABLE authors ( 
+   name text, 
+   year int, 
+   title text, 
+   isbn text, 
+   publisher text, 
+   PRIMARY KEY (name, year, title) 
+); 
+```
+
+插入数据后通过CQL查询显示如下：
+
+```
+ name       | year | title           | isbn          | publisher 
+------------+------+-----------------+---------------+----------- 
+ Tom Clancy | 1987 |   Patriot Games | 0-399-13241-4 |    Putnam 
+ Tom Clancy | 1993 | Without Remorse | 0-399-13825-0 |    Putnam 
+```
+
+在深入理解底层的存储转换之前，先来理解两个概念：**partion keys** 和 **clustering columns**。
+
+- **Partion keys**
+
+- **Clustering columns**
+
+ 
+#### Composite partion keys
+
+
+#### 存储模型的重要性
+
+### 理解查询
+
+### 使用集合进行非规范化
+
+### 使用Materialized views进行非规范化
+
+### 操纵时间序列数据
