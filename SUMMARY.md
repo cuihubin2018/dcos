@@ -101,6 +101,7 @@
   * [访问Storm集群](dcos-service-storm-clients.md)
 * [HDFS on DC/OS](dcos-service-hdfs.md)
 * [Cassandra on DC/OS](dcos-service-cassandra.md)
+  * [数据建模](dcos-service-cassandra/dcos-service-cassandra-modeling.md)
 * [Kafka on DC/OS](dcos-service-kafka.md)
 * [Spark on DC/OS](dcos-service-spark.md)
 
