@@ -100,6 +100,18 @@ INSERT INTO books (title, author, year) VALUES ('Without Remorse', 'Tom Clancy',
 
 这看上去与传统的ANSI SQL非常相似，但是对应着Cassandra的底层存储却是完全不同。
 
- 
+在存储层，数据用一个Row Key即title和一个name/value组成的列集合表示。每个列都有一个时间戳用于处理冲突。
+
+系统存储时根据Row Key的哈希值在Cassandra集群节点中分布式存储，因此查询返回的结果是无序的。相对比之下，列集合中的数据是根据列名称按自然语言顺序排列的。因此上例中author排在year的前面。**这一点对于构建高效的数据模型至关重要**。
+
+```
+Row Key: Without Remorse 
+=> (name=author, value=Tom Clancy, timestamp=1393102991499000) 
+=> (name=year, value=1993, timestamp=1393102991499000) 
+Row Key: Patriot Games 
+=> (name=author, value=Tom Clancy, timestamp=1393102991499100) 
+=> (name=year, value=1987, timestamp=1393102991499100)
+```
+**注意**，这是旧的pre-3.0 CLI输出，仅用于理解概念，下述同。 
  
 
