@@ -183,6 +183,8 @@ $ curl -i \
 
 ![](/assets/dcos-mesos-agents.png)
 
+### 在DC/OS中预留资源
+
 ### 参考
 
 [https://github.com/apache/mesos/blob/master/docs/reservation.md](https://github.com/apache/mesos/blob/master/docs/reservation.md)

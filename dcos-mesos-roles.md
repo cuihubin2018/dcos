@@ -60,7 +60,7 @@ Mesos自0.27.0版本开始，如果未指定`--roles`，则角色白名单允许
 
 默认情况下，Mesos的Master节点使用[主导资源公平（DRF）算法](/dcos-mesos-resources-drf.md)来分配资源。特别地，DRF的这种实施首先识别哪一个角色与其所主导资源的公平份额相差是最大的。随之，该角色中的每个框架将被依次提供额外的资源。
 
-资源分配过程可以通过给角色设置[权重（weights）](/dcos-mesos-weights.md)来控制调整。拥有权重2的角色将被分配的公平份额是拥有权重1的角色的两倍。默认情况下，角色的权重为1。维护人员可以通过\/weights API为角色配置权重。
+资源分配过程可以通过给角色设置[权重（weights）](/dcos-mesos-weights.md)来控制调整。拥有权重2的角色将被分配的公平份额是拥有权重1的角色的两倍。默认情况下，角色的权重为1。维护人员可以通过`/weights` API为角色配置权重。
 
 ### 角色与主体
 
@@ -77,3 +77,19 @@ Mesos自0.27.0版本开始，如果未指定`--roles`，则角色白名单允许
 可以通过修改`/var/lib/dcos/mesos-resources`中的JSON定义，添加自定义的Mesos角色并预留静态资源。 如果需要动态预留资源，请参考[资源预留](/dcos-mesos-reservation.md)。
 
 #### 限定特定节点的资源角色
+
+如果希望将Agent节点的资源限定为特定资源角色而不是默认的“*”，可以通过修改`/var/lib/dcos/mesos-slave-common`文件（可能需要创建），添加：
+
+```
+MESOS_DEFAULT_ROLE=[角色名称]
+```
+
+修改后需要重新启动Mesos Slave服务：
+
+```
+systemctl stop dcos-mesos-slave
+rm -f /var/lib/mesos/slave/meta/slaves/latest
+systemctl start dcos-mesos-slave
+```
+
+**注意**，如果在`/var/lib/dcos/mesos-resources`中为其它角色[预留](/dcos-mesos-reservation.md)了资源，则这些资源仍会被分配给指定这些角色的服务。
