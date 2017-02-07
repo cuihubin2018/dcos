@@ -73,23 +73,11 @@ Marathon默认为运行的任务启用了检查点，但这要求Agent节点服�
 
 #### 节点正常重启
 
-因维护需要重启Agent节点前，需要将节点上正在运行的应用服务停止。
-
-可以通过DC/OS WEB UI或CLI停止应用服务，例如存在ID为`/graphite`的应用，实例数为1，部署在192.168.1.80节点上。
-
-通过WEB UI，进入到该服务的管理页签，选择“Suspend”该服务，或者“Scale”该服务实例数到0，该服务都将进入“`suspended`”状态。
-
-通过CLI方式时，可以执行以下命令：
-
-```
-dcos marathon app stop /graphite
-```
-
-当Agent节点（如192.168.1.80）上所有的服务都进入到停止状态，则可以重启该节点进行维护。
+因维护需要重启Agent节点前，首先需要将节点上正在运行的应用服务停止。然后按照[节点维护](/dcos-install-nodes-management/dcos-install-nodes-management-maintenance.md)中描述的步骤进行操作。
 
 #### 节点崩溃
 
-经过测试，如果单个节点系统崩溃，节点上通过Marathon启动的应用会在节点崩溃后自动转移到其它节点。
+如果单个节点系统崩溃，节点上通过Marathon启动的应用会在节点崩溃后自动转移到其它节点。
 
 #### 全节点崩溃
 
