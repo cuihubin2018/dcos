@@ -35,7 +35,7 @@ Agent节点恢复通过将Agent的任务和执行器的检查点信息（例如�
 * 如果recover=cleanup，杀死任何旧的活的执行者并退出。在执行不兼容的Agent节点或执行程序升级时使用此选项！注意：如果不存在检查点信息，则不执行恢复，并且Agent节点作为新节点向Master注册。
 
 
-3.**revovery\_timeout**：分配给Agent节点恢复的时间量，默认值：15分钟。
+3.**recovery\_timeout**：分配给Agent节点恢复的时间量，默认值：15分钟。
 
 * 如果Agent节点花费的恢复时间大于recovery\_timeout，则任何等待重新连接到Agent节点的执行程序都将自行终止。
 
@@ -58,6 +58,16 @@ KillMode=control-cgroup
 ### 扩展
 
 Marathon默认为运行的任务启用了检查点，但这要求Agent节点服务本身启用了检查点功能。Marathon的检查点功能可以通过命令行参数`--[disable_]checkpoint`来控制，该参数是可选的，且默认值是：`enabled`。
+
+### 在DC/OS中调整Recover配置
+
+在`/var/lib/dcos/mesos-slave-common`文件中，通过：
+
+- MESOS_STRICT
+- MESOS_RECOVER
+- MESOS_RECOVERY_TIMEOUT
+
+进行设置。
 
 ### 实践
 
