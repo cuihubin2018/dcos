@@ -152,6 +152,10 @@ rm -f /var/lib/mesos/slave/meta/slaves/latest
 systemctl start dcos-mesos-slave
 ```
 
+重启服务后可以从DC/OS管理UI中查看节点的属性：
+
+![](/assets/dcos-mesos-agent-attributes.png)
+
 例如，为一组Agent节点设置了“`elastic:true`”属性，在部署Elasticsearch时，通过[约束](/dcos-marathon-constraints.md)：`elastic:LIKE:true`即可将Elasticsearch服务限定在这些节点上。
 
 **注意**，采用Agent节点属性不能实现排他性，其他服务仍然可以分配在这些节点上运行。如果希望Agent节点被特定的服务独占，则需要将Agent节点的资源配置为特定角色，然后部署服务时指定该角色。
