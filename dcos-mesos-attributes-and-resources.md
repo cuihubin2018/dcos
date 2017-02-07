@@ -154,6 +154,8 @@ systemctl start dcos-mesos-slave
 
 例如，为一组Agent节点设置了“`elastic:true`”属性，在部署Elasticsearch时，通过[约束](/dcos-marathon-constraints.md)：`elastic:LIKE:true`即可将Elasticsearch服务限定在这些节点上。
 
+**注意**，采用Agent节点属性不能实现排他性，其他服务仍然可以分配在这些节点上运行。如果希望Agent节点被特定的服务独占，则需要将Agent节点的资源配置为特定角色，然后部署服务时指定该角色。
+
 ### DC/OS中的节点资源
 
 在Mesos中，资源是与角色相关联的。关于角色请参考[下一节](/dcos-mesos-roles.md)；关于如何在DC/OS中为特定角色配置资源请参考[添加磁盘资源](/dcos-storage-mount-disk-resources.md)。
