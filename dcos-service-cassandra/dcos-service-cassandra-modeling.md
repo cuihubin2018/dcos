@@ -523,5 +523,7 @@ CREATE TABLE sensor_readings (      sensorID uuid,      time_bucket int,     
 ```
 
 ### 参考
-- https://opencredo.com/cassandra-data-modelling-patterns/
+
 - https://pandaforme.gitbooks.io/introduction-to-cassandra/content/understand_the_cassandra_data_model.html
+- http://www.flyml.net/2016/10/30/cassandra-tutorial-materialized-view
+- https://opencredo.com/cassandra-data-modelling-patterns/
