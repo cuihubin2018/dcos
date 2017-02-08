@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.html" />
+    <link rel="next" href="dcos-install-by-advanced-mode-config.html" />
     
     
     <link rel="prev" href="dcos-install-by-cli.html" />
@@ -241,9 +241,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.4.1" data-path="dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.html">
+        <li class="chapter " data-level="1.2.4.1" data-path="dcos-install-by-advanced-mode-config.html">
             
-                <a href="dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.html">
+                <a href="dcos-install-by-advanced-mode-config.html">
             
                     
                     高级安装配置
@@ -1465,9 +1465,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.6.1" data-path="dcos-service-cassandra/dcos-service-cassandra-modeling.html">
+        <li class="chapter " data-level="3.6.1" data-path="dcos-service-cassandra-modeling.html">
             
-                <a href="dcos-service-cassandra/dcos-service-cassandra-modeling.html">
+                <a href="dcos-service-cassandra-modeling.html">
             
                     
                     数据建模
@@ -1589,9 +1589,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.2.1.1" data-path="dcos-install-nodes-management/dcos-install-nodes-management-maintenance.html">
+        <li class="chapter " data-level="4.2.1.1" data-path="dcos-install-nodes-management-maintenance.html">
             
-                <a href="dcos-install-nodes-management/dcos-install-nodes-management-maintenance.html">
+                <a href="dcos-install-nodes-management-maintenance.html">
             
                     
                     节点维护
@@ -2544,7 +2544,7 @@
 <span class="hljs-attr">        - name:</span> dcos<span class="hljs-bullet">-1</span>
 <span class="hljs-attr">          subnet:</span> <span class="hljs-number">192.168</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>/<span class="hljs-number">16</span>
 <span class="hljs-attr">          prefix:</span> <span class="hljs-number">24</span></code></pre>
-<p>&#x5173;&#x4E8E;&#x5B89;&#x88C5;&#x6A21;&#x677F;&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;<a href="dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.html">&#x9AD8;&#x7EA7;&#x5B89;&#x88C5;&#x914D;&#x7F6E;</a></p><h4 id="&#x6784;&#x5EFA;ip-detect&#x811A;&#x672C;">&#x6784;&#x5EFA;IP Detect&#x811A;&#x672C;</h4><pre><code>echo $\(ip addr \| grep &quot;inet &amp;lt;IP&#x7F51;&#x6BB5;&#xFF0C;&#x5982;&#xFF1A;192.168.83&amp;gt;&quot; \| awk &apos;{print $2}&apos; \| awk -F &apos;\/&apos; &apos;{print $1}&apos;\)</code></pre>
+<p>&#x5173;&#x4E8E;&#x5B89;&#x88C5;&#x6A21;&#x677F;&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;<a href="dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.md">&#x9AD8;&#x7EA7;&#x5B89;&#x88C5;&#x914D;&#x7F6E;</a></p><h4 id="&#x6784;&#x5EFA;ip-detect&#x811A;&#x672C;">&#x6784;&#x5EFA;IP Detect&#x811A;&#x672C;</h4><pre><code>echo $\(ip addr \| grep &quot;inet &amp;lt;IP&#x7F51;&#x6BB5;&#xFF0C;&#x5982;&#xFF1A;192.168.83&amp;gt;&quot; \| awk &apos;{print $2}&apos; \| awk -F &apos;\/&apos; &apos;{print $1}&apos;\)</code></pre>
 <p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x5728;&#x8282;&#x70B9;&#x4E0A;&#x5B89;&#x88C5;DC/OS&#x540E;&#xFF0C;&#x8282;&#x70B9;&#x7684;IP&#x5730;&#x5740;&#x4E0D;&#x5F97;&#x66F4;&#x6539;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x8282;&#x70B9;&#x6216;&#x66F4;&#x65B0;DHCP&#x65F6;&#xFF0C;IP&#x5730;&#x5740;&#x4E0D;&#x5F97;&#x66F4;&#x6539;&#x3002;&#x5982;&#x679C;&#x8282;&#x70B9;&#x7684;IP&#x5730;&#x5740;&#x66F4;&#x6539;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x79FB;&#x9664;&#x5E76;&#x91CD;&#x65B0;&#x5B89;&#x88C5;&#x8282;&#x70B9;&#x3002;</p><h3 id="&#x5B89;&#x88C5;dcos">&#x5B89;&#x88C5;DC/OS</h3><p>&#x4E0B;&#x8FF0;&#x6B65;&#x9AA4;&#x4F1A;&#x5728;Bootstrap&#x8282;&#x70B9;&#x4E0A;&#x6784;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7684;DC/OS&#x7F16;&#x8BD1;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x767B;&#x5F55;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x5B89;&#x88C5;DC/OS&#x3002;</p><p>&#x63D0;&#x793A;&#xFF1A;&#x5982;&#x679C;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x9075;&#x5FAA;&#x96C6;<a href="dcos-install-nodes-management.html">&#x7FA4;&#x8282;&#x70B9;&#x7BA1;&#x7406;</a>&#x4E2D;&#x7684;&#x6B65;&#x9AA4;&#x79FB;&#x9664;&#x8282;&#x70B9;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x5C1D;&#x8BD5;&#x5B89;&#x88C5;&#x3002;</p><h4 id="&#x4E0B;&#x8F7D;dcos-installer">&#x4E0B;&#x8F7D;DC/OS Installer</h4><pre><code>curl -O https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh</code></pre>
 <h4 id="&#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x96C6;&#x7FA4;&#x5B89;&#x88C5;&#x5305;">&#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x96C6;&#x7FA4;&#x5B89;&#x88C5;&#x5305;</h4><p>&#x5728;Bootstrap&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C;&#x4E0B;&#x8FF0;&#x547D;&#x4EE4;&#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5B89;&#x88C5;&#x6587;&#x4EF6;&#x3002;&#x8BE5;&#x547D;&#x4EE4;&#x4ECE;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;DC/OS&#x5B89;&#x88C5;&#x955C;&#x50CF;&#x4E2D;&#x63D0;&#x53D6;&#x5B89;&#x88C5;&#x6587;&#x4EF6;&#x5E76;&#x6839;&#x636E;&#x524D;&#x8FF0;&#x51C6;&#x5907;&#x7684;YAML&#x914D;&#x7F6E;&#x53CA;IP&#x4FA6;&#x6D4B;&#x811A;&#x672C;&#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x96C6;&#x7FA4;&#x5B89;&#x88C5;&#x6587;&#x4EF6;&#xFF0C;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;<code>./genconf/serve/</code>&#x3002;</p><pre><code>sudo bash dcos_generate_config.sh</code></pre>
 <p>&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p><pre><code>&#x251C;&#x2500;&#x2500; dcos-genconf.&lt;HASH&gt;.tar
@@ -2610,7 +2610,7 @@
                 </a>
                 
                 
-                <a href="dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.html" class="navigation navigation-next " aria-label="Next page: 高级安装配置">
+                <a href="dcos-install-by-advanced-mode-config.html" class="navigation navigation-next " aria-label="Next page: 高级安装配置">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2621,7 +2621,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"高级安装","level":"1.2.4","depth":2,"next":{"title":"高级安装配置","level":"1.2.4.1","depth":3,"path":"dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.md","ref":"dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.md","articles":[]},"previous":{"title":"通过CLI安装","level":"1.2.3","depth":2,"path":"dcos-install-by-cli.md","ref":"dcos-install-by-cli.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dcos-install-by-advanced-mode.md","mtime":"2017-02-08T09:54:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-02-08T09:58:11.263Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"高级安装","level":"1.2.4","depth":2,"next":{"title":"高级安装配置","level":"1.2.4.1","depth":3,"path":"dcos-install-by-advanced-mode-config.md","ref":"dcos-install-by-advanced-mode-config.md","articles":[]},"previous":{"title":"通过CLI安装","level":"1.2.3","depth":2,"path":"dcos-install-by-cli.md","ref":"dcos-install-by-cli.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dcos-install-by-advanced-mode.md","mtime":"2017-02-08T09:54:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-02-08T10:26:40.770Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

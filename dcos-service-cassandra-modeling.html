@@ -1,0 +1,2799 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>数据建模 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="dcos-service-kafka.html" />
+    
+    
+    <link rel="prev" href="dcos-service-cassandra.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">DC/OS之导论</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    导论
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="dcos概览.html">
+            
+                <a href="dcos概览.html">
+            
+                    
+                    DC/OS概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="dcos-basic-theory.html">
+            
+                <a href="dcos-basic-theory.html">
+            
+                    
+                    系统基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="dcos-basic-theory-terminologies.html">
+            
+                <a href="dcos-basic-theory-terminologies.html">
+            
+                    
+                    名词术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="dcos-install.html">
+            
+                <a href="dcos-install.html">
+            
+                    
+                    环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="dcos-install-default.html">
+            
+                <a href="dcos-install-default.html">
+            
+                    
+                    安装环境准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="dcos-install-docker-on-centos.html">
+            
+                <a href="dcos-install-docker-on-centos.html">
+            
+                    
+                    在Centos上安装Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="dcos-install-by-gui.html">
+            
+                <a href="dcos-install-by-gui.html">
+            
+                    
+                    GUI安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="dcos-install-by-cli.html">
+            
+                <a href="dcos-install-by-cli.html">
+            
+                    
+                    通过CLI安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="dcos-install-by-advanced-mode.html">
+            
+                <a href="dcos-install-by-advanced-mode.html">
+            
+                    
+                    高级安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="dcos-install-by-advanced-mode-config.html">
+            
+                <a href="dcos-install-by-advanced-mode-config.html">
+            
+                    
+                    高级安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="dcos-install-backup-installer-file.html">
+            
+                <a href="dcos-install-backup-installer-file.html">
+            
+                    
+                    备份安装文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="dcos-install-faq.html">
+            
+                <a href="dcos-install-faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">DC/OS之原理</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="dcos-theory-overview.html">
+            
+                <a href="dcos-theory-overview.html">
+            
+                    
+                    理解DC/OS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="dcos-dcos-arch-node-types.html">
+            
+                <a href="dcos-dcos-arch-node-types.html">
+            
+                    
+                    节点类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="dcos-dcos-arch-task-types.html">
+            
+                <a href="dcos-dcos-arch-task-types.html">
+            
+                    
+                    任务类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="dcos-dcos-admin-ports.html">
+            
+                <a href="dcos-dcos-admin-ports.html">
+            
+                    
+                    内部端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="dcos-dcos-arch-boot-sequence.html">
+            
+                <a href="dcos-dcos-arch-boot-sequence.html">
+            
+                    
+                    启动顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="dcos-mesos.html">
+            
+                <a href="dcos-mesos.html">
+            
+                    
+                    Mesos
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="dcos-mesos-attributes-and-resources.html">
+            
+                <a href="dcos-mesos-attributes-and-resources.html">
+            
+                    
+                    资源与属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="dcos-mesos-roles.html">
+            
+                <a href="dcos-mesos-roles.html">
+            
+                    
+                    角色（Roles）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="dcos-mesos-reservation.html">
+            
+                <a href="dcos-mesos-reservation.html">
+            
+                    
+                    资源预留（Reservation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="dcos-mesos-weights.html">
+            
+                <a href="dcos-mesos-weights.html">
+            
+                    
+                    权重（Weights）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="dcos-mesos-quota.html">
+            
+                <a href="dcos-mesos-quota.html">
+            
+                    
+                    配额（Quota）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="dcos-mesos-agent-recovery.html">
+            
+                <a href="dcos-mesos-agent-recovery.html">
+            
+                    
+                    节点恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="dcos-mesos-authorization.html">
+            
+                <a href="dcos-mesos-authorization.html">
+            
+                    
+                    Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="dcos-mesos-resources-drf.html">
+            
+                <a href="dcos-mesos-resources-drf.html">
+            
+                    
+                    资源分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="dcos-marathon.html">
+            
+                <a href="dcos-marathon.html">
+            
+                    
+                    Marathon
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="dcos-marathon-app-deployments.html">
+            
+                <a href="dcos-marathon-app-deployments.html">
+            
+                    
+                    应用部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="dcos-marathon-container.html">
+            
+                <a href="dcos-marathon-container.html">
+            
+                    
+                    容器运行管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="dcos-marathon-health-checks.html">
+            
+                <a href="dcos-marathon-health-checks.html">
+            
+                    
+                    应用健康检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="dcos-marathon-constraints.html">
+            
+                <a href="dcos-marathon-constraints.html">
+            
+                    
+                    部署约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="dcos-marathon-event-bus.html">
+            
+                <a href="dcos-marathon-event-bus.html">
+            
+                    
+                    事件总线
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="dcos-system-components.html">
+            
+                <a href="dcos-system-components.html">
+            
+                    
+                    系统服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="dcos-component-exhibitor.html">
+            
+                <a href="dcos-component-exhibitor.html">
+            
+                    
+                    Exhibitor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1.1" data-path="dcos-component-exhibitor-notes.html">
+            
+                <a href="dcos-component-exhibitor-notes.html">
+            
+                    
+                    理解Exhibitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.2" data-path="dcos-component-exhibitor-as-service.html">
+            
+                <a href="dcos-component-exhibitor-as-service.html">
+            
+                    
+                    Exhibitor on DC/OS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="dcos-component-adminrouter.html">
+            
+                <a href="dcos-component-adminrouter.html">
+            
+                    
+                    Adminrouter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="dcos-component-3dt.html">
+            
+                <a href="dcos-component-3dt.html">
+            
+                    
+                    3DT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="dcos-component-cosmos.html">
+            
+                <a href="dcos-component-cosmos.html">
+            
+                    
+                    Cosmos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="dcos-component-minuteman.html">
+            
+                <a href="dcos-component-minuteman.html">
+            
+                    
+                    Minuteman
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="dcos-component-spartan.html">
+            
+                <a href="dcos-component-spartan.html">
+            
+                    
+                    Spartan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="dcos-component-mesos-dns.html">
+            
+                <a href="dcos-component-mesos-dns.html">
+            
+                    
+                    Mesos-DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="dcos-component-metronome.html">
+            
+                <a href="dcos-component-metronome.html">
+            
+                    
+                    Metronome
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="dcos-mesos-containerizer.html">
+            
+                <a href="dcos-mesos-containerizer.html">
+            
+                    
+                    容器化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="dcos-mesos-containerizer-internals.html">
+            
+                <a href="dcos-mesos-containerizer-internals.html">
+            
+                    
+                    容器化实现细节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="dcos-mesos-mesos-containerizer.html">
+            
+                <a href="dcos-mesos-mesos-containerizer.html">
+            
+                    
+                    Mesos容器化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.2.1" data-path="dcos-mesos-mesos-containerizer-docker-volume.html">
+            
+                <a href="dcos-mesos-mesos-containerizer-docker-volume.html">
+            
+                    
+                    Docker卷支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.2" data-path="dcos-mesos-containerizer-cni.html">
+            
+                <a href="dcos-mesos-containerizer-cni.html">
+            
+                    
+                    容器网络接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="dcos-mesos-docker-containerizer.html">
+            
+                <a href="dcos-mesos-docker-containerizer.html">
+            
+                    
+                    Docker容器化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="dcos-marathon-container.html">
+            
+                <a href="dcos-marathon-container.html">
+            
+                    
+                    容器运行管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="dcos-network.html">
+            
+                <a href="dcos-network.html">
+            
+                    
+                    容器网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="dcos-network-marathon-ports.html">
+            
+                <a href="dcos-network-marathon-ports.html">
+            
+                    
+                    服务端口配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="dcos-network-virtual-networks.html">
+            
+                <a href="dcos-network-virtual-networks.html">
+            
+                    
+                    虚拟网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="dcos-network-virtual-networks-ippc.html">
+            
+                <a href="dcos-network-virtual-networks-ippc.html">
+            
+                    
+                    配置IP-per-Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="dcos-network-virtual-networks-isolation.html">
+            
+                <a href="dcos-network-virtual-networks-isolation.html">
+            
+                    
+                    隔离
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="dcos-network-docker-network.html">
+            
+                <a href="dcos-network-docker-network.html">
+            
+                    
+                    Docker 网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="dcos-service-discovery.html">
+            
+                <a href="dcos-service-discovery.html">
+            
+                    
+                    服务发现与负载
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="dcos-network-vips.html">
+            
+                <a href="dcos-network-vips.html">
+            
+                    
+                    VIPs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1.1" data-path="dcos-network-vips-lb.html">
+            
+                <a href="dcos-network-vips-lb.html">
+            
+                    
+                    基于VIPs的负载调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="dcos-component-marathon-lb.html">
+            
+                <a href="dcos-component-marathon-lb.html">
+            
+                    
+                    Marathon-LB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.2.1" data-path="dcos-component-marathon-lb-basic.html">
+            
+                <a href="dcos-component-marathon-lb-basic.html">
+            
+                    
+                    基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2.2" data-path="dcos-component-marathon-lb-advanced.html">
+            
+                <a href="dcos-component-marathon-lb-advanced.html">
+            
+                    
+                    高级特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2.3" data-path="dcos-component-marathon-lb-template.html">
+            
+                <a href="dcos-component-marathon-lb-template.html">
+            
+                    
+                    配置参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2.4" data-path="dcos-component-marathon-lb-tutorials.html">
+            
+                <a href="dcos-component-marathon-lb-tutorials.html">
+            
+                    
+                    应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="dcos-component-mesos-dns.html">
+            
+                <a href="dcos-component-mesos-dns.html">
+            
+                    
+                    Mesos-DNS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.3.1" data-path="dcos-component-mesos-dns-service-naming.html">
+            
+                <a href="dcos-component-mesos-dns-service-naming.html">
+            
+                    
+                    服务命名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.2" data-path="dcos-component-mesos-dns-http-api.html">
+            
+                <a href="dcos-component-mesos-dns-http-api.html">
+            
+                    
+                    HTTP接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.3" data-path="dcos-component-mesos-dns-config.html">
+            
+                <a href="dcos-component-mesos-dns-config.html">
+            
+                    
+                    配置与优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="dcos-storage.html">
+            
+                <a href="dcos-storage.html">
+            
+                    
+                    存储策略与方案
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="dcos-storage-multi-disks.html">
+            
+                <a href="dcos-storage-multi-disks.html">
+            
+                    
+                    磁盘资源
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1.1" data-path="dcos-storage-mount-disk-resources.html">
+            
+                <a href="dcos-storage-mount-disk-resources.html">
+            
+                    
+                    增加磁盘资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.1.2" data-path="dcos-storage-nfs-server.html">
+            
+                <a href="dcos-storage-nfs-server.html">
+            
+                    
+                    增加NFS存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="dcos-storage-persistent-volume.html">
+            
+                <a href="dcos-storage-persistent-volume.html">
+            
+                    
+                    持久化卷
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.2.1" data-path="dcos-storage-persistent-volume-local.html">
+            
+                <a href="dcos-storage-persistent-volume-local.html">
+            
+                    
+                    本地持久化卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2.2" data-path="dcos-storage-external-volume.html">
+            
+                <a href="dcos-storage-external-volume.html">
+            
+                    
+                    外部持久化卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="dcos-storage-sansds.html">
+            
+                <a href="dcos-storage-sansds.html">
+            
+                    
+                    SAN/SDS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.3.1" data-path="dcos-storage-sansds-rexray.html">
+            
+                <a href="dcos-storage-sansds-rexray.html">
+            
+                    
+                    Rex-Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3.2" data-path="dcos-storage-sansds-flocker.html">
+            
+                <a href="dcos-storage-sansds-flocker.html">
+            
+                    
+                    Flocker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3.3" data-path="dcos-storage-sansds-convoy.html">
+            
+                <a href="dcos-storage-sansds-convoy.html">
+            
+                    
+                    Convoy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="dcos-component-universe.html">
+            
+                <a href="dcos-component-universe.html">
+            
+                    
+                    Universe
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="dcos-component-universe-usage.html">
+            
+                <a href="dcos-component-universe-usage.html">
+            
+                    
+                    应用的管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">DC/OS之服务</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dcos-service-stateful.html">
+            
+                <a href="dcos-service-stateful.html">
+            
+                    
+                    有状态应用服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="dcos-service-management.html">
+            
+                <a href="dcos-service-management.html">
+            
+                    
+                    服务的管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="dcos-service-jenkins.html">
+            
+                <a href="dcos-service-jenkins.html">
+            
+                    
+                    Jenkins on DC/OS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="dcos-service-jenkins-custom-dind.html">
+            
+                <a href="dcos-service-jenkins-custom-dind.html">
+            
+                    
+                    Jenkins Slave环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="dcos-service-jenkins-example.html">
+            
+                <a href="dcos-service-jenkins-example.html">
+            
+                    
+                    示例：在Jenkins on DCOS上编译部署Tomcat应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="dcos-service-storm.html">
+            
+                <a href="dcos-service-storm.html">
+            
+                    
+                    Storm on DC/OS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="dcos-service-storm-config.html">
+            
+                <a href="dcos-service-storm-config.html">
+            
+                    
+                    Storm集群配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="dcos-service-storm-deploy.html">
+            
+                <a href="dcos-service-storm-deploy.html">
+            
+                    
+                    部署Storm集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="dcos-service-storm-clients.html">
+            
+                <a href="dcos-service-storm-clients.html">
+            
+                    
+                    访问Storm集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="dcos-service-hdfs.html">
+            
+                <a href="dcos-service-hdfs.html">
+            
+                    
+                    HDFS on DC/OS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="dcos-service-cassandra.html">
+            
+                <a href="dcos-service-cassandra.html">
+            
+                    
+                    Cassandra on DC/OS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.6.1" data-path="dcos-service-cassandra-modeling.html">
+            
+                <a href="dcos-service-cassandra-modeling.html">
+            
+                    
+                    数据建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="dcos-service-kafka.html">
+            
+                <a href="dcos-service-kafka.html">
+            
+                    
+                    Kafka on DC/OS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="dcos-service-spark.html">
+            
+                <a href="dcos-service-spark.html">
+            
+                    
+                    Spark on DC/OS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">DC/OS之管理</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="dcos-admin.html">
+            
+                <a href="dcos-admin.html">
+            
+                    
+                    管理概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="dcos-admin-cli.html">
+            
+                <a href="dcos-admin-cli.html">
+            
+                    
+                    DC/OS CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="dcos-admin-ui.html">
+            
+                <a href="dcos-admin-ui.html">
+            
+                    
+                    DC/OS 管理UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="dcos-install-maintainance.html">
+            
+                <a href="dcos-install-maintainance.html">
+            
+                    
+                    集群维护
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="dcos-install-nodes-management.html">
+            
+                <a href="dcos-install-nodes-management.html">
+            
+                    
+                    Agent节点管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1.1" data-path="dcos-install-nodes-management-maintenance.html">
+            
+                <a href="dcos-install-nodes-management-maintenance.html">
+            
+                    
+                    节点维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="dcos-install-m-uninstall-all.html">
+            
+                <a href="dcos-install-m-uninstall-all.html">
+            
+                    
+                    集群卸载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="dcos-install-upgrading.html">
+            
+                <a href="dcos-install-upgrading.html">
+            
+                    
+                    集群升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="dcos-admin-monitoring.html">
+            
+                <a href="dcos-admin-monitoring.html">
+            
+                    
+                    监控管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="dcos-admin-monitoring-dcos.html">
+            
+                <a href="dcos-admin-monitoring-dcos.html">
+            
+                    
+                    DC/OS的监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="dcos-admin-monitoring-collect.html">
+            
+                <a href="dcos-admin-monitoring-collect.html">
+            
+                    
+                    信息采集
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.2.1" data-path="dcos-admin-monitoring-collectd.html">
+            
+                <a href="dcos-admin-monitoring-collectd.html">
+            
+                    
+                    collectd
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.2.1.1" data-path="dcos-admin-monitoring-collectd-docker.html">
+            
+                <a href="dcos-admin-monitoring-collectd-docker.html">
+            
+                    
+                    docker-collectd-plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.2" data-path="dcos-admin-monitoring-docker.html">
+            
+                <a href="dcos-admin-monitoring-docker.html">
+            
+                    
+                    cAdvisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.3" data-path="dcos-admin-monitoring-storage-prometheus.html">
+            
+                <a href="dcos-admin-monitoring-storage-prometheus.html">
+            
+                    
+                    Prometheus
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="dcos-admin-monitoring-storage.html">
+            
+                <a href="dcos-admin-monitoring-storage.html">
+            
+                    
+                    数据存储查询
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.3.1" data-path="dcos-admin-monitoring-storage-prometheus.html">
+            
+                <a href="dcos-admin-monitoring-storage-prometheus.html">
+            
+                    
+                    Prometheus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.3.1.1" data-path="dcos-admin-monitoring-prometheus-concepts.html">
+            
+                <a href="dcos-admin-monitoring-prometheus-concepts.html">
+            
+                    
+                    概念与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3.1.2" data-path="dcos-admin-monitoring-prometheus-install.html">
+            
+                <a href="dcos-admin-monitoring-prometheus-install.html">
+            
+                    
+                    安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3.1.3" data-path="dcos-admin-monitoring-prometheus-instrumenting.html">
+            
+                <a href="dcos-admin-monitoring-prometheus-instrumenting.html">
+            
+                    
+                    监测与采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3.1.4" data-path="dcos-admin-monitoring-prometheus-alerting.html">
+            
+                <a href="dcos-admin-monitoring-prometheus-alerting.html">
+            
+                    
+                    分析与报警
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3.2" data-path="dcos-admin-monitoring-storage-influxdb.html">
+            
+                <a href="dcos-admin-monitoring-storage-influxdb.html">
+            
+                    
+                    InfluxDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="dcos-admin-monitoring-dashboard.html">
+            
+                <a href="dcos-admin-monitoring-dashboard.html">
+            
+                    
+                    展示与告警
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.4.1" data-path="dcos-admin-monitoring-dashboard-grafana.html">
+            
+                <a href="dcos-admin-monitoring-dashboard-grafana.html">
+            
+                    
+                    Grafana
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="dcos-admin-monitoring-solutions.html">
+            
+                <a href="dcos-admin-monitoring-solutions.html">
+            
+                    
+                    监控方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="dcos-admin-logging.html">
+            
+                <a href="dcos-admin-logging.html">
+            
+                    
+                    日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="dcos-admin-storage.html">
+            
+                <a href="dcos-admin-storage.html">
+            
+                    
+                    存储管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="dcos-admin-storage-glusterfs.html">
+            
+                <a href="dcos-admin-storage-glusterfs.html">
+            
+                    
+                    GlusterFS存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1.1" data-path="dcos-admin-storage-glusterfs-overview.html">
+            
+                <a href="dcos-admin-storage-glusterfs-overview.html">
+            
+                    
+                    GlusterFS概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.1.2" data-path="dcos-admin-storage-glusterfs-admin.html">
+            
+                <a href="dcos-admin-storage-glusterfs-admin.html">
+            
+                    
+                    GlusterFS维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.1.3" data-path="dcos-admin-storage-glusterfs-architecture.html">
+            
+                <a href="dcos-admin-storage-glusterfs-architecture.html">
+            
+                    
+                    GlusterFS架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="dcos-admin-storage-ceph.html">
+            
+                <a href="dcos-admin-storage-ceph.html">
+            
+                    
+                    Ceph集群存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="dcos-admin-faq.html">
+            
+                <a href="dcos-admin-faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">DC/OS之应用</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="dcos-usage-dockers.html">
+            
+                <a href="dcos-usage-dockers.html">
+            
+                    
+                    容器与镜像
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="dcos-usage-docker-dockerfile.html">
+            
+                <a href="dcos-usage-docker-dockerfile.html">
+            
+                    
+                    Dockerfile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="dcos-usage-docker-gc.html">
+            
+                <a href="dcos-usage-docker-gc.html">
+            
+                    
+                    Docker GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="dcos-usage-docker-multi-app-in-one.html">
+            
+                <a href="dcos-usage-docker-multi-app-in-one.html">
+            
+                    
+                    单容器多应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="dcos-service-pre-private-docker-registry.html">
+            
+                <a href="dcos-service-pre-private-docker-registry.html">
+            
+                    
+                    私有容器仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="dcos-usage-docker-storage-driver.html">
+            
+                <a href="dcos-usage-docker-storage-driver.html">
+            
+                    
+                    存储驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="dcos-usage-microservice.html">
+            
+                <a href="dcos-usage-microservice.html">
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="dcos-usage-microservice-arch-patterns.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns.html">
+            
+                    
+                    架构与模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="dcos-usage-microservice-frameworks.html">
+            
+                <a href="dcos-usage-microservice-frameworks.html">
+            
+                    
+                    微服务框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.2.1" data-path="dcos-usage-microservice-frameworks-spring-cloud.html">
+            
+                <a href="dcos-usage-microservice-frameworks-spring-cloud.html">
+            
+                    
+                    Spring Boot/Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.2" data-path="dcos-usage-microservice-frameworks-lagom.html">
+            
+                <a href="dcos-usage-microservice-frameworks-lagom.html">
+            
+                    
+                    Lagom
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="dcos-usage-bigdata.html">
+            
+                <a href="dcos-usage-bigdata.html">
+            
+                    
+                    大数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="dcos-usage-cicd.html">
+            
+                <a href="dcos-usage-cicd.html">
+            
+                    
+                    持续集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.4.1" data-path="dcos-usage-cicd-build-by-maven.html">
+            
+                <a href="dcos-usage-cicd-build-by-maven.html">
+            
+                    
+                    应用打包与镜像构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.2" data-path="dcos-usage-cicd-integration.html">
+            
+                <a href="dcos-usage-cicd-integration.html">
+            
+                    
+                    持续集成与构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="dcos-usage-cicd-deploy.html">
+            
+                <a href="dcos-usage-cicd-deploy.html">
+            
+                    
+                    持续部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.5.1" data-path="dcos-usage-cicd-deploy-practice.html">
+            
+                <a href="dcos-usage-cicd-deploy-practice.html">
+            
+                    
+                    基于DC/OS的部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5.2" data-path="dcos-usage-cicd-deploy-practice-vamp.html">
+            
+                <a href="dcos-usage-cicd-deploy-practice-vamp.html">
+            
+                    
+                    基于Vamp的部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.5.2.1" data-path="dcos-usage-cicd-deploy-practice-vamp-details.html">
+            
+                <a href="dcos-usage-cicd-deploy-practice-vamp-details.html">
+            
+                    
+                    深入理解Vamp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5.2.2" data-path="dcos-usage-cicd-deploy-practice-vamp-on-dcos.html">
+            
+                <a href="dcos-usage-cicd-deploy-practice-vamp-on-dcos.html">
+            
+                    
+                    Vamp on DC/OS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5.3" data-path="dcos-usage-cicd-deploy-practice-swan.html">
+            
+                <a href="dcos-usage-cicd-deploy-practice-swan.html">
+            
+                    
+                    基于Swan的部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="dcos-usage-gitbook.html">
+            
+                <a href="dcos-usage-gitbook.html">
+            
+                    
+                    Gitbook文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">DC/OS之开发</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="dcos-dev-universe-package.html">
+            
+                <a href="dcos-dev-universe-package.html">
+            
+                    
+                    Universe Package 开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="dcos-dev-metrics.html">
+            
+                <a href="dcos-dev-metrics.html">
+            
+                    
+                    指标采集
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="dcos-dev-metrics-prometheus.html">
+            
+                <a href="dcos-dev-metrics-prometheus.html">
+            
+                    
+                    Prometheus指标采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="dcos-dev-frameworks.html">
+            
+                <a href="dcos-dev-frameworks.html">
+            
+                    
+                    Mesos框架开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="dcos-dev-frameworks-highly-available.html">
+            
+                <a href="dcos-dev-frameworks-highly-available.html">
+            
+                    
+                    Mesos框架的高可用性设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="dcos-theory-solutions-martrix.html">
+            
+                <a href="dcos-theory-solutions-martrix.html">
+            
+                    
+                    Docker Swarm vs Mesos vs Kubernetties
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >数据建模</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x6570;&#x636E;&#x5EFA;&#x6A21;">&#x6570;&#x636E;&#x5EFA;&#x6A21;</h2><p>&#x4ECE;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;RDBMS&#x8FC1;&#x79FB;&#x5230;Cassandra&#x7684;&#x4E00;&#x5927;&#x96BE;&#x70B9;&#x662F;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x3002;&#x8FD9;&#x5BF9;&#x5DF2;&#x7ECF;&#x719F;&#x6089;&#x4E86;&#x5173;&#x7CFB;&#x6A21;&#x578B;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x548C;SQL&#x5904;&#x7406;&#x98CE;&#x683C;&#x7684;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6765;&#x8BF4;&#x5C24;&#x5176;&#x75DB;&#x82E6;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x65B0;&#x7684;&#x6280;&#x672F;&#x5E94;&#x5BF9;&#x65B0;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x5728;&#x67D0;&#x4E9B;&#x7279;&#x5B9A;&#x573A;&#x666F;&#x5177;&#x6709;&#x5DE8;&#x5927;&#x7684;&#x4F18;&#x52BF;&#xFF0C;&#x56E0;&#x6B64;&#x719F;&#x6089;&#x5E76;&#x638C;&#x63E1;&#x8FD9;&#x79CD;&#x65B0;&#x7684;&#x601D;&#x60F3;&#x5BF9;&#x51B3;&#x7B56;&#x8005;&#x6765;&#x8BF4;&#x4ECD;&#x7136;&#x662F;&#x5F88;&#x5FC5;&#x8981;&#x7684;&#x3002;</p><p>&#x672C;&#x8282;&#x4E3B;&#x8981;&#x6574;&#x7406;&#x81EA;&#x300A;Cassandra 3.x High Availablity&#x300B;&#x4E00;&#x4E66;&#x7684;&#x7B2C;&#x4E03;&#x7AE0;&#xFF0C;&#x5E76;&#x6C47;&#x603B;&#x4E00;&#x4E9B;&#x4E92;&#x8054;&#x7F51;&#x8D44;&#x6599;&#x3002;</p><p>&#x5927;&#x591A;&#x6570;&#x4F20;&#x7EDF;&#x7684;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4F7F;&#x7528;&#x8868;&#x683C;&#x65B9;&#x6CD5;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x5B83;&#x652F;&#x6301;&#x7684;&#x5404;&#x79CD;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x67E5;&#x8BE2;&#x3002;&#x4F46;&#x662F;&#x968F;&#x673A;&#x78C1;&#x76D8;I/O&#x5F80;&#x5F80;&#x662F;&#x4E00;&#x4E2A;&#x663E;&#x8457;&#x7684;&#x74F6;&#x9888;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x5206;&#x5E03;&#x5F0F;&#x5199;&#x6027;&#x80FD;&#xFF0C;Cassandra&#x91C7;&#x7528;<strong>&#x65E5;&#x5FD7;&#x7ED3;&#x6784;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</strong>&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x8BA9;&#x5B83;&#x5C06;&#x6570;&#x636E;&#x987A;&#x5E8F;&#x5199;&#x5165;<strong>&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;</strong>&#x548C;Cassandra&#x7684;&#x6301;&#x4E45;&#x5B58;&#x50A8;&#x7ED3;&#x6784;<strong>SSTables</strong>&#x3002;</p><h3 id="&#x6570;&#x636E;&#x6A21;&#x578B;">&#x6570;&#x636E;&#x6A21;&#x578B;</h3><p>Cassandra&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;:</p><ul><li>&#x5217;&#x65CF;&#x4F5C;&#x4E3A;&#x5B58;&#x50A8;&#x548C;&#x7EC4;&#x7EC7;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;
+</li>
+<li>&#x8868;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x591A;&#x7EF4;&#x5217;&#x65CF;&#x7684;&#x4E8C;&#x7EF4;&#x89C6;&#x56FE;
+</li>
+<li>&#x4F7F;&#x7528;Cassandra&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#xFF08;CQL&#xFF09;&#x5BF9;&#x8868;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;
+</li></ul>
+<h4 id="rowpartition">Row(Partition)</h4><p><img src="assets/cassandra-concept-row.png"></p><h4 id="key-partition-key">Key (Partition Key)</h4><ul><li>Composite row key
+</li></ul>
+<p><img src="assets/cassandra-concept-key-composite.png"></p><ul><li>Composite column key
+</li></ul>
+<p><img src="assets/cassandra-concept-column-composite.png"></p><h4 id="column-family-table">Column family (Table)</h4><p><img src="assets/cassandra-concept-column-family.png"></p><h4 id="table-with-single-row-partitions">Table with single-row partitions</h4><p><img src="assets/cassandra-concept-table-single-row.png"></p><h4 id="table-with-multi-row-partitions">Table with multi-row partitions</h4><p><img src="assets/cassandra-concept-table-multi-row.png"></p><p><strong>&#x6CE8;&#x610F;&#xFF0C;&#x8BF7;&#x7ED3;&#x5408;&#x4E0B;&#x8FF0;&#x5185;&#x5BB9;&#x5BF9;&#x4E0A;&#x8FF0;&#x6982;&#x5FF5;&#x8FDB;&#x884C;&#x7406;&#x89E3;&#x3002;</strong></p><h3 id="&#x65E5;&#x5FD7;&#x7ED3;&#x6784;&#x5B58;&#x50A8;">&#x65E5;&#x5FD7;&#x7ED3;&#x6784;&#x5B58;&#x50A8;</h3><p>Cassandra&#x63A5;&#x6536;&#x5230;&#x4E00;&#x6B21;&#x5199;&#x64CD;&#x4F5C;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x5C06;&#x6570;&#x636E;&#x540C;&#x65F6;&#x5199;&#x5165;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;&#x548C;&#x4E00;&#x4E2A;&#x79F0;&#x4E3A;<strong>memtable</strong>&#x7684;&#x5185;&#x5B58;&#x8868;&#x3002;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;Cassandra&#x7684;&#x53EF;&#x9760;&#x6027;&#xFF0C;Memtables&#x4F1A;&#x5468;&#x671F;&#x6027;&#x7684;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x4EE5;&#x4E0D;&#x53EF;&#x53D8;&#x7684;SSTables&#x5F62;&#x5F0F;&#x4FDD;&#x5B58;&#x3002;</p><p>&#x4FDD;&#x5B58;&#x5728;SSTables&#x4E2D;&#x7684;&#x6570;&#x636E;&#x62C6;&#x5206;&#x4E3A;&#x5206;&#x533A;&#xFF08;&#x8FD9;&#x4E9B;&#x5206;&#x533A;&#x5BF9;&#x5E94;&#x7740;Primary Key&#xFF09;&#x5E76;&#x6309;&#x5217;&#x540D;&#x79F0;&#x6392;&#x5E8F;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x672C;&#x8282;&#x540E;&#x7EED;&#x90E8;&#x5206;&#x4F1A;&#x8BE6;&#x7EC6;&#x63A2;&#x8BA8;&#x3002;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;&#x4EC5;&#x5728;&#x8282;&#x70B9;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x65F6;&#x7528;&#x4E8E;&#x6062;&#x590D;&#x672A;&#x53CA;&#x65F6;&#x5199;&#x5165;SSTables&#x7684;&#x6570;&#x636E;&#x3002;</p><p>&#x8FD9;&#x79CD;&#x5B58;&#x50A8;&#x65B9;&#x6848;&#x7684;&#x6027;&#x80FD;&#x6709;&#x51E0;&#x4E2A;&#x65B9;&#x9762;&#x4E0E;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x6709;&#x91CD;&#x8981;&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p><ul><li><p><strong>&#x5199;&#x4E0D;&#x53EF;&#x53D8;&#x6027;</strong></p><p>&#x5199;&#x603B;&#x662F;&#x9644;&#x52A0;&#x64CD;&#x4F5C;&#xFF0C;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x53EA;&#x9700;&#x8981;&#x5199;&#x5165;&#x65B0;&#x7684;&#x503C;&#x5E76;&#x9644;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x65F6;&#x95F4;&#x6233;&#xFF08;&#x6BCF;&#x4E00;&#x5217;&#x90FD;&#x6709;&#x5E26;&#x6709;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#xFF09;&#x3002;</p><pre><code class="lang-json">[
+{<span class="hljs-string">&quot;key&quot;</span>: <span class="hljs-string">&quot;Jack Jones&quot;</span>,
+<span class="hljs-string">&quot;cells&quot;</span>: [[<span class="hljs-string">&quot;1:&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-number">1470229749953090</span>],
+         [<span class="hljs-string">&quot;1:project_name&quot;</span>,<span class="hljs-string">&quot;Cassandra Tuning&quot;</span>,<span class="hljs-number">1470229749953090</span>],
+         [<span class="hljs-string">&quot;1:turnover&quot;</span>,<span class="hljs-string">&quot;5000000&quot;</span>,<span class="hljs-number">1470229749953090</span>],
+         [<span class="hljs-string">&quot;2:&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-number">1470229928612372</span>],
+         [<span class="hljs-string">&quot;2:project_name&quot;</span>,<span class="hljs-string">&quot;Spark Layer&quot;</span>,<span class="hljs-number">1470229928612372</span>],
+         [<span class="hljs-string">&quot;2:turnover&quot;</span>,<span class="hljs-string">&quot;2000000&quot;</span>,<span class="hljs-number">1470229928612372</span>]]},
+{<span class="hljs-string">&quot;key&quot;</span>: <span class="hljs-string">&quot;Jill Hill&quot;</span>,
+<span class="hljs-string">&quot;cells&quot;</span>: [[<span class="hljs-string">&quot;1:&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-number">1470229908473768</span>],
+         [<span class="hljs-string">&quot;1:project_name&quot;</span>,<span class="hljs-string">&quot;Kubernetes Setup&quot;</span>,<span class="hljs-number">1470229908473768</span>],
+         [<span class="hljs-string">&quot;1:turnover&quot;</span>,<span class="hljs-string">&quot;2000000&quot;</span>,<span class="hljs-number">1470229908473768</span>],
+         [<span class="hljs-string">&quot;2:&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-number">1470229948844042</span>],
+         [<span class="hljs-string">&quot;2:project_name&quot;</span>,<span class="hljs-string">&quot;Front End&quot;</span>,<span class="hljs-number">1470229948844042</span>],
+         [<span class="hljs-string">&quot;2:turnover&quot;</span>,<span class="hljs-string">&quot;1000000&quot;</span>,<span class="hljs-number">1470229948844042</span>]]}
+]</code></pre>
+<ul><li><strong>&#x4EE5;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5199;&#x4E3A;&#x51C6;</strong>
+</li></ul>
+<p>&#x5982;&#x679C;&#x78C1;&#x76D8;&#x4E0A;&#x540C;&#x4E00;&#x5217;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x67E5;&#x8BE2;&#x8BE5;&#x5217;&#x65F6;&#xFF0C;&#x6700;&#x65B0;&#x7684;&#x6570;&#x636E;&#x88AB;&#x8FD4;&#x56DE;&#x3002;</p></li>
+<li><p><strong>&#x5217;&#x65E0;&#x6CD5;&#x88AB;&#x7269;&#x7406;&#x5220;&#x9664;</strong></p><p>&#x4E0D;&#x53EF;&#x53D8;&#x6027;&#x4E5F;&#x610F;&#x5473;&#x7740;DELETE&#x64CD;&#x4F5C;&#x88AB;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5E76;&#x6CA1;&#x6709;&#x88AB;&#x771F;&#x6B63;&#x88AB;&#x5220;&#x9664;&#x3002;&#x800C;&#x662F;&#x8BE5;&#x5217;&#x7684;&#x503C;&#x88AB;&#x4E00;&#x4E2A;<code>null</code>&#x503C;&#x6240;&#x8986;&#x76D6;&#x3002;</p></li>
+<li><p><strong>&#x987A;&#x5E8F;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x6700;&#x9AD8;</strong></p><p>&#x5982;&#x679C;&#x67E5;&#x8BE2;&#x662F;&#x987A;&#x5E8F;&#x8BFB;&#x53D6;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x501F;&#x52A9;&#x5E95;&#x5C42;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x7684;&#x4F18;&#x52BF;&#x4ECE;&#x800C;&#x83B7;&#x5F97;&#x6700;&#x5927;&#x5316;&#x7684;&#x8BFB;&#x6027;&#x80FD;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Cassandra&#x5C3D;&#x91CF;&#x9650;&#x5236;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x987A;&#x5E8F;&#x67E5;&#x8BE2;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x6709;&#x4F8B;&#x5916;&#x3002;</p></li></ul>
+<h3 id="&#x7406;&#x89E3;&#x538B;&#x7F29;&#xFF08;compaction&#xFF09;">&#x7406;&#x89E3;&#x538B;&#x7F29;&#xFF08;Compaction&#xFF09;</h3><p>Cassandra&#x901A;&#x8FC7;&#x4E00;&#x79CD;&#x79F0;&#x4E4B;&#x4E3A;&#x538B;&#x7F29;&#xFF08;Compaction&#xFF09;&#x7684;&#x673A;&#x5236;&#x6765;&#x5904;&#x7406;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x63A8;&#x79FB;&#x800C;&#x4E0D;&#x65AD;&#x81A8;&#x80C0;&#x7684;SSTables&#x3002;&#x538B;&#x7F29;&#x5C06;&#x5206;&#x6563;&#x5728;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5206;&#x533A;&#xFF08;partitions&#xFF09;&#x805A;&#x5408;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x5220;&#x9664;&#x65E7;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E22;&#x5F03;tombstones&#x3002;&#x91CA;&#x653E;&#x7A7A;&#x95F4;&#x4EC5;&#x662F;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x76EE;&#x7684;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x539F;&#x56E0;&#x662F;&#x901A;&#x8FC7;&#x5C06;&#x6570;&#x636E;&#x8F6C;&#x79FB;&#x5230;&#x4E00;&#x4E2A;SSTables&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x8DE8;&#x6587;&#x4EF6;&#x6216;&#x8282;&#x70B9;&#x8BFB;&#x53D6;Key&#x7684;&#x78C1;&#x76D8;I/O&#x4ECE;&#x800C;&#x663E;&#x8457;&#x63D0;&#x9AD8;&#x8BFB;&#x7684;&#x6027;&#x80FD;&#x3002;</p><p>Cassandra&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x538B;&#x7F29;&#x7B56;&#x7565;&#xFF0C;&#x81EA;3.8&#xFF08;&#x6216;3.0.8&#xFF09;&#x5F00;&#x59CB;&#x65B0;&#x589E;&#x4E86;<strong>Time-window</strong>&#x538B;&#x7F29;&#x7B56;&#x7565;&#x7528;&#x4E8E;&#x53D6;&#x4EE3;<strong>Date-tiered</strong>&#x538B;&#x7F29;&#x7B56;&#x7565;&#x3002;</p><ul><li><p>Size-tiered&#x7B56;&#x7565;</p></li>
+<li><p>Leveled&#x7B56;&#x7565;</p></li>
+<li><p>Time-window&#x7B56;&#x7565;</p></li></ul>
+<h3 id="cql">CQL</h3><p>CQL&#x5DF2;&#x7ECF;&#x53D6;&#x4EE3;Thrift&#x6210;&#x4E3A;&#x4E0E;Cassandra&#x4EA4;&#x4E92;&#x7684;&#x6807;&#x51C6;&#x63A5;&#x53E3;&#x3002;&#x5728;&#x4E86;&#x89E3;CQL&#x4E4B;&#x524D;&#x5FC5;&#x987B;&#x8981;&#x610F;&#x8BC6;&#x5230;CQL&#x7684;&#x6570;&#x636E;&#x5F62;&#x5F0F;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x4E0E;&#x5E95;&#x5C42;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x76F8;&#x5339;&#x914D;&#xFF0C;&#x800C;&#x4E14;&#xFF0C;CQL&#x4E5F;&#x4E0D;&#x662F;SQL&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x7406;&#x89E3;CQL&#x8868;&#x73B0;&#x5F62;&#x5F0F;&#x7684;&#x771F;&#x6B63;&#x542B;&#x4E49;&#x624D;&#x80FD;&#x907F;&#x514D;&#x8BBE;&#x8BA1;&#x51FA;&#x4E0E;Cassandra&#x7406;&#x5FF5;&#x80CC;&#x9053;&#x800C;&#x9A70;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;&#x3002;</p><p>&#x4E0B;&#x9762;&#x8BE6;&#x89E3;CQL&#x8BED;&#x53E5;&#x4E0E;&#x5E95;&#x5C42;&#x5B58;&#x50A8;&#x7684;&#x8F6C;&#x6362;&#x3002;</p><h4 id="&#x5355;&#x4E2A;primary-key">&#x5355;&#x4E2A;Primary Key</h4><p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<strong>books</strong>&#x7684;&#x8868;&#xFF0C;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;<strong>title</strong>&#x4E3B;&#x952E;&#xFF1A;</p><pre><code>CREATE TABLE books ( 
+   title text, 
+   author text, 
+   year int, 
+   PRIMARY KEY (title) 
+);</code></pre>
+<p>&#x901A;&#x8FC7;&#x4E0B;&#x8FF0;&#x8BED;&#x53E5;&#x63D2;&#x5165;&#x4E24;&#x6761;&#x6570;&#x636E;&#xFF1A;</p><pre><code>INSERT INTO books (title, author, year) VALUES (&apos;Patriot Games&apos;, &apos;Tom Clancy&apos;, 1987); 
+INSERT INTO books (title, author, year) VALUES (&apos;Without Remorse&apos;, &apos;Tom Clancy&apos;, 1993);</code></pre>
+<p>&#x67E5;&#x8BE2;&#x65F6;&#x4F1A;&#x5F97;&#x5230;&#x4E0B;&#x8FF0;&#x7ED3;&#x679C;&#xFF1A;</p><pre><code>&#x201C;SELECT * FROM books; 
+
+ title           | author     | year 
+-----------------+------------+------ 
+ Without Remorse | Tom Clancy | 1993 
+   Patriot Games | Tom Clancy | 1987&#x201D;</code></pre>
+<p>&#x8FD9;&#x770B;&#x4E0A;&#x53BB;&#x4E0E;&#x4F20;&#x7EDF;&#x7684;ANSI SQL&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x5E94;&#x7740;Cassandra&#x7684;&#x5E95;&#x5C42;&#x5B58;&#x50A8;&#x5374;&#x662F;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x3002;</p><p>&#x5728;&#x5B58;&#x50A8;&#x5C42;&#xFF0C;&#x6570;&#x636E;&#x7528;&#x4E00;&#x4E2A;Row Key&#x5373;title&#x548C;&#x4E00;&#x4E2A;name/value&#x7EC4;&#x6210;&#x7684;&#x5217;&#x96C6;&#x5408;&#x8868;&#x793A;&#x3002;&#x6BCF;&#x4E2A;&#x5217;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x51B2;&#x7A81;&#x3002;</p><p>&#x7CFB;&#x7EDF;&#x5B58;&#x50A8;&#x65F6;&#x6839;&#x636E;Row Key&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x5728;Cassandra&#x96C6;&#x7FA4;&#x8282;&#x70B9;&#x4E2D;&#x5206;&#x5E03;&#x5F0F;&#x5B58;&#x50A8;&#xFF0C;&#x56E0;&#x6B64;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x65E0;&#x5E8F;&#x7684;&#x3002;&#x76F8;&#x5BF9;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;&#x5217;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x662F;&#x6839;&#x636E;&#x5217;&#x540D;&#x79F0;&#x6309;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x7684;&#x3002;&#x56E0;&#x6B64;&#x4E0A;&#x4F8B;&#x4E2D;<strong>author</strong>&#x6392;&#x5728;<strong>year</strong>&#x7684;&#x524D;&#x9762;&#x3002;<strong>&#x8FD9;&#x4E00;&#x70B9;&#x5BF9;&#x4E8E;&#x6784;&#x5EFA;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;&#x81F3;&#x5173;&#x91CD;&#x8981;</strong>&#x3002;</p><pre><code>Row Key: Without Remorse 
+=&gt; (name=author, value=Tom Clancy, timestamp=1393102991499000) 
+=&gt; (name=year, value=1993, timestamp=1393102991499000) 
+Row Key: Patriot Games 
+=&gt; (name=author, value=Tom Clancy, timestamp=1393102991499100) 
+=&gt; (name=year, value=1987, timestamp=1393102991499100)</code></pre>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF0C;&#x8FD9;&#x662F;&#x65E7;&#x7684;pre-3.0 CLI&#x8F93;&#x51FA;&#xFF0C;&#x4EC5;&#x7528;&#x4E8E;&#x7406;&#x89E3;&#x6982;&#x5FF5;&#xFF0C;&#x4E0B;&#x8FF0;&#x540C;&#x3002;</p><h4 id="compound-keys">Compound Keys</h4><p>&#x4E0B;&#x9762;&#x770B;&#x4E00;&#x4E2A;authors&#x8868;&#xFF0C;&#x8FD9;&#x4E2A;&#x8868;&#x4F7F;&#x7528;<strong>name</strong>&#xFF0C;<strong>year</strong>&#x548C;<strong>title</strong>&#x4F5C;&#x4E3A;&#x7EC4;&#x5408;&#x4E3B;&#x952E;&#x3002;</p><pre><code>CREATE TABLE authors ( 
+   name text, 
+   year int, 
+   title text, 
+   isbn text, 
+   publisher text, 
+   PRIMARY KEY (name, year, title) 
+); </code></pre>
+<p>&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x901A;&#x8FC7;CQL&#x67E5;&#x8BE2;&#x663E;&#x793A;&#x5982;&#x4E0B;&#xFF1A;</p><pre><code> name       | year | title           | isbn          | publisher 
+------------+------+-----------------+---------------+----------- 
+ Tom Clancy | 1987 |   Patriot Games | 0-399-13241-4 |    Putnam 
+ Tom Clancy | 1993 | Without Remorse | 0-399-13825-0 |    Putnam </code></pre>
+<p>&#x5728;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x5E95;&#x5C42;&#x7684;&#x5B58;&#x50A8;&#x8F6C;&#x6362;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x6765;&#x7406;&#x89E3;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#xFF1A;<strong>partion keys</strong> &#x548C; <strong>clustering columns</strong>&#x3002;</p><ul><li><p><strong>Partion keys</strong></p><p>&#x5728;&#x58F0;&#x660E;&#x4E3B;&#x952E;&#x65F6;&#xFF0C;&#x4E3B;&#x952E;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x5FC5;&#x5B9A;&#x662F;&#x5206;&#x533A;Key&#x3002;&#x8FD9;&#x4E2A;&#x5206;&#x533A;Key&#x5728;&#x5B58;&#x50A8;&#x5C42;&#x76F4;&#x63A5;&#x4F5C;&#x4E3A;Row Key&#xFF0C;&#x901A;&#x8FC7;&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;&#x968F;&#x673A;&#x5730;&#x5B58;&#x50A8;&#x5728;&#x96C6;&#x7FA4;&#x8282;&#x70B9;&#x4E0A;&#x3002;&#x5927;&#x591A;&#x6570;&#x67E5;&#x8BE2;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x5206;&#x533A;Key&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;Cassandra&#x80FD;&#x591F;&#x77E5;&#x9053;&#x8BF7;&#x6C42;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728;&#x54EA;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x3002;</p></li>
+<li><p><strong>Clustering columns</strong></p><p>&#x4E3B;&#x952E;&#x5217;&#x8868;&#x4E2D;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x5916;&#xFF0C;&#x5269;&#x4F59;&#x7684;&#x5B57;&#x6BB5;&#x79F0;&#x4E4B;&#x4E3A;Clustering columns&#xFF0C;&#x5B83;&#x4EEC;&#x51B3;&#x5B9A;&#x4E86;&#x6570;&#x636E;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x5B58;&#x50A8;&#x987A;&#x5E8F;&#x3002;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0D;&#x5C5E;&#x4E8E;&#x5206;&#x533A;Key&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x4E8E;&#x5B9A;&#x4F4D;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7684;&#x8282;&#x70B9;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5E2E;&#x52A9;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x51B3;&#x5B9A;&#x7740;&#x7528;&#x6237;&#x80FD;&#x591F;&#x5982;&#x4F55;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x4E0B;&#x9762;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x3002;</p></li></ul>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x4E3B;&#x952E;&#x5217;&#x8868;&#x53EF;&#x4EE5;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x8868;&#x793A;&#xFF1A;</p><pre><code>PRIMARY KEY (partition_key, clustering1, clustering2)</code></pre>
+<p>&#x533A;&#x5206;&#x4E86;&#x4E0A;&#x9762;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x4E0B;&#x9762;&#x6765;&#x770B;authors&#x8868;&#x5BF9;&#x5E94;&#x7684;&#x5E95;&#x5C42;&#x5B58;&#x50A8;&#xFF1A;</p><pre><code>Row Key: Tom Clancy 
+= &gt; (name = 1987: Patriot Games:ISBN, value = 0-399-13241-4) 
+= &gt; (name = 1987: Patriot Games:publisher, value = Putnam) 
+= &gt; (name = 1993: Without Remorse:ISBN, value = 0-399-13825-0) 
+= &gt; (name = 1993: Without Remorse:publisher, value = Putnam)</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;CQL&#x4E2D;&#x7684;&#x4E24;&#x6761;&#x8BB0;&#x5F55;&#x5728;&#x5B58;&#x50A8;&#x65F6;&#x6210;&#x4E3A;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF08;&#x5217;&#x65CF;&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E24;&#x6761;&#x8BB0;&#x5F55;&#x62E5;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5206;&#x533A;Key&#x3002;&#x53E6;&#x4E00;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x5730;&#x65B9;&#x662F;<strong>year</strong>&#x548C;<strong>title</strong>&#x5217;&#x503C;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5B83;&#x4EEC;&#x88AB;&#x5B58;&#x50A8;&#x4E3A;&#x5217;&#x540D;&#x79F0;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5217;&#x503C;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x53EA;&#x662F;&#x7528;&#x4E8E;&#x5C55;&#x793A;&#x5E95;&#x5C42;&#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x6982;&#x5FF5;&#xFF0C;&#x5B9E;&#x9645;&#x5B58;&#x50A8;&#x4E2D;Cassandra&#x5BF9;&#x6570;&#x636E;&#x505A;&#x4E86;&#x4F18;&#x5316;&#x3002;</p><p>&#x8FD8;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x884C;&#x96C6;&#x4E2D;&#x884C;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x5148;<strong>year</strong>&#x540E;<strong>title</strong>&#xFF0C;&#x8FD9;&#x8DDF;&#x5B83;&#x4EEC;&#x5728;&#x4E3B;&#x952E;&#x5217;&#x8868;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>WITH CLUSTERING ORDER BY</code>&#x8BED;&#x53E5;&#x6539;&#x53D8;&#x884C;&#x7684;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p><pre><code>CREATE TABLE authors ( 
+    name text,
+    year int, 
+    title text, 
+    isbn text, 
+    publisher text, 
+PRIMARY KEY (name, year, title) ) 
+WITH CLUSTERING ORDER BY (year DESC);</code></pre>
+<p>&#x518D;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x7ED3;&#x679C;&#x5C06;&#x663E;&#x793A;&#x4E3A;&#xFF1A;</p><pre><code>name       | year | title           | isbn          | publisher 
+-----------+------+-----------------+---------------+----------- 
+Tom Clancy | 1993 | Without Remorse | 0-399-13825-0 |    Putnam 
+Tom Clancy | 1987 |   Patriot Games | 0-399-13241-4 |    Putnam
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x5EFA;&#x6A21;&#x7684;&#x5DEE;&#x5F02;&#x5BF9;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x5F71;&#x54CD;&#x5F88;&#x5927;&#xFF0C;&#x5177;&#x4F53;&#x8BF7;&#x53C2;&#x8003;&#x540E;&#x7EED;CQL&#x67E5;&#x8BE2;&#x90E8;&#x5206;&#x3002;</p><h4 id="composite-partition-keys">Composite partition keys</h4><p>&#x524D;&#x4F8B;&#x4E2D;&#x90FD;&#x662F;&#x5355;&#x4E2A;&#x7684;&#x5206;&#x533A;Key&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x521B;&#x5EFA;&#x7EC4;&#x5408;&#x7684;&#x5206;&#x533A;Key&#x3002;&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x7684;&#x5206;&#x533A;Key&#x7684;&#x76EE;&#x7684;&#x662F;&#x7528;&#x6765;&#x4F18;&#x5316;&#x6570;&#x636E;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x5B58;&#x50A8;&#x7B56;&#x7565;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x5347;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x7684;&#x901F;&#x5EA6;&#x3002;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x5EFA;&#x6A21;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x65F6;&#x4F7F;&#x7528;&#x65F6;&#x95F4;&#x6876;&#xFF08;buckets&#xFF09;&#x4F5C;&#x4E3A;&#x5206;&#x533A;Key&#x3002;</p><p>&#x4E0B;&#x9762;&#x6765;&#x770B;&#x7EC4;&#x5408;&#x5206;&#x533A;Key&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p><pre><code>CREATE TABLE authors ( 
+    name text, 
+    year int, 
+    title text, 
+    isbn text, 
+    publisher text, 
+PRIMARY KEY (( name, year), title) );</code></pre>
+<p>&#x5728;&#x4E3B;&#x952E;&#x5B9A;&#x4E49;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x62EC;&#x53F7;&#x5C06;<strong>name</strong>&#x548C;<strong>year</strong>&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x8868;&#x793A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7EC4;&#x5408;&#x7684;&#x5206;&#x533A;Key&#x3002;</p><p>&#x5728;&#x5B58;&#x50A8;&#x5C42;&#xFF0C;year&#x4ECE;&#x5217;&#x540D;&#x79F0;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x53D8;&#x6210;&#x4E86;<strong>Row Key</strong>&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p><pre><code>Row Key: Tom Clancy: 1993 
+= &gt; (name = Without Remorse:isbn, value = 0-399-13241-4) 
+= &gt; (name = Without Remorse:publisher, value = 5075746e616d) 
+------------------- 
+Row Key: Tom Clancy: 1987 
+= &gt; (name = Patriot Games:isbn, value = 0-399-13825-0) 
+= &gt; (name = Patriot Games:publisher, value = 5075746e616d)</code></pre>
+<h4 id="&#x5B58;&#x50A8;&#x6A21;&#x578B;&#x7684;&#x91CD;&#x8981;&#x6027;">&#x5B58;&#x50A8;&#x6A21;&#x578B;&#x7684;&#x91CD;&#x8981;&#x6027;</h4><p>&#x7406;&#x89E3;Cassandra&#x7684;&#x5E95;&#x5C42;&#x5B58;&#x50A8;&#x6A21;&#x578B;&#x662F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x4F53;&#x73B0;&#x5728;&#xFF1A;</p><ul><li>&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x5FC5;&#x987B;&#x8981;&#x8003;&#x8651;&#x5230;&#x5E95;&#x5C42;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x3002;&#x5982;&#x679C;&#x4F60;&#x65E0;&#x6CD5;&#x7406;&#x89E3;&#x6570;&#x636E;&#x662F;&#x5982;&#x4F55;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x53EF;&#x80FD;&#x4F1A;&#x7ECF;&#x5E38;&#x78B0;&#x5230;&#x5404;&#x79CD;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x6700;&#x574F;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x6027;&#x80FD;&#x975E;&#x5E38;&#x5DEE;&#x3002;
+</li>
+<li>&#x5BF9;&#x4E8E;&#x5206;&#x533A;Key&#x7684;&#x9009;&#x62E9;&#x8981;&#x614E;&#x91CD;&#x8003;&#x8651;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x65F6;&#x5B83;&#x5FC5;&#x987B;&#x662F;&#x53EF;&#x77E5;&#x7684;&#x6761;&#x4EF6;&#x800C;&#x4E14;&#x8981;&#x80FD;&#x591F;&#x5F88;&#x597D;&#x7684;&#x5206;&#x6563;&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x3002;&#x5728;&#x5EFA;&#x6A21;&#x65F6;&#x8981;&#x907F;&#x514D;&#x5C11;&#x91CF;&#x7684;&#x5206;&#x533A;Key&#x5BF9;&#x5E94;&#x5927;&#x91CF;&#x7684;&#x5217;&#xFF0C;&#x8FD9;&#x4F1A;&#x4E25;&#x91CD;&#x5F71;&#x54CD;&#x6570;&#x636E;&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x5206;&#x5E03;&#x3002;
+</li>
+<li>&#x7531;&#x4E8E;Cassandra&#x91C7;&#x7528;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#xFF0C;&#x4F7F;&#x7528;&#x533A;&#x95F4;&#x67E5;&#x8BE2;&#x65F6;&#x4F1A;&#x83B7;&#x5F97;&#x5F88;&#x597D;&#x7684;&#x6027;&#x80FD;&#x3002;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x533A;&#x95F4;&#x67E5;&#x8BE2;&#x5C31;&#x662F;&#x9488;&#x5BF9;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x7684;&#x5206;&#x533A;Key&#x6309;&#x7167;&#x5217;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x987A;&#x5E8F;&#x67E5;&#x8BE2;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x533A;&#x95F4;&#x67E5;&#x8BE2;&#x4E0D;&#x80FD;&#x8DE8;&#x591A;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x5206;&#x533A;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x7684;&#x7269;&#x7406;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x3002;
+</li>
+<li>&#x8981;&#x614E;&#x91CD;&#x9009;&#x62E9;clustering columns&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x987A;&#x5E8F;&#x51B3;&#x5B9A;&#x7740;&#x6570;&#x636E;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x5B58;&#x653E;&#x987A;&#x5E8F;&#xFF0C;&#x8FDB;&#x800C;&#x5F71;&#x54CD;&#x4F60;&#x80FD;&#x591F;&#x5BF9;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x505A;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x67E5;&#x8BE2;&#x3002;
+</li></ul>
+<p>&#x5728;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x65F6;&#xFF0C;&#x7ED3;&#x6784;&#x89C4;&#x8303;&#x5316;&#x662F;&#x8981;&#x4F18;&#x5148;&#x8003;&#x8651;&#x7684;&#x3002;&#x4E0E;&#x4E4B;&#x4E0D;&#x540C;&#xFF0C;<strong>&#x5728;Cassandra&#x4E2D;&#x8FDB;&#x884C;&#x5EFA;&#x6A21;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5982;&#x4F55;&#x67E5;&#x8BE2;&#x662F;&#x4F18;&#x5148;&#x8003;&#x8651;&#x7684;</strong>&#xFF0C;&#x8FD9;&#x4E00;&#x539F;&#x5219;&#x5FC5;&#x987B;&#x7262;&#x8BB0;&#x3002;</p><h3 id="&#x7406;&#x89E3;cql&#x67E5;&#x8BE2;">&#x7406;&#x89E3;CQL&#x67E5;&#x8BE2;</h3><p>&#x4E0B;&#x9762;&#x4EE5;&#x4E0B;&#x8FF0;authors&#x8868;&#x6A21;&#x578B;&#x4ECB;&#x7ECD;CQL&#x7684;&#x5404;&#x79CD;&#x67E5;&#x8BE2;&#xFF1A;</p><pre><code>CREATE TABLE authors ( name text, year int, title text, isbn text, publisher text,
+PRIMARY KEY (name, year, title) ) WITH CLUSTERING ORDER BY (year DESC);</code></pre>
+<h4 id="query-by-key">Query by key</h4><p>&#x4E0B;&#x9762;&#x770B;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;Key&#x7684;&#x57FA;&#x672C;&#x67E5;&#x8BE2;&#xFF1A;</p><pre><code>SELECT * FROM authors WHERE name = &apos;Tom Clancy&apos;;</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x7B80;&#x5355;&#x67E5;&#x8BE2;&#xFF0C;&#x8BF7;&#x6C42;&#x9996;&#x5148;&#x53D1;&#x9001;&#x5230;&#x4E00;&#x4E2A;&#x534F;&#x8C03;&#x8282;&#x70B9;&#xFF0C;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x6211;&#x4EEC;&#x67E5;&#x8BE2;Key&#x7684;&#x526F;&#x672C;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4ECE;&#x53E6;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x5B58;&#x50A8;&#x8282;&#x70B9;&#x83B7;&#x53D6;&#x8BE5;&#x884C;&#xFF08;&#x5217;&#x65CF;&#xFF09;&#x4EE5;&#x6EE1;&#x8DB3;Quorum&#x7684;&#x8981;&#x6C42;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x624D;&#x80FD;&#x6EE1;&#x8DB3;&#x6B64;&#x67E5;&#x8BE2;&#x7684;&#x8981;&#x6C42;&#x3002;</p><p><img src="assets/cassandra-cql-query-basic.png"></p><p>&#x5728;&#x5B58;&#x50A8;&#x5C42;&#xFF0C;&#x8BE5;&#x67E5;&#x8BE2;&#x9996;&#x5148;&#x5B9A;&#x4F4D;&#x5206;&#x533A;Key&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x6309;&#x7167;&#x5217;&#x81EA;&#x7136;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#x987A;&#x5E8F;&#x626B;&#x63CF;&#x6240;&#x6709;&#x7684;&#x5217;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5C3D;&#x7BA1;&#x770B;&#x8D77;&#x6765;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x67E5;&#x8BE2;&#xFF0C;&#x5B58;&#x50A8;&#x5C42;&#x4ECD;&#x7136;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x533A;&#x95F4;&#x67E5;&#x8BE2;&#x3002;</p><p><img src="assets/cassandra-cql-query-basic-storage.png"></p><h4 id="range-queries">Range Queries</h4><p>&#x4E0B;&#x9762;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x533A;&#x95F4;&#x67E5;&#x8BE2;&#x7684;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#xFF1A;</p><pre><code>SELECT * FROM authors WHERE name = &apos;Tom Clancy&apos; AND year &gt; = 1993;</code></pre>
+<p>&#x6B64;&#x67E5;&#x8BE2;&#x4ECD;&#x7136;&#x53EA;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x56E0;&#x6B64;&#x8DDF;&#x524D;&#x4F8B;&#x76F8;&#x540C;&#xFF0C;&#x67E5;&#x8BE2;&#x53EA;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x53C2;&#x4E0E;&#x3002;&#x4E0E;&#x524D;&#x4F8B;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;Cassandra&#x5728;&#x626B;&#x63CF;&#x5230;&#x4E00;&#x6761;&#x4E0D;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x5C31;&#x4F1A;&#x505C;&#x6B62;&#x626B;&#x63CF;&#x3002;</p><p><img src="assets/cassandra-cql-query-range.png"></p><p>&#x6B64;&#x4F8B;&#x4E2D;&#xFF0C;&#x626B;&#x63CF;&#x5230;year&#x503C;&#x4E3A;1991&#x65F6;&#xFF0C;Cassandra&#x5C31;&#x77E5;&#x9053;&#x6CA1;&#x6709;&#x66F4;&#x591A;&#x5217;&#x9700;&#x8981;&#x626B;&#x63CF;&#x4E86;&#x3002;&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x67E5;&#x8BE2;&#x7684;&#x6548;&#x7387;&#x662F;&#x975E;&#x5E38;&#x9AD8;&#x7684;&#x3002;</p><p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x793A;&#x4F8B;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x603B;&#x7ED3;&#x4EE5;&#x4E0B;&#x4E09;&#x70B9;&#xFF1A;</p><ol><li>&#x987A;&#x5E8F;&#x67E5;&#x8BE2;&#x662F;&#x9AD8;&#x6548;&#x7684;&#xFF0C;&#x5B83;&#x5145;&#x5206;&#x5229;&#x7528;&#x4E86;Cassandra&#x5728;&#x5B58;&#x50A8;&#x5C42;&#x7684;&#x81EA;&#x7136;&#x6392;&#x5E8F;&#x5B58;&#x50A8;&#x673A;&#x5236;&#x3002;
+</li>
+<li>&#x4EE5;&#x5206;&#x533A;Key&#x6216;&#x8005;&#x5206;&#x533A;Key&#x4E0E;Clustering columns&#x7EC4;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x67E5;&#x8BE2;&#x5728;&#x5B58;&#x50A8;&#x5C42;&#x662F;&#x987A;&#x5E8F;&#x67E5;&#x8BE2;&#xFF0C;&#x8FD9;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x7C7B;&#x67E5;&#x8BE2;&#x662F;&#x4F18;&#x5316;&#x7684;&#x3002;
+</li>
+<li>&#x5C3D;&#x91CF;&#x6309;&#x7167;&#x4F60;&#x8BFB;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x5199;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x4E0E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x5EFA;&#x6A21;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;
+</li></ol>
+<h4 id="&#x62E5;&#x62B1;&#x53CD;&#x8303;&#x5F0F;">&#x62E5;&#x62B1;&#x53CD;&#x8303;&#x5F0F;</h4><p>&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8303;&#x5F0F;&#x5EFA;&#x6A21;&#x5728;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x4F1A;&#x5BFC;&#x81F4;&#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x8054;&#x5408;&#x67E5;&#x8BE2;&#xFF08;joins&#xFF09;&#x3002;&#x4EE5;authors&#x8868;&#x4E3A;&#x4F8B;&#xFF0C;author&#x548C;book&#x7684;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x4F1A;&#x8981;&#x6C42;&#x5C06;books&#x5EFA;&#x4E3A;&#x53E6;&#x4E00;&#x5F20;&#x8868;&#xFF0C;&#x6BCF;&#x4E2A;&#x8868;&#x90FD;&#x6709;&#x4E00;&#x4E2A;ID&#x4E3B;&#x952E;&#xFF0C;books&#x8868;&#x6709;&#x4E00;&#x4E2A;authorID&#x4F5C;&#x4E3A;&#x5916;&#x952E;&#x3002;</p><pre><code>CREATE TABLE authors ( authorID int, name varchar( 50), PRIMARY KEY (authorID) )
+
+CREATE TABLE books ( bookID int, authorID int, name varchar( 100), year int, INDEX auth_ind (authorID), FOREIGN KEY (authorID) REFERENCES authors( authorID) )</code></pre>
+<p>&#x8FD9;&#x79CD;&#x8054;&#x5408;&#x67E5;&#x8BE2;&#x5728;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5F88;&#x5E38;&#x89C1;&#xFF0C;&#x4F46;&#x662F;&#x653E;&#x5230;Cassandra&#x8FD9;&#x79CD;&#x5206;&#x5E03;&#x5F0F;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x4E00;&#x6B21;&#x8054;&#x5408;&#x67E5;&#x8BE2;&#x9700;&#x8981;&#x8DE8;&#x591A;&#x4E2A;&#x8868;&#xFF0C;&#x800C;&#x4E00;&#x4E2A;&#x8868;&#x9700;&#x8981;&#x8DE8;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5176;&#x590D;&#x6742;&#x6027;&#x548C;&#x6548;&#x7387;&#x53EF;&#x60F3;&#x800C;&#x77E5;&#x3002;</p><p>&#x5728;Cassandra&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;authors&#x8868;&#x548C;&#x4E00;&#x4E2A;books&#x96C6;&#x5408;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x79CD;&#x9700;&#x6C42;&#x3002;</p><p>&#x5C3D;&#x7BA1;&#x5728;Cassandra&#x4E2D;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x91C7;&#x7528;<strong>&#x7B2C;&#x4E8C;&#x7D22;&#x5F15;</strong>&#x907F;&#x514D;&#x53CD;&#x8303;&#x5F0F;&#x6570;&#x636E;&#x6A21;&#x578B;&#xFF0C;&#x4F46;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x597D;&#x7684;&#x65B9;&#x6848;&#x3002;</p><h3 id="&#x4F7F;&#x7528;&#x96C6;&#x5408;&#x5B9E;&#x73B0;&#x53CD;&#x8303;&#x5F0F;">&#x4F7F;&#x7528;&#x96C6;&#x5408;&#x5B9E;&#x73B0;&#x53CD;&#x8303;&#x5F0F;</h3><p>Cassandra&#x652F;&#x6301;&#x4E09;&#x79CD;&#x96C6;&#x5408;&#x7C7B;&#x578B;&#xFF1A;Sets&#xFF0C;Lists &#x548C; Maps&#x3002;&#x5728;&#x5177;&#x4F53;&#x4ECB;&#x7ECD;&#x4E4B;&#x524D;&#x9996;&#x5148;&#x8981;&#x77E5;&#x9053;&#x4F7F;&#x7528;&#x96C6;&#x5408;&#x7684;&#x51E0;&#x4E2A;&#x539F;&#x5219;&#xFF1A;</p><ul><li>&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x9879;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;64KB
+</li>
+<li>&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x6700;&#x591A;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;64000&#x4E2A;&#x6570;&#x636E;&#x9879;
+</li>
+<li>&#x67E5;&#x8BE2;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x603B;&#x662F;&#x4F1A;&#x8FD4;&#x56DE;&#x6574;&#x4E2A;&#x96C6;&#x5408;
+</li>
+<li>&#x96C6;&#x5408;&#x6700;&#x597D;&#x7528;&#x6765;&#x5EFA;&#x6A21;&#x5C0F;&#x7684;&#x6709;&#x9650;&#x7684;&#x6570;&#x636E;&#x96C6;
+</li></ul>
+<h4 id="sets">Sets</h4><p>CQL&#x4E2D;&#x7684;Set&#x4E0E;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x7684;Set&#x7C7B;&#x4F3C;&#xFF0C;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x9879;&#x662F;&#x552F;&#x4E00;&#x7684;&#x3002;&#x7A0D;&#x6709;&#x5DEE;&#x5F02;&#x7684;&#x662F;&#xFF0C;&#x5728;Cassandra&#x4E2D;&#xFF0C;Set&#x4E2D;&#x7684;&#x6570;&#x636E;&#x9879;&#x662F;&#x6309;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x6392;&#x5E8F;&#x7684;&#x3002;</p><p>&#x4E0B;&#x9762;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E86;books&#x96C6;&#x5408;&#x7684;authors&#x8868;&#xFF1A;</p><pre><code>CREATE TABLE authors ( 
+    name text, 
+    books set &lt; text &gt;, 
+PRIMARY KEY (name) );
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E2A;&#x8868;&#x8FDB;&#x884C;<strong>INSERT</strong>&#x548C;<strong>UPDATE</strong>&#x64CD;&#x4F5C;&#xFF1A;</p><pre><code>INSERT INTO authors (name, books) VALUES (&apos; Tom Clancy&apos;, {&apos; Without Remorse&apos;, &apos;Patriot Games&apos;}); 
+
+-- &#x5411;&#x96C6;&#x5408;&#x4E2D;&#x6DFB;&#x52A0;&#x6570;&#x636E;
+UPDATE authors SET books = books + {&apos; Red Storm Rising&apos;} WHERE name = &apos;Tom Clancy&apos;;
+
+-- &#x4ECE;&#x96C6;&#x5408;&#x4E2D;&#x79FB;&#x9664;&#x6570;&#x636E;
+UPDATE authors SET books = books - {&apos; Red Storm Rising&apos;} WHERE name = &apos;Tom Clancy&apos;;</code></pre>
+<p>&#x5728;&#x5B58;&#x50A8;&#x5C42;&#xFF0C;Set&#x96C6;&#x5408;&#x7684;&#x6570;&#x636E;&#x9879;&#x88AB;&#x5B58;&#x50A8;&#x4E3A;&#x5217;&#x540D;&#x79F0;&#xFF0C;&#x5217;&#x503C;&#x7559;&#x7A7A;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x6570;&#x636E;&#x7684;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#x53EA;&#x9700;&#x8981;&#x8986;&#x76D6;&#x65E7;&#x7684;&#x5217;&#x540D;&#x79F0;&#x3002;</p><p>books&#x5728;&#x5B58;&#x50A8;&#x5C42;&#x7684;&#x793A;&#x610F;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p><p><img src="assets/cassandra-cql-denormalization-set.png"></p><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;set&#x96C6;&#x5408;&#x7684;&#x540D;&#x79F0;&#x4F5C;&#x4E3A;&#x5217;&#x540D;&#x79F0;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x9879;&#x4F5C;&#x4E3A;&#x5217;&#x540D;&#x79F0;&#x7684;&#x53E6;&#x4E00;&#x90E8;&#x5206;&#x3002;</p><h4 id="lists">Lists</h4><p>&#x4ECE;CQL&#x5C42;&#x770B;&#xFF0C;Lists&#x4E0E;Sets&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF1A;</p><pre><code>CREATE TABLE authors (
+      name text,
+      books list&lt;text&gt;,
+      PRIMARY KEY (name)
+);</code></pre>
+<p>&#x5BF9;Lists&#x96C6;&#x5408;&#x7684;<strong>INSERT</strong>&#x548C;<strong>UPDATE</strong>&#x64CD;&#x4F5C;&#xFF1A;</p><pre><code>INSERT INTO authors (name, books)
+   VALUES (&apos;Tom Clancy&apos;, [&apos;Without Remorse&apos;, &apos;Patriot Games&apos;]);
+
+-- &#x7531;&#x4E8E;List&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF0C;&#x56E0;&#x6B64;CQL&#x652F;&#x6301;prepend&#x548C;append&#x64CD;&#x4F5C;
+
+UPDATE authors
+   SET books = books + [&apos;Red Storm Rising&apos;]
+   WHERE name = &apos;Tom Clancy&apos;;
+
+UPDATE authors
+   SET books = [&apos;Red Storm Rising&apos;] + books
+   WHERE name = &apos;Tom Clancy&apos;;
+
+-- &#x53EF;&#x4EE5;&#x5220;&#x9664;&#x6307;&#x5B9A;name&#x7684;&#x6570;&#x636E;&#x9879;
+UPDATE authors
+   SET books = books - [&apos;Red Storm Rising&apos;]
+   WHERE name = &apos;Tom Clancy&apos;;</code></pre>
+<p>&#x4E0D;&#x540C;&#x4E8E;Set&#x96C6;&#x5408;&#xFF0C;List&#x96C6;&#x5408;&#x5728;&#x5B58;&#x50A8;&#x5C42;&#x5C06;&#x6570;&#x636E;&#x9879;&#x653E;&#x7F6E;&#x5728;&#x5217;&#x503C;&#x4E2D;&#xFF0C;&#x5217;&#x540D;&#x79F0;&#x7528;UUID&#x6765;&#x786E;&#x4FDD;&#x96C6;&#x5408;&#x987A;&#x5E8F;&#x3002;</p><pre><code>Row Key: Tom Clancy
+   =&gt; (name=books:d36de8b0305011e4a0dddbbeade718be, value=576974686f)
+   =&gt; (name=books:d36de8b1305011e4a0dddbbeade718be, value=506174726)</code></pre>
+<h4 id="maps">Maps</h4><pre><code>CREATE TABLE authors (
+      name text,
+      books map&lt;text, int&gt;,
+      PRIMARY KEY (name)
+);</code></pre>
+<p>&#x5BF9;Map&#x96C6;&#x5408;&#x6267;&#x884C;<strong>INSERT</strong>&#xFF0C;<strong>UPDATE</strong>&#x548C;<strong>DELETE</strong>&#x64CD;&#x4F5C;&#xFF1A;</p><pre><code>INSERT INTO authors (name, books)
+   VALUES (&apos;Tom Clancy&apos;, {&apos;Without Remorse&apos;:1993, &apos;Patriot Games&apos;:1987});
+
+UPDATE authors
+   SET books[&apos;Red Storm Rising&apos;] = 1986
+   WHERE name = &apos;Tom Clancy&apos;;
+
+DELETE books[&apos;Red Storm Rising&apos;]
+   FROM authors WHERE name = &apos;Tom Clancy&apos;;
+</code></pre>
+<p>&#x5728;&#x5B58;&#x50A8;&#x5C42;&#xFF0C;Map&#x4E0E;List&#x7684;&#x5B58;&#x50A8;&#x7C7B;&#x4F3C;&#xFF0C;&#x5DEE;&#x522B;&#x662F;&#x6392;&#x5E8F;&#x7684;ID&#x88AB;&#x66FF;&#x6362;&#x6210;Map&#x7684;Key&#xFF1A;</p><pre><code>RowKey: Tom Clancy
+   =&gt; (name=books:50617472696f742047616d6573, value=000007c3)
+   =&gt; (name=books:576974686f75742052656d6f727365, value=000007c9)</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x8FF0;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x4F7F;&#x7528;&#x4E86;&#x7C7B;&#x4F3C;Clustering columns&#x7684;&#x7EC4;&#x5408;&#x5217;&#x5B58;&#x50A8;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5F53;&#x524D;Cassandra&#x5E76;&#x4E0D;&#x652F;&#x6301;&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x7684;&#x533A;&#x95F4;&#x67E5;&#x8BE2;&#x3002;</p><h3 id="&#x4F7F;&#x7528;materialized-views&#xFF08;mv&#xFF09;&#x5B9E;&#x73B0;&#x53CD;&#x8303;&#x5F0F;">&#x4F7F;&#x7528;Materialized views&#xFF08;MV&#xFF09;&#x5B9E;&#x73B0;&#x53CD;&#x8303;&#x5F0F;</h3><p>&#x5728;&#x5F88;&#x591A;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x4E3B;&#x952E;&#x6765;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x3002;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x5206;&#x533A;Key&#x5E76;&#x987A;&#x5E8F;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5728;3.0&#x7248;&#x672C;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x591A;&#x5F20;&#x8868;&#xFF0C;&#x6BCF;&#x5F20;&#x8868;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x7684;&#x67E5;&#x8BE2;&#x7C7B;&#x578B;&#x3002;</p><p>Cassandra&#x4ECE;3.0&#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x79F0;&#x4E4B;&#x4E3A;Materialized views&#x7684;&#x7279;&#x6027;&#xFF0C;&#x8BE5;&#x529F;&#x80FD;&#x8D1F;&#x8D23;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#x6570;&#x636E;&#x7684;&#x4E0D;&#x540C;&#x89C6;&#x56FE;&#x6765;&#x6EE1;&#x8DB3;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x67E5;&#x8BE2;&#x3002;</p><p>&#x521B;&#x5EFA;Materialized views&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x4EE5;&#x524D;&#x8FF0;authors&#x8868;&#x4E3A;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7ED9;&#x5B9A;<strong>year</strong>&#x7684;&#x6240;&#x6709;<strong>authors</strong>&#xFF0C;&#x53EF;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x89C6;&#x56FE;&#xFF1A;</p><pre><code>CREATE MATERIALIZED VIEW books_by_year AS
+     SELECT *
+     FROM authors
+     WHERE year IS NOT NULL
+       AND name IS NOT NULL
+       AND title IS NOT NULL
+     PRIMARY KEY (year, name, title);</code></pre>
+<p>&#x5F53;&#x5411;authors&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x65B0;&#x6570;&#x636E;&#x65F6;&#xFF0C;Cassandra&#x4F1A;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x8BE5;&#x89C6;&#x56FE;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x6309;&#x4E0B;&#x8FF0;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#xFF1A;</p><pre><code>SELECT * FROM books_by_year
+   WHERE year = 1987;</code></pre>
+<p>CQL&#x8981;&#x6C42;&#x67E5;&#x8BE2;&#x65F6;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x975E;&#x7A7A;&#xFF08;<code>non-null</code>&#xFF09;&#x7684;&#x4E3B;&#x952E;&#x5217;&#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x3002;&#x5728;&#x4E0A;&#x4F8B;&#x4E2D;&#x4F7F;&#x7528;&#x4E86; IS NOT NULL&#x9650;&#x5B9A;&#x3002;&#x521B;&#x5EFA;Materialized views&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;WHERE&#x8BED;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x8FC7;&#x6EE4;&#xFF0C;&#x5982;&#xFF1A;</p><pre><code>CREATE MATERIALIZED VIEW clancy_books AS
+     SELECT *
+     FROM authors
+     WHERE name = &apos;Tom Clancy&apos;
+       AND title IS NOT NULL
+       AND year IS NOT NULL
+     PRIMARY KEY (name, title, year);</code></pre>
+<p>&#x4F7F;&#x7528;Materialized views&#x65F6;&#xFF0C;&#x5F53;&#x6570;&#x636E;&#x51FA;&#x73B0;&#x53D8;&#x66F4;&#xFF0C;Cassandra&#x9700;&#x8981;&#x540C;&#x65F6;&#x5199;&#x5165;&#x57FA;&#x672C;&#x8868;&#x548C;&#x89C6;&#x56FE;&#x8868;&#x3002;&#x8FD9;&#x662F;&#x6709;&#x6027;&#x80FD;&#x635F;&#x8017;&#x7684;&#xFF0C;&#x4F46;&#x76F8;&#x6BD4;&#x4E8E;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#xFF0C;MV&#x4ECD;&#x7136;&#x4FDD;&#x6301;&#x5F88;&#x9AD8;&#x7684;&#x6027;&#x80FD;&#x3002;&#x4E0B;&#x56FE;&#x662F;&#x5B98;&#x65B9;&#x7684;&#x5BF9;&#x6BD4;&#x6570;&#x636E;&#xFF1A;</p><p><img src="assets/cassandra-materialized-view-performance.png"></p><p>MV&#x7684;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p><p><img src="assets/cassandra-materialized-view-process.png"></p><p>&#x4F7F;&#x7528;&#x4E86;MV&#x4E4B;&#x540E;&#xFF0C;&#x66F4;&#x65B0;/&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x5148;read&#x7136;&#x540E;&#x518D;&#x5199;&#xFF0C;&#x6B64;&#x5916;&#x8FD8;&#x8981;&#x505A;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#xFF0C;&#x90FD;&#x4F1A;&#x5B58;&#x5728;&#x6027;&#x80FD;&#x635F;&#x8017;&#x3002;</p><p>&#x4E0B;&#x56FE;&#x662F;&#x5B98;&#x65B9;&#x7ED9;&#x51FA;&#x7684;&#x539F;&#x59CB;&#x5199;&#xFF08;raw &#xFF09;&#x4E0E;&#x91C7;&#x7528;&#x4E86;MV&#x7684;&#x5199;&#x6027;&#x80FD;&#x5BF9;&#x6BD4;</p><p><img src="assets/cassandra-materialized-view-perf2.png"></p><p>&#x603B;&#x4E4B;&#xFF0C;&#x4F7F;&#x7528;MV&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x4EE5;&#x4E0B;&#x51E0;&#x70B9;&#xFF1A;</p><ul><li>&#x4ECE;MV&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x8DDF;&#x4ECE;&#x539F;&#x59CB;&#x8868;&#x8BFB;&#x6570;&#x636E;&#x7684;&#x6027;&#x80FD;&#x662F;&#x4E00;&#x6837;&#x7684;
+</li>
+<li>&#x5199;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;MV&#x6027;&#x80FD;&#x4F1A;&#x4E0B;&#x964D;10%.
+</li>
+<li>&#x5982;&#x679C;Primary Key &#x53EA;&#x6709;1&#x4E2A;&#xFF0C;MV&#x7684;&#x6027;&#x80FD;&#x8981;&#x597D;&#x4E8E;&#x4EBA;&#x5DE5;&#x53CD;&#x8303;&#x5F0F;&#xFF08;&#x624B;&#x5DE5;&#x7EF4;&#x62A4;&#x591A;&#x5F20;&#x8868;&#xFF09;.
+</li>
+<li>&#x5BF9;&#x4E8E;&#x590D;&#x5408;&#x4E3B;&#x952E;(Compund primary keys)&#xFF0C;MV&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#x8FD8;&#x662F;&#x8981;&#x5FEB;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x590D;&#x5408;&#x4E3B;&#x952E;&#x592A;&#x957F;&#xFF08;&#x6BD4;&#x5982;&gt;100&#xFF09;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4EBA;&#x5DE5;&#x53EF;&#x80FD;&#x8FD8;&#x8981;&#x5FEB;&#x4E00;&#x4E9B;
+</li>
+<li>&#x5982;&#x679C;&#x539F;&#x59CB;&#x8868;&#x6709;&#x5927;&#x89C4;&#x6A21;&#x5220;&#x9664;&#xFF0C;MV&#x9700;&#x8981;&#x53D1;&#x8D77;&#x5F88;&#x591A;CQL&#x6765;&#x67E5;&#x8BE2;&#x4E0E;&#x5220;&#x9664;&#x3002;&#x6027;&#x80FD;&#x53EF;&#x80FD;&#x4F1A;&#x6025;&#x5267;&#x4E0B;&#x964D;
+</li>
+<li>MV&#x4E3B;&#x952E;&#x7684;&#x8BBE;&#x8BA1;&#x8FD8;&#x662F;&#x8981;&#x8003;&#x8651;&#x662F;&#x5426;&#x4F1A;&#x9020;&#x6210;&#x70ED;&#x70B9;&#xFF08;hot spot&#xFF09;&#x3002;hot spot &#x4F9D;&#x7136;&#x4F1A;&#x9020;&#x6210;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;&#x751A;&#x81F3;OOM
+</li>
+<li>&#x5F53;&#x524D;MV&#x4EC5;&#x652F;&#x6301;select&#x3002;
+</li></ul>
+<h3 id="&#x64CD;&#x7EB5;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;">&#x64CD;&#x7EB5;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;</h3><p>&#x8FD1;&#x4E8C;&#x5341;&#x591A;&#x5E74;&#xFF0C;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x90FD;&#x662F;&#x56F4;&#x7ED5;&#x7740;&#x5B9E;&#x4F53;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x3002;&#x6700;&#x8FD1;&#x51E0;&#x5E74;&#xFF0C;&#x4EBA;&#x4EEC;&#x5F00;&#x59CB;&#x7ED9;&#x6570;&#x636E;&#x52A0;&#x5165;<strong>&#x65F6;&#x95F4;</strong>&#x7EF4;&#x5EA6;&#xFF0C;&#x5373;&#x9664;&#x4E86;&#x5B9E;&#x4F53;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5927;&#x5BB6;&#x5F00;&#x59CB;&#x5173;&#x6CE8;&#x8FD9;&#x4E9B;&#x5173;&#x7CFB;&#x662F;&#x5982;&#x4F55;&#x968F;&#x65F6;&#x95F4;&#x53D8;&#x5316;&#x7684;&#x3002;&#x5173;&#x7CFB;&#x578B;&#x5EFA;&#x6A21;&#x548C;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x7684;&#x4E00;&#x4E2A;&#x6709;&#x8DA3;&#x800C;&#x91CD;&#x8981;&#x7684;&#x5DEE;&#x5F02;&#x662F;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x662F;&#x53EF;&#x53D8;&#x7684;&#x800C;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x3002;&#x53EF;&#x53D8;&#x6570;&#x636E;&#x662F;&#x4E0D;&#x7A33;&#x5B9A;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EF;&#x80FD;&#x968F;&#x65F6;&#x6539;&#x53D8;&#x3002;&#x4E3A;&#x4FDD;&#x8BC1;&#x6211;&#x4EEC;&#x6709;&#x6700;&#x65B0;&#x7684;&#x6570;&#x636E;&#x7248;&#x672C;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x590D;&#x6742;&#x3002;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;&#x4E0D;&#x53EF;&#x53D8;&#x6570;&#x636E;&#x662F;&#x7A33;&#x5B9A;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4E0E;&#x968F;&#x65F6;&#x95F4;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x76F8;&#x5173;&#x7684;&#x8BB8;&#x591A;&#x590D;&#x6742;&#x6027;&#x3002;</p><p>&#x4E0B;&#x8FF0;&#x662F;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x4F20;&#x611F;&#x5668;&#x6570;&#x636E;&#x8868;&#x793A;&#x4F8B;&#xFF1A;</p><pre><code>CREATE TABLE sensor_readings (
+      sensorID uuid,
+      time_bucket int,
+      timestamp bigint,
+      reading decimal,
+      PRIMARY KEY ((sensorID, time_bucket), timestamp)
+   ) WITH CLUSTERING ORDER BY (timestamp DESC);</code></pre>
+<h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3><ul><li><a href="https://pandaforme.gitbooks.io/introduction-to-cassandra/content/understand_the_cassandra_data_model.html" target="_blank">https://pandaforme.gitbooks.io/introduction-to-cassandra/content/understand_the_cassandra_data_model.html</a>
+</li>
+<li><a href="http://www.flyml.net/2016/10/30/cassandra-tutorial-materialized-view" target="_blank">http://www.flyml.net/2016/10/30/cassandra-tutorial-materialized-view</a>
+</li>
+<li><a href="https://opencredo.com/cassandra-data-modelling-patterns/" target="_blank">https://opencredo.com/cassandra-data-modelling-patterns/</a>
+</li></ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="dcos-service-cassandra.html" class="navigation navigation-prev " aria-label="Previous page: Cassandra on DC/OS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="dcos-service-kafka.html" class="navigation navigation-next " aria-label="Next page: Kafka on DC/OS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"数据建模","level":"3.6.1","depth":2,"next":{"title":"Kafka on DC/OS","level":"3.7","depth":1,"path":"dcos-service-kafka.md","ref":"dcos-service-kafka.md","articles":[]},"previous":{"title":"Cassandra on DC/OS","level":"3.6","depth":1,"path":"dcos-service-cassandra.md","ref":"dcos-service-cassandra.md","articles":[{"title":"数据建模","level":"3.6.1","depth":2,"path":"dcos-service-cassandra-modeling.md","ref":"dcos-service-cassandra-modeling.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dcos-service-cassandra-modeling.md","mtime":"2017-02-08T10:26:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-02-08T10:26:40.770Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
