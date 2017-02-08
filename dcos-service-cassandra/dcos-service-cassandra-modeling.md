@@ -6,6 +6,42 @@
 
 大多数传统的关系型数据库使用表格方法存储数据，它支持的各种随机访问查询。但是随机磁盘I/O往往是一个显著的瓶颈，因此，为了确保分布式写性能，Cassandra采用**日志结构的存储引擎**，这可以让它将数据顺序写入**提交日志**和Cassandra的持久存储结构**SSTables**。
 
+### 数据模型
+
+Cassandra的数据模型:
+
+- 列族作为存储和组织数据的方式
+- 表作为一个多维列族的二维视图
+- 使用Cassandra查询语言（CQL）对表进行操作
+
+#### Row(Partition)
+
+![](/assets/cassandra-concept-row.png)
+
+#### Key (Partition Key)
+
+1. Composite row key
+
+![](/assets/cassandra-concept-key-composite.png)
+
+2. Composite column key
+
+![](/assets/cassandra-concept-column-composite.png)
+
+#### Column family (Table)
+
+![](/assets/cassandra-concept-column-family.png)
+
+#### Table with single-row partitions
+
+![](/assets/cassandra-concept-table-single-row.png)
+
+#### Table with multi-row partitions
+
+![](/assets/cassandra-concept-table-multi-row.png)
+
+**注意，请结合下述内容对上述概念进行理解。**
+
 ### 日志结构存储工作机制
 
 Cassandra接收到一次写操作请求时，它会将数据同时写入提交日志和一个称为**memtable**的内存表。提交日志可以确保Cassandra的可靠性，Memtables会周期性的写入磁盘以不可变的SSTables形式保存。
