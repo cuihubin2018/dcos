@@ -141,7 +141,8 @@ CREATE TABLE authors (
 在深入理解底层的存储转换之前，先来理解两个概念：**partion keys** 和 **clustering columns**。
 
 - **Partion keys**
-
+ 
+ 在声明主键时，主键列表中的第一个字段必定是分区关键字。这个关键字
 - **Clustering columns**
 
  
