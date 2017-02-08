@@ -20,11 +20,11 @@ Cassandra的数据模型:
 
 #### Key (Partition Key)
 
-1. Composite row key
+- Composite row key
 
 ![](/assets/cassandra-concept-key-composite.png)
 
-2. Composite column key
+- Composite column key
 
 ![](/assets/cassandra-concept-column-composite.png)
 
@@ -521,3 +521,7 @@ MV的工作机制如下图所示：
 ```
 CREATE TABLE sensor_readings (      sensorID uuid,      time_bucket int,      timestamp bigint,      reading decimal,      PRIMARY KEY ((sensorID, time_bucket), timestamp)   ) WITH CLUSTERING ORDER BY (timestamp DESC);
 ```
+
+### 参考
+- https://opencredo.com/cassandra-data-modelling-patterns/
+- https://pandaforme.gitbooks.io/introduction-to-cassandra/content/understand_the_cassandra_data_model.html
