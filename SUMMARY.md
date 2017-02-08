@@ -12,7 +12,7 @@
   * [GUI安装](dcos-install-by-gui.md)
   * [通过CLI安装](dcos-install-by-cli.md)
   * [高级安装](dcos-install-by-advanced-mode.md)
-    * [高级安装配置](dcos-install-by-advanced-mode/dcos-install-by-advanced-mode-config.md)
+    * [高级安装配置](dcos-install-by-advanced-mode-config.md)
   * [备份安装文件](dcos-install-backup-installer-file.md)
 * [FAQ](dcos-install-faq.md)
 
@@ -101,7 +101,7 @@
   * [访问Storm集群](dcos-service-storm-clients.md)
 * [HDFS on DC/OS](dcos-service-hdfs.md)
 * [Cassandra on DC/OS](dcos-service-cassandra.md)
-  * [数据建模](dcos-service-cassandra/dcos-service-cassandra-modeling.md)
+  * [数据建模](dcos-service-cassandra-modeling.md)
 * [Kafka on DC/OS](dcos-service-kafka.md)
 * [Spark on DC/OS](dcos-service-spark.md)
 
@@ -112,7 +112,7 @@
   * [DC/OS 管理UI](dcos-admin-ui.md)
 * [集群维护](dcos-install-maintainance.md)
   * [Agent节点管理](dcos-install-nodes-management.md)
-    * [节点维护](dcos-install-nodes-management/dcos-install-nodes-management-maintenance.md)
+    * [节点维护](dcos-install-nodes-management-maintenance.md)
   * [集群卸载](dcos-install-m-uninstall-all.md)
   * [集群升级](dcos-install-upgrading.md)
 * [监控管理](dcos-admin-monitoring.md)
