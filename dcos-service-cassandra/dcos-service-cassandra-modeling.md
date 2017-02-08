@@ -10,7 +10,7 @@
 
 Cassandra接收到一次写操作请求时，它会将数据同时写入提交日志和一个称为**memtable**的内存表。提交日志可以确保Cassandra的可靠性，Memtables会周期性的写入磁盘以不可变的SSTables形式保存。
 
-保存在SSTables中的数据拆分为扇区（这些扇区对应着Primary Key）并按列名称排序。这一点非常重要，本节后续部分会详细探讨。提交日志仅在节点重新启动时用于恢复未及时写入SSTables的数据。
+保存在SSTables中的数据拆分为分区（这些分区对应着Primary Key）并按列名称排序。这一点非常重要，本节后续部分会详细探讨。提交日志仅在节点重新启动时用于恢复未及时写入SSTables的数据。
 
 这种存储方案的性能有几个与数据建模有重要的影响：
 
@@ -51,7 +51,7 @@ Cassandra接收到一次写操作请求时，它会将数据同时写入提交�
 
 ### 理解压缩（Compaction）
 
-Cassandra通过一种称之为压缩（Compaction）的机制来处理随着时间推移而不断膨胀的SSTables。压缩将分散在多个文件中的扇区（partitions）聚合成一个文件，并删除旧的数据，丢弃tombstones。释放空间仅是其中的一个目的，另一个重要的原因是通过将数据转移到一个SSTables中，可以降低跨文件或节点读取Key的磁盘I/O从而显著提高读的性能。
+Cassandra通过一种称之为压缩（Compaction）的机制来处理随着时间推移而不断膨胀的SSTables。压缩将分散在多个文件中的分区（partitions）聚合成一个文件，并删除旧的数据，丢弃tombstones。释放空间仅是其中的一个目的，另一个重要的原因是通过将数据转移到一个SSTables中，可以降低跨文件或节点读取Key的磁盘I/O从而显著提高读的性能。
 
 Cassandra提供了多种压缩策略，自3.8（或3.0.8）开始新增了**Time-window**压缩策略用于取代**Date-tiered**压缩策略。
 
@@ -102,7 +102,7 @@ INSERT INTO books (title, author, year) VALUES ('Without Remorse', 'Tom Clancy',
 
 在存储层，数据用一个Row Key即title和一个name/value组成的列集合表示。每个列都有一个时间戳用于处理冲突。
 
-系统存储时根据Row Key的哈希值在Cassandra集群节点中分布式存储，因此查询返回的结果是无序的。相对比之下，列集合中的数据是根据列名称按自然语言顺序排列的。因此上例中author排在year的前面。**这一点对于构建高效的数据模型至关重要**。
+系统存储时根据Row Key的哈希值在Cassandra集群节点中分布式存储，因此查询返回的结果是无序的。相对比之下，列集合中的数据是根据列名称按自然语言顺序排列的。因此上例中**author**排在**year**的前面。**这一点对于构建高效的数据模型至关重要**。
 
 ```
 Row Key: Without Remorse 
@@ -116,7 +116,7 @@ Row Key: Patriot Games
  
 #### Compound Keys
 
-下面看一个authors表，这个表使用name，year和title作为组合主键。
+下面看一个authors表，这个表使用**name**，**year**和**title**作为组合主键。
 
 ```
 CREATE TABLE authors ( 
@@ -232,7 +232,7 @@ Row Key: Tom Clancy: 1987
 
 在关系型数据建模时，结构规范化是要优先考虑的。与之不同，**在Cassandra中进行建模时，数据如何查询是优先考虑的**，这一原则必须牢记。
 
-
+### 理解CQL查询
 
 下面以下述authors表模型介绍CQL的各种查询：
 
@@ -276,9 +276,9 @@ SELECT * FROM authors WHERE name = 'Tom Clancy' AND year > = 1993;
 2. 以分区Key或者分区Key与Clustering columns组合条件的查询在存储层是顺序查询，这也意味着这类查询是优化的。
 3. 尽量按照你读数据的方式去写数据。这与关系型数据库建模是不同的。
 
-#### 拥抱反规范化
+#### 拥抱反范式
 
-关系型数据库中的规范化建模在很大程度上会导致客户端使用联合查询（joins）。以authors表为例，author和book的一对多关系会要求将books建为另一张表，每个表都有一个ID主键，books表有一个authorID作为外键。
+关系型数据库中的范式建模在很大程度上会导致客户端使用联合查询（joins）。以authors表为例，author和book的一对多关系会要求将books建为另一张表，每个表都有一个ID主键，books表有一个authorID作为外键。
 
 ```
 CREATE TABLE authors ( authorID int, name varchar( 50), PRIMARY KEY (authorID) )
