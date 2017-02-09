@@ -152,6 +152,7 @@
 * [微服务](dcos-usage-microservice.md)
   * [架构与模式](dcos-usage-microservice-arch-patterns.md)
     * [API管理](dcos-usage-microservice-arch-patterns-api.md)
+      * [API网关](dcos-usage-microservice-arch-patterns-api-gateway.md)
       * [API文档自动化](dcos-usage-microservice-arch-patterns-api-docs.md)
   * [微服务框架](dcos-usage-microservice-frameworks.md)
     * [Spring Boot/Cloud](dcos-usage-microservice-frameworks-spring-cloud.md)

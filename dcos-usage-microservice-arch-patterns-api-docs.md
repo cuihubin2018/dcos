@@ -4,8 +4,6 @@
 
 API描述文档有两种获取模式，一种是动态模式，可以根据运行的代码动态生成API描述，这对OpenAPI开放平台特别有用；另一种是静态模式，以HTML文档等形式展现。这两种模式都遵循一个原则：API描述信息的基准是源代码。多源头维护API描述的方式在实践中往往会产生不一致，滞后，最终会成为一种负担。
 
-微服务的API接口根据不同的业务需求有不同的技术实现选择，当前常用的有HTTP/REST，RPC/gRPC，Thrift等。
-
 ### REST API
 
 通过[Swagger](http://swagger.io/)，[ReDoc](https://github.com/Rebilly/ReDoc)等工具，可以为REST风格的接口自动生成API接口描述，并依此生成清晰的API文档。Swagger是一个规范和完整的框架，用于生成、描述、调用和可视化**RESTful**风格的Web服务。ReDoc是一款根据OpenAPI/Swagger生成的API接口描述文件生成API参考文档的工具。
