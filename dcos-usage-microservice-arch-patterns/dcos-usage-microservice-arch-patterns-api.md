@@ -10,7 +10,15 @@ API描述文档有两种获取模式，一种是动态模式，可以根据运�
 
 #### REST API
 
-通过[Swagger](http://swagger.io/)，[ReDoc](https://github.com/Rebilly/ReDoc)等工具，可以为REST接口自动生成API接口描述，并依此生成清晰的API文档。Swagger是一个规范和完整的框架，用于生成、描述、调用和可视化**RESTful**风格的 Web 服务。ReDoc是一款根据OpenAPI/Swagger生成的API接口描述文件生成API参考文档的工具。
+通过[Swagger](http://swagger.io/)，[ReDoc](https://github.com/Rebilly/ReDoc)等工具，可以为REST风格的接口自动生成API接口描述，并依此生成清晰的API文档。Swagger是一个规范和完整的框架，用于生成、描述、调用和可视化**RESTful**风格的Web服务。ReDoc是一款根据OpenAPI/Swagger生成的API接口描述文件生成API参考文档的工具。
+
+遵循前述API描述信息的来源基准是源代码的原则，我们以Spring/Spring Boot/Spring Cloud项目作为实现API文档自动化的载体来探讨API接口描述的两种获取模式。
+
+** 动态API文档 **
+
+** 静态API文档 **
+
+** API文档自动化实践 **
 
 
 
