@@ -4,3 +4,6 @@ API网关在网络拓扑中位于客户端和后端服务之间，当前互联�
 
 ### KONG
 
+### 整合微服务，Marathon-LB 和 KONG
+
+通过订阅Marathon的事件，配合微服务部署时设定的LABEL信息，微服务实现可以将服务的REST接口描述（通过Swagger提供）注册到KONG。
