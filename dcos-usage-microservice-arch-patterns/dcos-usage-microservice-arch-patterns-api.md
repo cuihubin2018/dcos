@@ -8,4 +8,5 @@
 
 #### REST API
 
-通过Swagger，ReDoc等工具，可以为REST接口自动生成API接口描述，并生成清晰的API文档。
+通过[Swagger](http://swagger.io/)，[ReDoc](https://github.com/Rebilly/ReDoc)等工具，可以为REST接口自动生成API接口描述，并依此生成清晰的API文档。Swagger是一个规范和完整的框架，用于生成、描述、调用和可视化**RESTful**风格的 Web 服务。ReDoc是一款根据OpenAPI/Swagger生成的API接口描述文件生成API参考文档的工具。
+
