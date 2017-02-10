@@ -28,6 +28,16 @@ Kong提供了API支持用户自定义插件扩展，并实现了众多的插件�
 - 日志记录
   TCP，UDP，HTTP，文件日志，Syslog，StatsD和Loggly。
 
-### 整合微服务，Marathon-LB 和 KONG
+### API网关 和 DC/OS
+
+![](/assets/dcos-api-gateway-deployments.png)
+
+如上图所示，API网关与DC/OS的整合存在两种模式，在模式1中，API网关独立于DC/OS集群之外，Marathon-LB部署于公开节点上作为外部负载均衡服务；在模式2中，API网关位于在DC/OS集群内部，部署在公开节点上，Marathon-LB作为内部负载均衡服务。
+
+#### KONG in DC/OS
+
+
+
+#### 服务自动注册
 
 通过订阅Marathon的事件，配合微服务部署时设定的LABEL信息，微服务实现可以将服务的REST接口描述（通过Swagger提供）注册到KONG。
