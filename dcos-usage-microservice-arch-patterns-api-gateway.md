@@ -134,6 +134,10 @@ docker run -d -p 8080:8080 pgbi/kong-dashboard npm start -- -a user=password
 ![](/assets/kong-dashboard-apis-plugin.png)
 
 
+#### 主要功能
+
+KONG作为API网关，其核心功能是代理客户端的请求并通过丰富的插件进行处理，此外KONG还支持集群部署，CLI命令行管理，丰富的管理API便于第三方集成以及插件开发API便于用户开发自己的处理插件。详细信息请参考[官方文档](https://getkong.org/docs/)。
+
 ### API网关 和 DC/OS
 
 ![](/assets/dcos-api-gateway-deployments.png)
