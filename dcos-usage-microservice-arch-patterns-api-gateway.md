@@ -165,8 +165,9 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
   部署KONG所需要的Cassandra存储（也可以使用PostgreSQL）：
   
   ```
-  dcos package install marathon-lb
+  dcos package install cassandra
   ```
+  **注意**，Kong 0.9.x（含）之前的版本仅支持Cassandra 2.2，Kong 0.10开始支持Cassandra 3.x。
   
   部署KONG：
   
