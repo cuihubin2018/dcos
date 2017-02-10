@@ -303,6 +303,58 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
   
 5. 部署Kong Dashboard管理程序：
 
+  ```json
+  {
+    "id": "/kong-dashboard",
+    "instances": 1,
+    "cpus": 0.1,
+    "mem": 128,
+    "disk": 0,
+    "container": {
+      "docker": {
+        "image": "pgbi/kong-dashboard",
+        "forcePullImage": false,
+        "privileged": false,
+        "portMappings": [
+          {
+            "containerPort": 8080,
+            "protocol": "tcp",
+            "servicePort": 10305,
+            "labels": {
+              "VIP_0": "/kong-dashboard:8080"
+            }
+          }
+        ],
+        "network": "BRIDGE"
+      }
+    },
+    "healthChecks": [
+      {
+        "protocol": "HTTP",
+        "path": "/",
+        "gracePeriodSeconds": 60,
+        "intervalSeconds": 60,
+        "timeoutSeconds": 30,
+        "maxConsecutiveFailures": 3,
+        "ignoreHttp1xx": false
+      }
+    ],
+    "labels": {
+      "HAPROXY_GROUP": "internal"
+    },
+    "portDefinitions": [
+      {
+        "port": 10305,
+        "protocol": "tcp",
+        "labels": {}
+      }
+    ],
+  }
+  ```
+
+6. 检查KONG网关是否正常工作
+
+  通过Kong Dashboard向API网关添加API接口，访问接口检查是否正常。
 
 #### 服务自动注册
 
