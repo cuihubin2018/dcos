@@ -6,7 +6,9 @@ API网关在网络拓扑中位于客户端和后端服务之间，当前互联�
 
 Kong是一个通过[lua-nginx-module](https://github.com/openresty/lua-nginx-module)实现的在Nginx中运行的Lua应用程序。Kong没有使用lua-nginx-module直接编译Nginx，而是基于[OpenResty](https://openresty.org/)，与已经包含了lua-nginx-module的OpenResty一起分发。
 
-KONG支持用Cassandra和Postgresql作为数据存储服务器，负载存储来自Kong操作的数据，同时，借助于Nginx，OpenResty和Lua插件体系，Kong作为API网关具备了高性能，高扩展性和灵活性。Kong提供了API支持用户自定义插件扩展，并实现了众多的插件支持API网关的职能：
+KONG支持用Cassandra和Postgresql作为数据存储服务器，负载存储来自Kong操作的数据，同时，借助于Nginx，OpenResty和Lua插件体系，Kong作为API网关具备了高性能，高扩展性和灵活性。
+
+Kong提供了API支持用户自定义插件扩展，并实现了众多的插件支持API网关的职能：
 
 - 认证
   HTTP基本认证，密钥认证，OAuth，JWT，HMAC和LDAP
