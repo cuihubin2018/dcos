@@ -148,10 +148,160 @@ KONG作为API网关，其核心功能是代理客户端的请求并通过丰富�
 
 KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署也可以按模式2进行。按模式2部署时，API网关是单实例覆盖全业务还是按业务进行实例拆分也可以根据实际需求进行调整。
 
-下述步骤按单实例覆盖全业务的模式进行部署实践，其他场景可以根据实际需要调整。
+下述步骤按单实例覆盖全业务的模式进行部署实践，其他场景可以根据实际需要调整。在此场景中，客户端请求的流动过程如下：
 
+```
+客户端请求  <--->  Marathon-LB (“external”) <--->  KONG  <--->  Marathon-LB (“internal”)  <--->  内部服务
+```
 
+1. 部署Marathon-LB (“external”)：
 
+  ```
+  dcos package install marathon-lb
+  ```
+  
+2. 部署KONG：
+
+  部署KONG所需要的Cassandra存储（也可以使用PostgreSQL）：
+  
+  ```
+  dcos package install marathon-lb
+  ```
+  
+  部署KONG：
+  
+  ```
+  dcos marathon app add kong.json
+  ```
+  
+  KONG的Marathon应用程序JSON定义如下：
+  
+  ```json
+  {
+    "id": "/kong",
+    "cmd": "KONG_NGINX_DAEMON=\"off\" KONG_CLUSTER_ADVERTISE=$HOST:$PORT3  kong start",
+    "cpus": 1,
+    "mem": 512,
+    "disk": 0,
+    "instances": 1,
+    "acceptedResourceRoles": [
+      "*"
+    ],
+    "container": {
+      "type": "DOCKER",
+      "volumes": [],
+      "docker": {
+        "image": "kong",
+        "network": "BRIDGE",
+        "portMappings": [
+          {
+            "containerPort": 8000,
+            "hostPort": 0,
+            "servicePort": 10001,
+            "protocol": "tcp",
+            "name": "proxy",
+            "labels": {}
+          },
+          {
+            "containerPort": 8001,
+            "hostPort": 0,
+            "servicePort": 10002,
+            "protocol": "tcp",
+            "name": "admin",
+            "labels": {}
+          },
+          {
+            "containerPort": 8443,
+            "hostPort": 0,
+            "servicePort": 10003,
+            "protocol": "tcp",
+            "name": "ssl",
+            "labels": {}
+          },
+          {
+            "containerPort": 7946,
+            "hostPort": 0,
+            "servicePort": 10004,
+            "protocol": "tcp,udp",
+            "name": "serf",
+            "labels": {}
+          }
+        ],
+        "privileged": false,
+        "parameters": [],
+        "forcePullImage": true
+      }
+    },
+    "env": {
+      "KONG_CASSANDRA_CONTACT_POINTS": "node.cassandra.l4lb.thisdcos.directory",
+      "KONG_DATABASE": "cassandra"
+    },
+    "healthChecks": [
+      {
+        "protocol": "TCP",
+        "portIndex": 1,
+        "gracePeriodSeconds": 300,
+        "intervalSeconds": 60,
+        "timeoutSeconds": 20,
+        "maxConsecutiveFailures": 3,
+        "ignoreHttp1xx": false
+      }
+    ],
+    "labels": {
+      "HAPROXY_1_GROUP": "external",
+      "HAPROXY_0_GROUP": "external"
+    },
+    "portDefinitions": [
+      {
+        "port": 10001,
+        "protocol": "tcp",
+        "name": "proxy",
+        "labels": {}
+      },
+      {
+        "port": 10002,
+        "protocol": "tcp",
+        "name": "admin",
+        "labels": {}
+      },
+      {
+        "port": 10003,
+        "protocol": "tcp",
+        "name": "ssl",
+        "labels": {}
+      },
+      {
+        "port": 10004,
+        "protocol": "udp",
+        "name": "serf-udp",
+        "labels": {}
+      }
+    ]
+  }
+  ```
+
+3. 部署Marathon-LB (“internal”)：
+
+  ```
+  dcos package install --options=marathon-lb-internal.json marathon-lb
+  ```
+  对应的Marathon应用JSON定义如下：
+
+  ```json
+  {
+    "marathon-lb":{
+      "name":"marathon-lb-internal",
+      "haproxy-group":"internal",
+      "bind-http-https":false,
+      "role":""
+    }
+  }
+  ```
+
+4. 部署内部服务
+  注意，本方案里用 **“internal”** Marathon-LB作为内部应用服务的负载均衡器，因此在部署应用服务时，在LABEL中“HAPROXY_GROUP”的值应设置为**“internal”**。
+  
+5. 部署Kong Dashboard管理程序：
 
 
 #### 服务自动注册
