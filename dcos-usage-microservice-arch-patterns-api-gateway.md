@@ -162,12 +162,62 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
   
 2. 部署KONG：
 
-  部署KONG所需要的Cassandra存储（也可以使用PostgreSQL）：
+  部署KONG所需要的Cassandra存储（也可以使用PostgreSQL）。
   
-  ```
-  dcos package install cassandra
-  ```
   **注意**，Kong 0.9.x（含）之前的版本仅支持Cassandra 2.2，Kong 0.10开始支持Cassandra 3.x。
+  
+  下述是Cassandra 2.2的应用部署JSON定义：
+  
+  ```json
+  {
+    "id": "/kong/cassandra2",
+    "instances": 1,
+    "cpus": 0.5,
+    "mem": 2048,
+    "disk": 0,
+    "container": {
+      "docker": {
+        "image": "cassandra:2.2",
+        "forcePullImage": false,
+        "privileged": false,
+        "portMappings": [
+          {
+            "containerPort": 9042,
+            "protocol": "tcp",
+            "hostPort": 9042,
+            "servicePort": 10121
+          }
+        ],
+        "network": "BRIDGE"
+      },
+      "type": "DOCKER",
+      "volumes": [
+        {
+          "containerPath": "/var/lib/cassandra",
+          "hostPath": "/data/cassandra/2.2",
+          "mode": "RW"
+        }
+      ]
+    },
+    "healthChecks": [
+      {
+        "protocol": "TCP",
+        "gracePeriodSeconds": 60,
+        "intervalSeconds": 30,
+        "timeoutSeconds": 30,
+        "maxConsecutiveFailures": 3
+      }
+    ],
+    "portDefinitions": [
+      {
+        "port": 10121,
+        "protocol": "tcp",
+        "labels": {}
+      }
+    ],
+    "requirePorts": false
+  }
+  ```
   
   部署KONG：
   
@@ -302,6 +352,8 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
 4. 部署内部服务
   注意，本方案里用 **“internal”** Marathon-LB作为内部应用服务的负载均衡器，因此在部署应用服务时，在LABEL中“HAPROXY_GROUP”的值应设置为**“internal”**。
   
+  本例使用3个Nginx实例作为服务示例。
+  
 5. 部署Kong Dashboard管理程序：
 
   ```json
@@ -356,6 +408,19 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
 6. 检查KONG网关是否正常工作
 
   通过Kong Dashboard向API网关添加API接口，访问接口检查是否正常。
+  
+7. 部署完成后，服务实例列表如下：
+
+ ![](/assets/dcos-api-gateway-kong-service-list.png)
+ 
+8. **结论**： 部署完成后，外部客户端通过外部MLB（192.168.1.51:10031）访问API网关KONG（192.168.1.81），KONG将请求代理给内部MLB（192.168.1.80）,内部MLB为三个Nginx服务（微服务示例）提供负载均衡。
+
+ ![](/assets/dcos-api-gateway-kong-service-api.png)
+ 
+ 通过以下CURL命令测试：
+ ```
+ curl -i -X GET --url http://192.168.1.51:10301/ --header 'Host: 192.168.1.80'
+ ```
 
 #### 服务自动注册
 
