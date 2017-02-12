@@ -422,11 +422,11 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
  curl -i -X GET --url http://192.168.1.51:10301/ --header 'Host: 192.168.1.80'
  ```
 
-#### 网关功能实践
+#### API Metrics
 
+在DC/OS之管理的监控管理章节，我们推荐使用Prometheus实现Metrics的存储分析与告警。Prometheus提供了丰富的客户端组件可以很容易的实现指标的采集。但是，当前KONG没有提供与Prometheus集成的插件，不过，Github上存在一个[nginx-lua-prometheus](https://github.com/knyar/nginx-lua-prometheus)项目，通过LUA实现了采集Nginx指标供Prometheus拉取。因此，一种可选方案是，通过改造nginx-lua-prometheus作为KONG的插件，实现API的指标度量与采集。
 
-
-#### 服务自动注册
+#### API自动注册
 
 通过订阅Marathon的事件，配合微服务部署时设定的LABEL信息，微服务实现可以将服务的REST接口描述（通过Swagger提供）注册到KONG。
 
