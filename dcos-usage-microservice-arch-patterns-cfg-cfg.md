@@ -17,21 +17,37 @@ cfg4j主要包括以下特性：
 
 ### 功能示例
 
-下述代码使用依赖注入在Spring框架中启用cfg4j配置服务：
+#### 添加依赖
+
+```xml
+<dependencies>
+  <dependency>
+    <groupId>org.cfg4j</groupId>
+    <artifactId>cfg4j-core</artifactId>
+    <version>4.4.0</version>
+  </dependency>
+  
+  <!-- Optional plug-ins -->
+  
+  <!-- Consul integration -->
+  <dependency> 
+    <groupId>org.cfg4j</groupId>
+    <artifactId>cfg4j-consul</artifactId>
+    <version>4.4.0</version>
+  </dependency>
+  
+  <!-- Git integration -->
+  <dependency>
+    <groupId>org.cfg4j</groupId>
+    <artifactId>cfg4j-git</artifactId>
+    <version>4.4.0</version>
+  </dependency>
+</dependencies>
+```
+
+#### 初始化配置服务
 
 ```java
-import org.cfg4j.provider.ConfigurationProvider;
-import org.cfg4j.provider.ConfigurationProviderBuilder;
-import org.cfg4j.source.ConfigurationSource;
-import org.cfg4j.source.consul.ConsulConfigurationSourceBuilder;
-import org.cfg4j.source.context.environment.ImmutableEnvironment;
-import org.cfg4j.source.reload.strategy.PeriodicalReloadStrategy;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 
 @Configuration
 class Cfg4jBeansConfig {
@@ -74,7 +90,7 @@ class Cfg4jBeansConfig {
 }
 ```
 
-通过配置对象注入配置，而不是直接提供配置。这里也有两种方案：
+应用通过配置对象注入配置，而不是直接提供配置。这里也有两种方案：
 
 - 直接注入配置（配置变更时不会自动更新）
 
@@ -97,8 +113,160 @@ if(queryEmpty()) {
 }
 ```
 
+#### 访问配置
 
-详细示例请参考[cfg4j官方文档](http://www.cfg4j.org/releases/latest/)。
+直接获取原始类型的配置：
+
+```java
+Boolean property = provider.getProperty("some.property", Boolean.class); // some.property=false
+
+Integer property = provider.getProperty("some.other.property", Integer.class); // some.other.property=1234
+
+float[] floats = provider.getProperty("my.floatsArray", float[].class); // my.floatsArray=1.2,99.999,0.15
+
+URL url = provider.getProperty("my.url", URL.class); // my.url=http://www.cfg4j.org
+```
+
+直接获取集合类型的配置：
+
+```java
+List<String> stringList = provider.getProperty("some.string.list", new GenericType<List<String>>() {}); // some.string.list=how,are,you
+
+Map<String, Integer> pairs = provider.getProperty("some.map", new GenericType<Map<String, Integer>>() {}); // some.map=a=1,b=33,c=-10
+```
+
+直接获取配置对象：
+
+```java
+// Define your configuration interface
+public interface MyConfiguration {
+  Boolean featureToggle();
+  File[] someFiles();
+  Map<String, Integer> prices();
+}
+
+// someFeature.featureToggle=true
+// someFeature.someFiles=/temp/fileA.txt,/temp/fileB.txt
+// someFeature.prices=apple=1,candy=33,car=10
+MyConfiguration config = simpleConfigurationProvider.bind("someFeature", MyConfiguration.class);
+
+// Use it (when configuration changes your object will be auto-updated!)
+if(config.featureToggle()) {
+  ...
+}
+```
+
+#### 配置刷新
+
+定时刷新配置：
+
+```java
+// Reload every second
+ConfigurationProvider provider = new ConfigurationProviderBuilder()
+        .withConfigurationSource(...)
+        .withReloadStrategy(new PeriodicalReloadStrategy(1, TimeUnit.SECONDS))
+        .build();
+```
+
+自定义触发刷新配置：
+
+```java
+// Implement your strategy
+public class MyReloadStrategy implements ReloadStrategy {
+
+  public void register(Reloadable resource) {
+      ...
+      resource.reload();
+      ...
+  }
+
+}
+
+ConfigurationProvider provider = new ConfigurationProviderBuilder()
+        .withReloadStrategy(new MyReloadStrategy())
+        .build();
+```
+
+#### 环境切换
+
+cfg4j使用Environment告诉配置服务配置文件的存储位置。通过Environment可以切换不同的环境获取各自对应的配置。
+
+```java
+ConfigurationProvider provider = new ConfigurationProviderBuilder()
+        .withConfigurationSource(new ConsulConfigurationSourceBuilder().build())
+        .withEnvironment(new ImmutableEnvironment("myApplication/prod"))  // each conf variable will be prefixed with this value when fetching from Consul
+        .build();
+```
+
+#### 不同配置文件的支持
+
+cfg4j使用ConfigurationSource读取配置文件的内容时，能够通过文件的扩展名(.properties 或.yaml)自动识别是Properties文件还是YAML文件。
+
+#### 从多个配置源中合并配置
+
+```java
+ConfigurationSource source1 = ...
+ConfigurationSource source2 = ...
+
+ConfigurationSource mergedSource = new MergeConfigurationSource(source1, source2);
+
+```
+
+#### 故障情况下回退
+
+在分布式环境中工作时，故障很难避免，因此，可以考虑使用多个来源，当一个失败时，另一个将被用作后备。
+
+```java
+ConfigurationSource source1 = ...
+ConfigurationSource source2 = ...
+
+ConfigurationSource mergedSource = new FallbackConfigurationSource(source1, source2);
+
+```
+
+
+更多详细示例请参考[cfg4j官方文档](http://www.cfg4j.org/releases/latest/)。
+
+### 快速开发
+
+在本地开发时，可以通过以下方式加快开发速度：
+
+向项目中添加一个临时配置文件，并使用cfg4j的MergeConfigurationSource从配置存储和文件读取配置。通过将本地文件设置为主配置源，cfg4j可以使用覆盖机制，如果在文件中找到该属性，将使用它，否则，将回退到使用配置存储中的值。
+
+```java
+@Bean
+ConfigurationProvider configurationProvider(ConfigurationSource configurationSource,
+                                           @Value("${configuration.environment}") String configurationEnvironment) {
+
+ ConfigurationSource localOverrideSource = new FilesConfigurationSource(() -> Collections.singletonList(Paths.get("application.properties")));
+ MergeConfigurationSource mergeConfigurationSource = new MergeConfigurationSource(localOverrideSource, configurationSource);
+
+ return new ConfigurationProviderBuilder()
+     .withConfigurationSource(mergeConfigurationSource)
+     .withEnvironment(new ImmutableEnvironment("app/" + configurationEnvironment + "/feature"))
+     .withReloadStrategy(new PeriodicalReloadStrategy(30, TimeUnit.SECONDS))
+     .build();
+}
+```
+
+可以Fork一个配置库，对fork库的配置进行更改，并使用cfg4j的GitConfigurationSource直接访问它（不需要推送缓存）。
+
+```java
+@Bean
+ConfigurationProvider configurationProvider(@Value("${configuration.environment}") String configurationEnvironment) {
+ ConfigurationSource GitSource = new GitConfigurationSourceBuilder()
+     .withRepositoryURI("https://Github.com/myUser/my-config-fork.Git")
+     .build();
+
+ return new ConfigurationProviderBuilder()
+     .withConfigurationSource(GitSource)
+     .withEnvironment(new ImmutableEnvironment("app/" + configurationEnvironment + "/feature"))
+     .withReloadStrategy(new PeriodicalReloadStrategy(30, TimeUnit.SECONDS))
+     .build();
+}
+```
+
+设置一个私有的推送缓存，将开发的服务指向该缓存，并直接在缓存修改配置。
 
 ### 参考
 
