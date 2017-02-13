@@ -155,6 +155,7 @@
       * [API网关](dcos-usage-microservice-arch-patterns-api-gateway.md)
       * [API文档自动化](dcos-usage-microservice-arch-patterns-api-docs.md)
     * [配置管理](dcos-usage-microservice-arch-patterns-cfg.md)
+      * [配置管理](dcos-usage-microservice-arch-patterns-cfg-cfg.md)
       * [Secrets管理](dcos-usage-microservice-arch-patterns-cfg-secrets.md)
     * [指标聚合](dcos-usage-microservice-arch-patterns-metrics.md)
     * [日志归集](dcos-usage-microservice-arch-patterns-logging.md)
