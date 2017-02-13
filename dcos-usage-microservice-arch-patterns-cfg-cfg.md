@@ -15,7 +15,85 @@ cfg4j主要包括以下特性：
 - 多DI框架支持：支持Spring，Guice等多种DI。
 
 
+### 功能示例
 
+下述代码使用依赖注入在Spring框架中启用cfg4j配置服务：
+
+```java
+import org.cfg4j.provider.ConfigurationProvider;
+import org.cfg4j.provider.ConfigurationProviderBuilder;
+import org.cfg4j.source.ConfigurationSource;
+import org.cfg4j.source.consul.ConsulConfigurationSourceBuilder;
+import org.cfg4j.source.context.environment.ImmutableEnvironment;
+import org.cfg4j.source.reload.strategy.PeriodicalReloadStrategy;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
+
+@Configuration
+class Cfg4jBeansConfig {
+
+  @Value("${configuration.endpoint.protocol:http}")
+  private String configurationEndpointProtocol;
+
+  @Value("${configuration.endpoint.hostname:youForgotToSpecifyHost}")
+  private String configurationEndpoint;
+
+  @Value("${configuration.endpoint.port:8500}")
+  private int configurationEndpointPort;
+
+  @Bean
+  ConfigurationSource globalConfigurationSource() throws MalformedURLException {
+    return new ConsulConfigurationSourceBuilder()
+        .withHost(configurationEndpoint)
+        .withPort(configurationEndpointPort)
+        .build();
+  }
+
+  @Bean
+  ConfigurationProvider configurationProvider(ConfigurationSource configurationSource,
+                                              @Value("${configuration.environment}") String configurationEnvironment) {
+    return new ConfigurationProviderBuilder()
+        .withConfigurationSource(configurationSource)
+        .withEnvironment(new ImmutableEnvironment("app/" + configurationEnvironment + "/feature"))
+        .withReloadStrategy(new PeriodicalReloadStrategy(30, TimeUnit.SECONDS))
+        .build();
+  }
+
+  public interface SearchConfig {
+    String defaultQuery();
+  }
+
+  @Bean
+  SearchConfig searchConfig(ConfigurationProvider configurationProvider) {
+    return configurationProvider.bind("search", SearchConfig.class);
+  }
+}
+```
+
+```java
+String defaultQuery = configurationProvider.getProperty("search.defaultQuery", String.class);
+
+if(queryEmpty()) {
+ return defaultQuery;
+}
+```
+
+```java
+SearchConfig config = configurationProvider.bind("search", SearchConfig.class);
+
+// in search method
+if(queryEmpty()) {
+ return config.defaultQuery();
+}
+```
+
+### 参考
+
+- http://code.flickr.net/2016/03/24/configuration-management-for-distributed-systems-using-github-and-cfg4j/
 
 
 
