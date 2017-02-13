@@ -74,6 +74,10 @@ class Cfg4jBeansConfig {
 }
 ```
 
+通过配置对象注入配置，而不是直接提供配置。这里也有两种方案：
+
+- 直接注入配置（配置变更时不会自动更新）
+
 ```java
 String defaultQuery = configurationProvider.getProperty("search.defaultQuery", String.class);
 
@@ -81,6 +85,8 @@ if(queryEmpty()) {
  return defaultQuery;
 }
 ```
+
+- 通过接口绑定注入配置（配置变更时会自动更新）
 
 ```java
 SearchConfig config = configurationProvider.bind("search", SearchConfig.class);
@@ -90,6 +96,9 @@ if(queryEmpty()) {
  return config.defaultQuery();
 }
 ```
+
+
+详细示例请参考[cfg4j官方文档](http://www.cfg4j.org/releases/latest/)。
 
 ### 参考
 
