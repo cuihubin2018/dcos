@@ -1,2 +1,2 @@
-## SAN\/SDS
+## SAN/SDS
 
