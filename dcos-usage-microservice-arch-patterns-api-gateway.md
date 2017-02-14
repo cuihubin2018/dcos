@@ -159,7 +159,6 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
   ```
   dcos package install marathon-lb
   ```
-  
 2. 部署KONG：
 
   部署KONG所需要的Cassandra存储（也可以使用PostgreSQL）。
@@ -330,7 +329,6 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
     ]
   }
   ```
-
 3. 部署Marathon-LB (“internal”)：
 
   ```
@@ -348,7 +346,6 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
     }
   }
   ```
-
 4. 部署内部服务
   注意，本方案里用 **“internal”** Marathon-LB作为内部应用服务的负载均衡器，因此在部署应用服务时，在LABEL中“HAPROXY_GROUP”的值应设置为**“internal”**。
   
@@ -404,7 +401,6 @@ KONG作为API网关与DC/OS集群的整合既可以按上述模式1方式部署�
     ],
   }
   ```
-
 6. 检查KONG网关是否正常工作
 
   通过Kong Dashboard向API网关添加API接口，访问接口检查是否正常。
