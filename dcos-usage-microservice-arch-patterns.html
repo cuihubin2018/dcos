@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="dcos-usage-microservice-frameworks.html" />
+    <link rel="next" href="dcos-usage-microservice-arch-patterns-api.html" />
     
     
     <link rel="prev" href="dcos-usage-microservice.html" />
@@ -2127,6 +2127,141 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1.1" data-path="dcos-usage-microservice-arch-patterns-api.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-api.html">
+            
+                    
+                    API管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1.1.1" data-path="dcos-usage-microservice-arch-patterns-api-gateway.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-api-gateway.html">
+            
+                    
+                    API网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.1.2" data-path="dcos-usage-microservice-arch-patterns-api-docs.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-api-docs.html">
+            
+                    
+                    API文档自动化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.2" data-path="dcos-usage-microservice-arch-patterns-cfg.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-cfg.html">
+            
+                    
+                    配置管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1.2.1" data-path="dcos-usage-microservice-arch-patterns-cfg-cfg.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-cfg-cfg.html">
+            
+                    
+                    cfg4j
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.2.2" data-path="dcos-usage-microservice-arch-patterns-cfg-secrets.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-cfg-secrets.html">
+            
+                    
+                    Secrets管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.3" data-path="dcos-usage-microservice-arch-patterns-metrics.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-metrics.html">
+            
+                    
+                    指标聚合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.4" data-path="dcos-usage-microservice-arch-patterns-logging.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-logging.html">
+            
+                    
+                    日志归集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.5" data-path="dcos-usage-microservice-arch-patterns-tracking.html">
+            
+                <a href="dcos-usage-microservice-arch-patterns-tracking.html">
+            
+                    
+                    分布式跟踪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="5.2.2" data-path="dcos-usage-microservice-frameworks.html">
@@ -2489,7 +2624,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x67B6;&#x6784;&#x4E0E;&#x6A21;&#x5F0F;">&#x67B6;&#x6784;&#x4E0E;&#x6A21;&#x5F0F;</h2><p>&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x7684;&#x6A21;&#x5F0F;&#x8BED;&#x8A00;&#x5728;<a href="http://microservices.io/index.html" target="_blank">Chris Richardson &#x7684;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x7F51;&#x7AD9;</a>&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#x3002;</p><p><img src="http://microservices.io/i/MicroservicePatternLanguage.jpg"></p>
+                                <h2 id="&#x67B6;&#x6784;&#x4E0E;&#x6A21;&#x5F0F;">&#x67B6;&#x6784;&#x4E0E;&#x6A21;&#x5F0F;</h2><p>&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x7684;&#x6A21;&#x5F0F;&#x8BED;&#x8A00;&#x5728;<a href="http://microservices.io/index.html" target="_blank">Chris Richardson &#x7684;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x7F51;&#x7AD9;</a>&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#x3002;</p><p><img src="http://microservices.io/i/MicroservicePatternLanguage.jpg"></p><p>&#x524D;&#x8FF0;&#x6211;&#x4EEC;&#x63D0;&#x5230;&#x4E86;&#x5F53;&#x524D;&#x4E3B;&#x6D41;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x57FA;&#x7840;&#x6846;&#x67B6;Spring Boot/Cloud&#x4F53;&#x7CFB;&#xFF0C;Lagom&#xFF0C;Vert.x&#x53CA;Dropwizard&#xFF0C;&#x8FD8;&#x6709;&#x8BB8;&#x591A;&#x5176;&#x5B83;&#x7684;&#x5546;&#x4E1A;&#x548C;&#x5F00;&#x6E90;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x57FA;&#x7840;&#x6846;&#x67B6;&#x5728;&#x4E0D;&#x65AD;&#x51FA;&#x73B0;&#xFF0C;Oracle&#x548C;IBM&#x7B49;&#x5382;&#x5546;&#x4E5F;&#x4E3A;J2EE 8&#x63D0;&#x51FA;&#x4E86;&#x652F;&#x6301;&#x5FAE;&#x670D;&#x52A1;&#x7684;<a href="http://microprofile.io/" target="_blank">Micro Profile</a>&#x3002;</p><p>&#x8FD9;&#x4E9B;&#x5FAE;&#x670D;&#x52A1;&#x57FA;&#x7840;&#x6846;&#x67B6;&#x5728;&#x79C9;&#x627F;&#x81EA;&#x5DF1;&#x4F53;&#x7CFB;&#x7684;&#x7A81;&#x51FA;&#x98CE;&#x683C;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x4E5F;&#x5728;&#x4E0D;&#x65AD;&#x7684;&#x5C06;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x5173;&#x6CE8;&#x7684;&#x6838;&#x5FC3;&#x53CA;&#x5468;&#x8FB9;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x6216;&#x6574;&#x5408;&#xFF0C;&#x4EE5;&#x671F;&#x671B;&#x63D0;&#x4F9B;&#x5B8C;&#x5584;&#x7684;&#x57FA;&#x7840;&#x5FAE;&#x670D;&#x52A1;&#x5E73;&#x53F0;&#x3002;&#x800C;&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#xFF0C;&#x7531;&#x4E91;&#x8BA1;&#x7B97;&#x53D1;&#x5C55;&#x800C;&#x6765;&#x7684;IaaS&#xFF0C;PaaS&#x4E5F;&#x5728;&#x4E0D;&#x65AD;&#x6F14;&#x8FDB;&#xFF0C;&#x4EE5;&#x671F;&#x671B;&#x4E3A;&#x4E0A;&#x5C42;&#x4E91;&#x539F;&#x751F;&#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x66F4;&#x52A0;&#x4E30;&#x5BCC;&#x548C;&#x5B8C;&#x5584;&#x7684;&#x57FA;&#x7840;&#x670D;&#x52A1;&#x3002;&#x968F;&#x7740;&#x8FD9;&#x4E24;&#x5927;&#x9635;&#x8425;&#x7684;&#x4E0D;&#x65AD;&#x63A8;&#x8FDB;&#xFF0C;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x8FB9;&#x754C;&#x5DF2;&#x7ECF;&#x53D8;&#x5F97;&#x6A21;&#x7CCA;&#xFF0C;&#x7279;&#x522B;&#x662F;Docker&#x5BB9;&#x5668;&#x5316;&#x7684;&#x51FA;&#x73B0;&#xFF0C;&#x52A0;&#x901F;&#x4E86;&#x8FD9;&#x4E00;&#x8FDB;&#x7A0B;&#xFF0C;Dev&#x4E0E;Ops&#x4E4B;&#x95F4;&#x7684;&#x201C;&#x9E3F;&#x6C9F;&#x201D;&#x4E5F;&#x53D8;&#x6210;&#x4E86;&#x201C;&#x5766;&#x9014;&#x201D;&#x3002;</p><p>&#x4E0B;&#x56FE;&#xFF08;&#x672C;&#x56FE;&#x53C2;&#x8003;&#x4E86;Bilgin Ibryam&#x7684;<a href="https://developers.redhat.com/blog/2016/12/09/spring-cloud-for-microservices-compared-to-kubernetes/" target="_blank">&#x6587;&#x7AE0;</a>&#xFF09;&#x5C55;&#x793A;&#x4E86;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x4E0E;IaaS/PaaS&#x5404;&#x81EA;&#x7684;&#x5173;&#x6CE8;&#x5C42;&#x9762;&#xFF0C;&#x4ECE;&#x56FE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5FAE;&#x670D;&#x52A1;&#x4E0E;IaaS/PaaS&#x76F8;&#x8F85;&#x76F8;&#x6210;&#xFF0C;&#x4E24;&#x8005;&#x7684;&#x7ED3;&#x5408;&#x53EF;&#x4EE5;&#x4E3A;&#x7528;&#x6237;&#x5E26;&#x6765;&#x5B8C;&#x5584;&#x7684;&#x4E91;&#x5E94;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p><p><img src="assets/msa-tech-stacks.png"></p><p>&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x7684;&#x5173;&#x6CE8;&#x70B9;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#xFF08;Config Management&#xFF09;&#xFF0C;API&#x7BA1;&#x7406;&#xFF08;API Management&#xFF09;&#xFF0C;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#xFF08;Service Discovery&#xFF09;&#xFF0C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;Load Balance&#xFF09;&#xFF0C;&#x6570;&#x636E;&#x7BA1;&#x7406;&#xFF08;Data Management&#xFF09;&#xFF0C;&#x65E5;&#x5FD7;&#x805A;&#x5408;&#xFF08;Centralized &#xFF09;&#xFF0C;&#x6307;&#x6807;&#x805A;&#x5408;&#xFF08;Centralized Metrics&#xFF09;&#xFF0C;&#x5206;&#x5E03;&#x5F0F;&#x8FFD;&#x8E2A;&#xFF08;Distributed Tracking&#xFF09;&#xFF0C;&#x670D;&#x52A1;&#x5B89;&#x5168;&#xFF08;Service Security&#xFF09;&#xFF0C;&#x5F39;&#x6027;&#x548C;&#x5BB9;&#x9519;&#xFF08;Resilience &amp; Fault Tolerance&#xFF09;&#xFF0C;&#x8C03;&#x5EA6;&#x90E8;&#x7F72;&#xFF08;Deployment &amp; Scheduling&#xFF09;&#xFF0C;&#x81EA;&#x52A8;&#x4F38;&#x7F29;&#x4E0E;&#x4FEE;&#x590D;&#xFF08;Auto Scaling &amp; Self Healing&#xFF09;&#x7B49;&#x3002;</p>
                                 
                                 </section>
                             
@@ -2521,7 +2656,7 @@
                 </a>
                 
                 
-                <a href="dcos-usage-microservice-frameworks.html" class="navigation navigation-next " aria-label="Next page: 微服务框架">
+                <a href="dcos-usage-microservice-arch-patterns-api.html" class="navigation navigation-next " aria-label="Next page: API管理">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2532,7 +2667,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"架构与模式","level":"5.2.1","depth":2,"next":{"title":"微服务框架","level":"5.2.2","depth":2,"path":"dcos-usage-microservice-frameworks.md","ref":"dcos-usage-microservice-frameworks.md","articles":[{"title":"Spring Boot/Cloud","level":"5.2.2.1","depth":3,"path":"dcos-usage-microservice-frameworks-spring-cloud.md","ref":"dcos-usage-microservice-frameworks-spring-cloud.md","articles":[]},{"title":"Lagom","level":"5.2.2.2","depth":3,"path":"dcos-usage-microservice-frameworks-lagom.md","ref":"dcos-usage-microservice-frameworks-lagom.md","articles":[]}]},"previous":{"title":"微服务","level":"5.2","depth":1,"path":"dcos-usage-microservice.md","ref":"dcos-usage-microservice.md","articles":[{"title":"架构与模式","level":"5.2.1","depth":2,"path":"dcos-usage-microservice-arch-patterns.md","ref":"dcos-usage-microservice-arch-patterns.md","articles":[]},{"title":"微服务框架","level":"5.2.2","depth":2,"path":"dcos-usage-microservice-frameworks.md","ref":"dcos-usage-microservice-frameworks.md","articles":[{"title":"Spring Boot/Cloud","level":"5.2.2.1","depth":3,"path":"dcos-usage-microservice-frameworks-spring-cloud.md","ref":"dcos-usage-microservice-frameworks-spring-cloud.md","articles":[]},{"title":"Lagom","level":"5.2.2.2","depth":3,"path":"dcos-usage-microservice-frameworks-lagom.md","ref":"dcos-usage-microservice-frameworks-lagom.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dcos-usage-microservice-arch-patterns.md","mtime":"2017-02-08T09:54:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-02-08T10:26:40.770Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"架构与模式","level":"5.2.1","depth":2,"next":{"title":"API管理","level":"5.2.1.1","depth":3,"path":"dcos-usage-microservice-arch-patterns-api.md","ref":"dcos-usage-microservice-arch-patterns-api.md","articles":[{"title":"API网关","level":"5.2.1.1.1","depth":4,"path":"dcos-usage-microservice-arch-patterns-api-gateway.md","ref":"dcos-usage-microservice-arch-patterns-api-gateway.md","articles":[]},{"title":"API文档自动化","level":"5.2.1.1.2","depth":4,"path":"dcos-usage-microservice-arch-patterns-api-docs.md","ref":"dcos-usage-microservice-arch-patterns-api-docs.md","articles":[]}]},"previous":{"title":"微服务","level":"5.2","depth":1,"path":"dcos-usage-microservice.md","ref":"dcos-usage-microservice.md","articles":[{"title":"架构与模式","level":"5.2.1","depth":2,"path":"dcos-usage-microservice-arch-patterns.md","ref":"dcos-usage-microservice-arch-patterns.md","articles":[{"title":"API管理","level":"5.2.1.1","depth":3,"path":"dcos-usage-microservice-arch-patterns-api.md","ref":"dcos-usage-microservice-arch-patterns-api.md","articles":[{"title":"API网关","level":"5.2.1.1.1","depth":4,"path":"dcos-usage-microservice-arch-patterns-api-gateway.md","ref":"dcos-usage-microservice-arch-patterns-api-gateway.md","articles":[]},{"title":"API文档自动化","level":"5.2.1.1.2","depth":4,"path":"dcos-usage-microservice-arch-patterns-api-docs.md","ref":"dcos-usage-microservice-arch-patterns-api-docs.md","articles":[]}]},{"title":"配置管理","level":"5.2.1.2","depth":3,"path":"dcos-usage-microservice-arch-patterns-cfg.md","ref":"dcos-usage-microservice-arch-patterns-cfg.md","articles":[{"title":"cfg4j","level":"5.2.1.2.1","depth":4,"path":"dcos-usage-microservice-arch-patterns-cfg-cfg.md","ref":"dcos-usage-microservice-arch-patterns-cfg-cfg.md","articles":[]},{"title":"Secrets管理","level":"5.2.1.2.2","depth":4,"path":"dcos-usage-microservice-arch-patterns-cfg-secrets.md","ref":"dcos-usage-microservice-arch-patterns-cfg-secrets.md","articles":[]}]},{"title":"指标聚合","level":"5.2.1.3","depth":3,"path":"dcos-usage-microservice-arch-patterns-metrics.md","ref":"dcos-usage-microservice-arch-patterns-metrics.md","articles":[]},{"title":"日志归集","level":"5.2.1.4","depth":3,"path":"dcos-usage-microservice-arch-patterns-logging.md","ref":"dcos-usage-microservice-arch-patterns-logging.md","articles":[]},{"title":"分布式跟踪","level":"5.2.1.5","depth":3,"path":"dcos-usage-microservice-arch-patterns-tracking.md","ref":"dcos-usage-microservice-arch-patterns-tracking.md","articles":[]}]},{"title":"微服务框架","level":"5.2.2","depth":2,"path":"dcos-usage-microservice-frameworks.md","ref":"dcos-usage-microservice-frameworks.md","articles":[{"title":"Spring Boot/Cloud","level":"5.2.2.1","depth":3,"path":"dcos-usage-microservice-frameworks-spring-cloud.md","ref":"dcos-usage-microservice-frameworks-spring-cloud.md","articles":[]},{"title":"Lagom","level":"5.2.2.2","depth":3,"path":"dcos-usage-microservice-frameworks-lagom.md","ref":"dcos-usage-microservice-frameworks-lagom.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dcos-usage-microservice-arch-patterns.md","mtime":"2017-02-14T01:32:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-02-14T01:34:36.644Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
