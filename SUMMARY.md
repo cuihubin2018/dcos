@@ -104,7 +104,7 @@
   * [数据建模](dcos-service-cassandra-modeling.md)
 * [Kafka on DC/OS](dcos-service-kafka.md)
 * [Spark on DC/OS](dcos-service-spark.md)
-* [dcos-service-consul](dcos-service-consul.md)
+* [Consul on DC/OS](dcos-service-consul.md)
 
 ## DC/OS之管理
 
