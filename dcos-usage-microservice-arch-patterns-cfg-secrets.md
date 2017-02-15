@@ -34,9 +34,9 @@ HashiCorp的[Vault](https://www.vaultproject.io)是一个安全访问Secrets的�
 
 在详解上述架构之前，先来看一下Vault架构所涉及的几个概念：
 
-存储后端（Storage Backend）
+- 存储后端（Storage Backend）
 
-存储后端负责加密数据的持久存储。Vault不信任存储后端，并且仅期望其提供持久性存储功能。在启动Vault服务器时需要配置存储后端。
+  存储后端负责加密数据的持久存储。Vault不信任存储后端，并且仅期望其提供持久性存储功能。在启动Vault服务器时需要配置存储后端。
 
 - 屏障（Barrier）
 
