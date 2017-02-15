@@ -32,7 +32,7 @@ HashiCorp的[Vault](https://www.vaultproject.io)是一个安全访问Secrets的�
 
 ![](/assets/vault-arch-overview.png)
 
-在详解上述架构之前，先来看一下Vault所涉及的几个概念：
+在详解上述架构之前，先来看一下Vault架构所涉及的几个概念：
 
 存储后端（Storage Backend）
 
