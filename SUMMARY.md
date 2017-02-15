@@ -161,6 +161,7 @@
     * [指标聚合](dcos-usage-microservice-arch-patterns-metrics.md)
     * [日志归集](dcos-usage-microservice-arch-patterns-logging.md)
     * [分布式跟踪](dcos-usage-microservice-arch-patterns-tracking.md)
+    * [dcos-usage-microservice-arch-patterns-service-discovery](dcos-usage-microservice-arch-patterns-service-discovery.md)
   * [微服务框架](dcos-usage-microservice-frameworks.md)
     * [Spring Boot/Cloud](dcos-usage-microservice-frameworks-spring-cloud.md)
     * [Lagom](dcos-usage-microservice-frameworks-lagom.md)
