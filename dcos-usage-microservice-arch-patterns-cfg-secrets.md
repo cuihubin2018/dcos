@@ -48,6 +48,22 @@ Secret后端负责管理Secrets。简单的Secret后端像“`generic`”后端�
 
 审计后端（Audit Backend）
 
+审计后端负责管理审计日志。来自Vault的每个请求和来自Vault的响应都将通过配置的审核后端。这提供了一种将Vault与不同类型的多个审核日志记录目标集成的简单方法。
+
+凭据后端（Credential Backend）
+
+凭据后端用于验证连接到Vault的用户或应用程序。一旦验证，后端返回应用的适用策略列表。Vault接受经过身份验证的用户，并返回可用于将来请求的客户端令牌。例如，用户密码后端使用用户名和密码来认证用户。
+
+客户端令牌（Client Token）
+
+客户端令牌在概念上类似于网站上的会话cookie。用户验证后，Vault会返回一个用于将来请求的客户端令牌。Vault使用令牌验证客户端的身份并强制实施适用的ACL策略。此令牌通过HTTP头传递。
+
+Secret
+
+Secret是Vault返回的包含机密或加密信息的任何内容。不是由Vault返回的所有内容都是Secret，例如系统配置，状态信息或后端策略不被视为Secrets。Secret总是有相关的租约，这意味着客户端不能假设Secret可以无限期地使用。Vault将在租赁结束时撤销Secret，并且维护人员可以在租赁结束之前进行干预以撤销Secret。
+
+服务器（Server）
+
 
 
 Keywhiz
