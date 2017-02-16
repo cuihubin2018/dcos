@@ -122,3 +122,7 @@ Vault内核负责记录请求和响应并发送给审计总线，再由其存储
 - Socket
 
 ### Keywhiz
+
+[Keywhiz](https://github.com/square/keywhiz)是Square开发的用于管理和分发秘密的系统。它可以很好地适应面向服务的体系结构（SOA）。
+
+关于Keywhiz与Vault的对比可以参考：[Vault vs. Keywhiz](https://www.vaultproject.io/intro/vs/keywhiz.html)。
