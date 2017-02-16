@@ -66,5 +66,14 @@ HashiCorp的[Vault](https://www.vaultproject.io)是一个安全访问Secrets的�
 
   Vault依赖于作为服务器运行的长时间运行的实例。 Vault服务器提供了一个API，客户端与之交互并管理所有后端之间的交互，ACL实施和Secret租用撤销。采用基于服务器的架构可以客户端与安全密钥及策略分离，实现集中式审计日志记录并简化操作员的管理。
 
+再看上述Vault架构图，从图中可以看出组件被屏障Barrier清晰的隔离为内外两部分。只有存储后端和HTTP API位于外部，其他组件都位于屏障内部。存储后端是不可信的，被Vault用来存储加密后的数据。
+
+Vault启动时处于**密封（“sealed”）**状态，在可以与其交互之前，Vault必须切换到**启封（“unsealed”）**状态。状态切换需要提供启封钥匙。Vault初始化时会生成一把加密密钥来保护所有的数据，这个加密密钥受主钥匙（master key）保护。默认情况下，Vault使用[Shamir的密钥共享算法](https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing)将主钥匙拆分为5份，必须提供5个密钥中任意3个来重建主钥匙。
+
+![](/assets/vault-master-keys-shares-arch.png)
+
+主钥匙拆分的数量及用来重建主钥匙的最低份数都可以设置，也可以禁用Shamir的密钥共享算法，这时需要使用主钥匙直接启封Vault。一旦Vault检索到加密密钥，它就能够解密存储后端中的数据，并进入启封状态。取消密封后，Vault会加载所有配置的审计，凭据和Secrets后端。
+
+当客户端首次连接到Vault时，需要进行身份验证。 Vault提供可配置的凭证后端，在所使用的身份验证机制中提供灵活性。
 
 ### Keywhiz
