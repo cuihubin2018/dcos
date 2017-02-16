@@ -158,6 +158,7 @@
     * [配置管理](dcos-usage-microservice-arch-patterns-cfg.md)
       * [cfg4j](dcos-usage-microservice-arch-patterns-cfg-cfg.md)
       * [Secrets管理](dcos-usage-microservice-arch-patterns-cfg-secrets.md)
+      * [配置管理示例](dcos-usage-microservice-arch-patterns-cfg-example.md)
     * [服务发现](dcos-usage-microservice-arch-patterns-service-discovery.md)
     * [负载均衡](dcos-usage-microservice-arch-patterns-lb.md)
     * [指标聚合](dcos-usage-microservice-arch-patterns-metrics.md)
