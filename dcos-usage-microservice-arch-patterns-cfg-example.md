@@ -25,6 +25,8 @@
 
 ### 详细过程
 
+本示例以DC/OS计算环境为基础运行环境。示例仅用于验证方案的可行性，具体运行环境配置及代码示例不应在生产环境使用。
+
 #### 准备工作
 
 Gitlab
@@ -43,6 +45,15 @@ Vault
 
 #### 示例代码
 
-### 扩展
+### 结论
 
-可以通过实现整合的UI对配置信息、任务、Vault的管理等进行集成配置。
+1. 实际的应用根据实际需求和业务流程进行调整。
+
+2. 可以通过实现整合的UI对配置信息、任务、Vault的管理等进行集成配置。
+
+### 参考
+
+- https://github.com/cfg4j/cfg4j-sample-apps
+- https://github.com/cfg4j/cfg4j-pusher
+- http://docs.spring.io/spring-vault/docs/current-SNAPSHOT/reference/html
+- https://www.vaultproject.io/docs/auth/index.html
