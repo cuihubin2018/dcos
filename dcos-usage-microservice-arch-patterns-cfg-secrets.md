@@ -84,6 +84,41 @@ Vault启动时处于**密封（“sealed”）**状态，在可以与其交互�
 
 Vault内核负责记录请求和响应并发送给审计总线，再由其存储到审计后端。在请求处理流程之外，Vault内核负责某些后台操作，如关键的租约管理可以撤销客户端令牌和自动撤销Secrets。此外，Vault通过使用回滚管理器使用预写写日志（write ahead logging）来处理某些部分故障情况的恢复。
 
+#### Secret Backends
 
+- AWS
+- Cassandra
+- Consul
+- Cubbyhole
+- Generic
+- MongoDB
+- MSSQL
+- MySQL
+- PKI (Certificates)
+- PostgreSQL
+- RabbitMQ
+- SSH
+- Transit
+- Custom
+
+#### Auth Backends
+
+- App ID
+- AppRole
+- AWS EC2
+- GitHub
+- LDAP
+- MFA
+- Okta
+- RADIUS
+- TLS Certificates
+- Tokens
+- Username & Password
+
+#### Audit Backends
+
+- File
+- Syslog
+- Socket
 
 ### Keywhiz
