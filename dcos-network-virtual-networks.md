@@ -28,5 +28,18 @@ DC/OS的默认每容器IP解决方案需要与运行DC/OS的网络无关。因�
 
 DC/OS的Overlay设计做出以下假设/约束：
 
+- 由于集中式IPAM缺乏对可用性和可靠性的保证，方案无法使用集中的IPAM。
 
+- 需要避免第2层的泛滥，使网络可扩展。这意味着方案不能依赖广播ARP来获取容器的MAC地址。
 
+- 该解决方案需要支持`MesosContainerizer`和`DockerContainerizer`，即在同一个Overlay上，方案应该能够同时运行Docker和Mesos容器，并允许它们相互通信。
+
+基于上述假设/约束，DC/OS使用基于VxLAN的第三层Overlay技术。
+
+### 场景
+
+下图通过数据包的流动阐述了DC/OS中基于Overlay技术实现的容器网络通信方案。
+
+![](/assets/dcos-overlay-fig-1.png)
+
+上图演示了一个拥有2个Agent的DC/OS集群，要让DC/OS的Overlay工作，需要一个足够大的地址空间为之上的容器分配地址。
