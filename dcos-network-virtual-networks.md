@@ -94,22 +94,22 @@ DC/OS的Overlay设计做出以下假设/约束：
 
 Master节点上的Overlay组件：
 
-它将负责将子网分配给每个Agent。下述将更详细地描述Master组件如何使用复制的日志来检查这些信息，以便在故障切换到新的Master时进行恢复。
+- 它将负责将子网分配给每个Agent。下述将更详细地描述Master组件如何使用复制的日志来检查这些信息，以便在故障切换到新的Master时进行恢复。
 
-它将监听Agent叠加网络组件以便于注册和恢复其分配的子网。Agent上的Overlay组件还将使用此端点来了解分配给Agent自身的叠加子网（在多个虚拟网络的情况下），分配给叠加网络中每个Mesos和Docker网桥的子网以及分配给容器的VTEP IP和MAC地址。
+- 它将监听Agent叠加网络组件以便于注册和恢复其分配的子网。Agent上的Overlay组件还将使用此端点来了解分配给Agent自身的叠加子网（在多个虚拟网络的情况下），分配给叠加网络中每个Mesos和Docker网桥的子网以及分配给容器的VTEP IP和MAC地址。
 
-它通过HTTP端点“`overlay-master/state`”来展示DC/OS中所有虚拟网络的状态。响应信息的详细描述参考[此处](https://github.com/dcos/mesos-overlay-modules/blob/master/include/overlay/overlay.proto#L86)。
+- 它通过HTTP端点“`overlay-master/state`”来展示DC/OS中所有虚拟网络的状态。响应信息的详细描述参考[此处](https://github.com/dcos/mesos-overlay-modules/blob/master/include/overlay/overlay.proto#L86)。
 
 
 Agent节点上的Overlay组件：
 
-它负责向Master节点上的Overlay组件（Master模块）注册。注册后，它检索分配的Agent子网，分配给其Mesos和Docker网桥的子网以及VTEP信息（VTEP的IP和MAC地址）。
+- 它负责向Master节点上的Overlay组件（Master模块）注册。注册后，它检索分配的Agent子网，分配给其Mesos和Docker网桥的子网以及VTEP信息（VTEP的IP和MAC地址）。
 
-基于分配的Agent子网，它负责生成用于MesosContainerizer的`network/cni`隔离器的CNI（容器网络接口）网络配置。
+- 基于分配的Agent子网，它负责生成用于MesosContainerizer的`network/cni`隔离器的CNI（容器网络接口）网络配置。
 
-它负责创建DockerContainerizer使用的Docker网络。
+- 它负责创建DockerContainerizer使用的Docker网络。
 
-它通过HTTP端点`overlay-agent/overlays`。虚拟网络服务使用此接口检索有关该特定代理的叠加网络信息。
+- 它通过HTTP端点`overlay-agent/overlays`。虚拟网络服务使用此接口检索有关该特定代理的叠加网络信息。
 
 #### 虚拟网络服务（叠加网络编排）
 
@@ -120,5 +120,8 @@ Agent节点上的Overlay组件：
 3. 将路由写入到各个Agent的各个子网。
 4. 使用VTEP IP和MAC地址写入ARP缓存。
 5. 使用VTEP MAC地址和隧道端点信息写入VxLAN FDB。
-6. 使用Lashup（一个分布式CRDT存储引擎）可以将Agent叠加网络信息可靠地传播到集群内的所有Agent。这是虚拟网络服务执行的最重要的功能之一，因为只有拥有群集中所有Agent的全部信息，虚拟网络服务才能对所有Agent上的所有叠加子网的每个Agent进行路由。
+6. 使用[Lashup](https://github.com/dcos/lashup/)（一个分布式CRDT存储引擎）可以将Agent叠加网络信息可靠地传播到集群内的所有Agent。这是虚拟网络服务执行的最重要的功能之一，因为只有拥有群集中所有Agent的全部信息，虚拟网络服务才能对所有Agent上的所有叠加子网的每个Agent进行路由。
 
+### 参考
+
+- https://dcos.io/docs/1.9/overview/design/overlay/#using-replicated-log-to-coordinate-subnet-allocation-in-master-
