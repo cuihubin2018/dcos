@@ -1,6 +1,6 @@
 ## 虚拟网络
 
-DC/OS使用**Overlay技术**作为IP-per-Container的解决方案。
+DC/OS使用**Overlay叠加网络技术**作为IP-per-Container的解决方案。
 
 ### 术语
 
@@ -13,9 +13,13 @@ DC/OS使用**Overlay技术**作为IP-per-Container的解决方案。
   三层交换是工作在OSI七层协议的3层上，可以启用路由协议（静态或动态），还可以启用访问控制列表，总之，路由能做的事三层交换基本都能做，三层交换没有NAT。
   
 - IPAM
+  IPAM用于发现、监视、审核和管理企业网络上使用的IP地址空间。IPAM 可以对运行动态主机配置协议 (DHCP) 和域名服务 (DNS) 的服务器进行管理和监视。
 - ARP
-- VxLAN
+  地址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。
+- VXLAN
+  VXLAN(Virtual Extensible LAN),是一种网络虚似化技术,试图改进大型云计算的部署时的扩展问题.可以说是对VLAN的一种扩展,由于VLAN Header头部限长是12bit, 导致VLAN的限制个数是`2^12=409`6个,无法满足日益增长的需求.目前 VXLAN 的报文 Header 内有 24 bit，可以支持 `2^24`次方的 VNI 个数(VXLAN中通过VNI来识别，相当于VLAN ID). [参考资料](http://blog.csdn.net/achejq/article/details/12945127)
 - VTEP
+  VXLAN隧道终端 (VXLAN Tunneling End Point)，用于多VXLAN报文进行封装/解封，包括MAC请求报文和正常VXLAN数据报文，在一端封装报文后通过隧道向另一端VTEP发送封装报文，另一端VTEP接收到封装的报文解封装后根据被封装的MAC地址进行转发。VTEP可由支持VXLAN的硬件设备或软件来实现。
 - overlay
 
 ### 概述
@@ -77,3 +81,44 @@ DC/OS的Overlay设计做出以下假设/约束：
 - Agent 2上的VxLAN1024对数据包进行解封，由于目标MAC地址设置为Agent 2上的VxLAN1024的MAC地址，因此该数据包将由Agent 2上的VxLAN1024进行处理。
 
 - 在Agent 2中，路由表具有子网9.0.2.128/25的条目，直接连接到桥“d-dcos”。因此，数据包将被转发到连接到“d-dcos”网桥的容器进行处理。
+
+### 架构
+
+![](/assets/dcos-overlay-fig-2.png)
+
+上图描述了DC/OS实现的用于实现Overlay叠加网络技术的软件体系结构。图中橙色的块是必须建造的缺失组件。
+
+#### DC/OS modules for Mesos
+
+要配置基础的DC/OS叠加网络，需要一个可以为每个Agent分配子网的实体组件。该实体组件还需要配置Linux网桥，以及在自己的子网中启动Mesos和Docker容器。此外，每个Agent上的VTEP需要分配IP地址和MAC地址，并且Agent上的路由表需要配置正确的路由，以便于容器通过DC/OS叠加网络进行通信。
+
+Master节点上的Overlay组件：
+
+它将负责将子网分配给每个Agent。下述将更详细地描述Master组件如何使用复制的日志来检查这些信息，以便在故障切换到新的Master时进行恢复。
+
+它将监听Agent叠加网络组件以便于注册和恢复其分配的子网。Agent上的Overlay组件还将使用此端点来了解分配给Agent自身的叠加子网（在多个虚拟网络的情况下），分配给叠加网络中每个Mesos和Docker网桥的子网以及分配给容器的VTEP IP和MAC地址。
+
+它通过HTTP端点“`overlay-master/state`”来展示DC/OS中所有虚拟网络的状态。响应信息的详细描述参考[此处](https://github.com/dcos/mesos-overlay-modules/blob/master/include/overlay/overlay.proto#L86)。
+
+
+Agent节点上的Overlay组件：
+
+它负责向Master节点上的Overlay组件（Master模块）注册。注册后，它检索分配的Agent子网，分配给其Mesos和Docker网桥的子网以及VTEP信息（VTEP的IP和MAC地址）。
+
+基于分配的Agent子网，它负责生成用于MesosContainerizer的`network/cni`隔离器的CNI（容器网络接口）网络配置。
+
+它负责创建DockerContainerizer使用的Docker网络。
+
+它通过HTTP端点`overlay-agent/overlays`。虚拟网络服务使用此接口检索有关该特定代理的叠加网络信息。
+
+#### 虚拟网络服务（叠加网络编排）
+
+虚拟网络服务（[Navstar](https://github.com/dcos/navstar.git)）是在每个Agent上运行的叠加协调器服务，负责以下功能。它是一个包含DC/OS叠加网络的非实时组件以及其他与网络相关的DC/OS服务模块的子系统。在每个Agent上运行的虚拟网络服务负责以下功能：
+
+1. 与Agent叠加网络模块对话，获取分配给Agent的子网，VTEP IP和MAC地址。
+2. 在Agent上创建VTEP。
+3. 将路由写入到各个Agent的各个子网。
+4. 使用VTEP IP和MAC地址写入ARP缓存。
+5. 使用VTEP MAC地址和隧道端点信息写入VxLAN FDB。
+6. 使用Lashup（一个分布式CRDT存储引擎）可以将Agent叠加网络信息可靠地传播到集群内的所有Agent。这是虚拟网络服务执行的最重要的功能之一，因为只有拥有群集中所有Agent的全部信息，虚拟网络服务才能对所有Agent上的所有叠加子网的每个Agent进行路由。
+
