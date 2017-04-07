@@ -8,6 +8,8 @@
 | Master nodes | 2核，16G内存，128G硬盘 | CentOS 7.2 | 1 |  |
 | Agent nodes | 2核，16G内存，128G硬盘 | CentOS 7.2 | 3 |  |
 
+**注：**主机系统上的`/var`目录至少保留10GB的存储空间，这个目录用于存储Docker和Mesos容器的运行沙箱。
+
 ### 2.系统环境准备
 
 更新系统到最新版本
@@ -22,7 +24,7 @@ $ sudo yum update -y
 $ sudo systemctl stop firewalld && sudo systemctl disable firewalld
 ```
 
-DC\/OS安装在\/opt\/mesosphere下，确保该目录在一个非 LVM逻辑磁盘或共享存储磁盘下。（注：实际测试时，在LVM盘下仍安装成功）。
+DC/OS安装在/opt/mesosphere下，确保该目录在一个非 LVM逻辑磁盘或共享存储磁盘下。（注：实际测试时，在LVM盘下仍安装成功）。
 
 ### 3.端口协议准备
 
@@ -43,7 +45,9 @@ DC\/OS安装在\/opt\/mesosphere下，确保该目录在一个非 LVM逻辑磁�
 
 **范围：**所有节点
 
-**版本：**1.7.x ~ 1.11.x ** 注意：**当前DCOS（1.8.x~1.9.x)暂不支持1.12.x
+**版本：**
+- 针对DC/OS 1.8.x版本，Docker版本：1.7.x ~ 1.11.x ** 注意：**DCOS（1.8.x)暂不支持1.12.x+
+- 针对DC/OS 1.9.x版本，Docker版本：1.11.x ~ 1.13.x
 
 **推荐：**
 
