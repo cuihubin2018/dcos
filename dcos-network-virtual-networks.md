@@ -111,6 +111,10 @@ Agent节点上的Overlay组件：
 
 - 它通过HTTP端点`overlay-agent/overlays`。虚拟网络服务使用此接口检索有关该特定代理的叠加网络信息。
 
+**使用复制的日志来协调Master中的子网分配**
+
+**配置MesosContainerizer和DockerContainerizer以使用已分配的子网**
+
 #### 虚拟网络服务（叠加网络编排）
 
 虚拟网络服务（[Navstar](https://github.com/dcos/navstar.git)）是在每个Agent上运行的叠加协调器服务，负责以下功能。它是一个包含DC/OS叠加网络的非实时组件以及其他与网络相关的DC/OS服务模块的子系统。在每个Agent上运行的虚拟网络服务负责以下功能：
