@@ -39,9 +39,13 @@ Marathon-LB是一个容器应用，它订阅了Marathon的事件总线，自动�
 
 * Marathon-LB可用于内部负载均衡和服务发现，外部流量的入口路由负载可以使用硬件设备如F5，或者是云负载如AWS的Elastic Load Balancer（ELB）。
 
+![](/assets/marathon-lb-elb.jpeg)
+
 * Marathon-LB只用于内部负载均衡和服务发现。
 
 * 可以将内部LB和外部LB同时使用Marathon-LB，不同的服务根据需求开放给不同的Marathon-LB。
+
+![](/assets/marathon-lb-ilb.png)
 
 
 #### 应用示例 {#mlb-sample-config}
