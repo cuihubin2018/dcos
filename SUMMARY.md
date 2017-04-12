@@ -49,6 +49,7 @@
   * [Spartan](dcos-component-spartan.md)
   * [Mesos-DNS](dcos-component-mesos-dns.md)
   * [Metronome](dcos-component-metronome.md)
+  * [Marathon-LB](dcos-component-marathon-lb.md)
 * [容器化](dcos-mesos-containerizer.md)
   * [容器化实现细节](dcos-mesos-containerizer-internals.md)
   * [Mesos容器化](dcos-mesos-mesos-containerizer.md)
@@ -190,6 +191,4 @@
 ## 附录
 
 * [Docker Swarm vs Mesos vs Kubernetties](dcos-theory-solutions-martrix.md)
-
-
 
