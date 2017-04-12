@@ -6,3 +6,4 @@
 
 如果在开发环境中部署Cassandra，则需要至少**3**个**Private Agent**。关于Private Agent和Public Agent，请参考“Private Agent和Public Agent的区别”。
 
+ ![](/assets/app-marathon-mesos-interactions.png)
