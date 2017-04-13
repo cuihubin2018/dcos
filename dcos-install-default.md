@@ -2,6 +2,8 @@
 
 ### 1.硬件资源准备
 
+**注：下述仅为实验性质的配置，如果希望搭建一个稳定的测试环境或正式环境，为了后续升级方便，建议采用至少3个Master节点，硬件配置请参考[官方推荐](https://dcos.io/docs/1.9/administration/installing/custom/system-requirements/)，同时采用[高级安装模式](/dcos-install-by-advanced-mode.md)**
+
 | 节点 | 配置 | 操作系统 | 数量 | 备注 |
 | --- | --- | --- | --- | --- |
 | Bootstrap node | 2核，16G内存，60G硬盘 | CentOS 7.2 | 1 | 该节点适用于GUI安装模式，节点不在集群内（安装完成后，保留安装环境的同时，也可以加入到集群） |
@@ -9,6 +11,8 @@
 | Agent nodes | 2核，16G内存，128G硬盘 | CentOS 7.2 | 3 |  |
 
 **注：**主机系统上的`/var`目录至少保留10GB的存储空间，这个目录用于存储Docker和Mesos容器的运行沙箱。
+
+**注：用于Master和Agent节点主机系统在安装规划时建议关闭swap。相关讨论请参考：[DCOS_OSS-710: Default MESOS_CGROUPS_LIMIT_SWAP to true by vishnu2kmohan · Pull Request #1326 · dcos/dcos](https://github.com/dcos/dcos/pull/1326)**
 
 ### 2.系统环境准备
 
