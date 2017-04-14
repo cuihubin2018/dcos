@@ -117,6 +117,7 @@
     * [Grafana](dcos-admin-monitoring-dashboard-grafana.md)
   * [监控方案](dcos-admin-monitoring-solutions.md)
 * [日志管理](dcos-admin-logging.md)
+  * [日志归集](dcos-admin-logging/dcos-admin-logging-aggregationmd.md)
 * [存储管理](dcos-admin-storage.md)
   * [GlusterFS存储](dcos-admin-storage-glusterfs.md)
     * [GlusterFS概览](dcos-admin-storage-glusterfs-overview.md)
