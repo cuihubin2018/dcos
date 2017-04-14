@@ -185,9 +185,9 @@ sudo chkconfig filebeat on
 
 3. 重启Logstash服务
 
-通过Kibana使用`framework:*`作为查询条件，过滤查询效果类似下图：
+ 通过Kibana使用`framework:*`作为查询条件，过滤查询效果类似下图：
 
-![](/assets/logstash-framework-exists.png)
+ ![](/assets/logstash-framework-exists.png)
 
 ### 注意事项
 
