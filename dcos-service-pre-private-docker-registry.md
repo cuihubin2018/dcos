@@ -203,6 +203,11 @@ __注意__，使用自签名证书时，要在DC/OS集群内部访问镜像仓�
 /opt/mesosphere/active/python-requests/lib/python3.5/site-packages/requests/cacert.pem
 ```
 
+__注意__，解决UCR用CURL访问采用自签名证书的私有Registry的另一种方案是将签名证书放置于：
+```
+/var/lib/dcos/pki/tls/certs
+```
+
 ### 在集群外部访问容器仓库
 
 因为DCOS集群内部使用VIP“192.168.0.1”来访问容器仓库，VIP“192.168.0.1”对集群外部环境来说是无法访问的，那么集群外部如何访问该私有容器仓库？
