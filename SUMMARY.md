@@ -183,13 +183,13 @@
 
 ## DC/OS之开发
 
-* [Universe Package 开发](dcos-dev-universe-package.md)
-* [指标采集](dcos-dev-metrics.md)
-  * [Prometheus指标采集](dcos-dev-metrics-prometheus.md)
 * [Mesos框架开发](dcos-dev-frameworks.md)
   * [使用HTTP API开发调度框架](dcos-dev-frameworks-by-http-api.md)
   * [使用传统API开发调度框架](dcos-dev-frameworks-by-default-api.md)
   * [Mesos框架的高可用性设计](dcos-dev-frameworks-highly-available.md)
+* [Universe Package 开发](dcos-dev-universe-package.md)
+* [指标采集](dcos-dev-metrics.md)
+  * [Prometheus指标采集](dcos-dev-metrics-prometheus.md)
 
 ## 附录
 
