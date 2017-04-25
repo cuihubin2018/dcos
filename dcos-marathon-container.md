@@ -29,11 +29,11 @@ $ echo 'docker,mesos' > /etc/mesos-slave/containerizers
 $ echo '10mins' > /etc/mesos-slave/executor_registration_timeout
 ```
 
-上述两项配置在DCOS中对应的位置为\(Agent节点\)：`/opt/mesosphere/etc/mesos-slave-common。`
+上述两项配置在DC/OS中对应的位置为\(Agent节点\)：`/opt/mesosphere/etc/mesos-slave-common。`
 
-3.调整Marathon的启动参数--task\_launch\_timeout（在杀死一个任务之前等待其进入TASK\_RUNNING的时间，毫秒，默认值为30000），使其匹配Agent节点执行程序超时设置。在DCOS中，该启动参数通过变量MARATHON\_TASK\_LAUNCH\_TIMEOUT进行设置，参数位于\(Master节点\)：/opt/mesosphere/etc/marathon。
+3.调整Marathon的启动参数`--task_launch_timeout`（在杀死一个任务之前等待其进入`TASK_RUNNING`的时间，毫秒，默认值为30000），使其匹配Agent节点执行程序超时设置。在**DC/OS**中，该启动参数通过变量`MARATHON_TASK_LAUNCH_TIMEOUT`进行设置，参数位于\(Master节点\)：`/opt/mesosphere/etc/marathon`。
 
-说明：Marathon的命令行参数都对应一个添加前缀“MARATHON\_”的变量。
+说明：Marathon的命令行参数都对应一个添加前缀“`MARATHON_`”的变量。
 
 #### 容器应用定义示例
 
@@ -55,7 +55,7 @@ $ echo '10mins' > /etc/mesos-slave/executor_registration_timeout
 }
 ```
 
-此处volumes和type为可选配置，type的默认值为DOCKER。承载容器镜像运行的Mesos沙箱的系统挂载点可以通过环境变量$MESOS\_SANDBOX获取。
+此处volumes和type为可选配置，type的默认值为`DOCKER`。承载容器镜像运行的Mesos沙箱的系统挂载点可以通过环境变量`$MESOS_SANDBOX`获取。
 
 #### 桥接网络模式
 
@@ -89,15 +89,17 @@ $ echo '10mins' > /etc/mesos-slave/executor_registration_timeout
 
 2）**containerPort**，是指应用在容器内监听的端口。该配置可选且默认值为0。取默认值0时，Marathon将该端口设置为与hostPort相同的值。这要求容器内应用通过获取传递进容器的环境变量$PORT0，$PORT1，...设定应用的启动端口。
 
-3）**servicePort**，是一个用于服务发现的辅助配置，Marathon并不实际使用该端口配置，但它会确保该端口在整个集群内唯一。该配置可选且默认值为0。取默认值0时，端口被随机分配，范围介于\[local\_port\_min, local\_port\_max\]之间，默认值为10000~20000。
+3）**servicePort**，是一个用于服务发现的辅助配置，Marathon并不实际使用该端口配置，但它会确保该端口在整个集群内唯一。该配置可选且默认值为0。取默认值0时，端口被随机分配，范围介于`[local_port_min, local_port_max]`之间，默认值为`10000~20000`。
 
 **静态端口绑定**
 
-如果为hostPort设置了非默认值0，必须确保设定的端口值处于Mesos资源提供的范围内。默认情况下，Mesos的Agent节点提供的端口资源范围是\[31000-32000\]，该默认值可以通过参数调整：
+如果为hostPort设置了非默认值0，必须确保设定的端口值处于Mesos资源提供的范围内。默认情况下，Mesos的Agent节点提供的端口资源范围是`[31000-32000]`，该默认值可以通过参数调整：
 
---resources="ports\(\*\):\[8000-9000, 31000-32000\]"
+```
+--resources="ports(*):[8000-9000, 31000-32000]"
+```
 
-DCOS默认设置的端口资源范围\(/opt/mesosphere/etc/mesos-slave \)为：
+DCOS默认设置的端口资源范围(`/opt/mesosphere/etc/mesos-slave` )为：
 
 ```json
 {
@@ -120,15 +122,15 @@ DCOS默认设置的端口资源范围\(/opt/mesosphere/etc/mesos-slave \)为：
 
 #### Registry 1.0 - Docker pre 1.6
 
-在应用JSON定义的uris字段里添加一个.**dockercfg**文件路径配置。Docker的$HOME环境变量会设置为$MESOS\_SANDBOX，因此可以自动获取docker配置文件。
+在应用JSON定义的uris字段里添加一个**.dockercfg**文件路径配置。Docker的`$HOME`环境变量会设置为`$MESOS_SANDBOX`，因此可以自动获取docker配置文件。
 
 #### Registry 2.0 - Docker 1.6 and up
 
-在应用JSON定义的uris字段里添加一个docker.tar.gz文件路径配置。docker.tar.gz文件需要包含.docker目录及该目录下的.docker/config.json。
+在应用JSON定义的uris字段里添加一个`docker.tar.gz`文件路径配置。`docker.tar.gz`文件需要包含`.docker`目录及该目录下的`.docker/config.json`。
 
 **步骤1：制作docker.tar.gz**
 
-1）登录到容器镜像仓库，登录后自动在用户目录下创建了一个.docker和.docker\/config.json文件。
+1）登录到容器镜像仓库，登录后自动在用户目录下创建了一个`.docker`和`.docker/config.json`文件。
 
 ```
 $ docker login some.docker.host.com 
@@ -137,7 +139,7 @@ $ docker login some.docker.host.com
     Email: foo@bar.com
 ```
 
-2）压缩.docker目录
+2）压缩`.docker`目录
 
 ```
 $ cd ~ 
@@ -152,7 +154,7 @@ $ tar -tvf ~/docker.tar.gz
     -rw------- root/root 114 2015-07-28 01:31 .docker/config.json
 ```
 
-4）将.docker.tar.gz放置到一个Mesos\/Marathon可访问的位置（该位置必须被所有节点访问到）
+4）将`.docker.tar.gz`放置到一个Mesos/Marathon可访问的位置（该位置必须被所有节点访问到）
 
 ```
 $ cp docker.tar.gz /etc/
@@ -191,8 +193,8 @@ Marathon 0.8.2 和 Mesos 0.22.0版本开始支持在启动任务时强制拉取�
 
 #### **Command vs Args**
 
-Marathon自0.7.0版本开始在应用的JSON定义中支持args字段。在同一应用JSON定义中不能同时出现cmd和args。cmd字段在任务启动时以“/bin/sh -c '${app.cmd}'”执行。  
-args字段提供了一种与容器定义进行交互的方式，如自定义Docker容器中的ENTRYPOINT：
+Marathon自0.7.0版本开始在应用的JSON定义中支持args字段。在同一应用JSON定义中不能同时出现cmd和args。cmd字段在任务启动时以“`/bin/sh -c '${app.cmd}'`”执行。  
+args字段提供了一种与容器定义进行交互的方式，如自定义Docker容器中的**ENTRYPOINT**：
 
 ```
 FROM busybox 
@@ -228,7 +230,7 @@ ENTRYPOINT ["echo"]
 
 #### 特权模式和自定义Docker选项
 
-Marathon 自0.7.6版本开始，新增了两个字段：privileged 和 parameters。privileged字段允许用户以特权模式运行容器，默认值为false。parameters字段允许用户为docker run提供自定义的命令行参数，使用该特性时要注意，随着Mesos容器化的发展，当Mesos与Docker引擎的交互不通过CLI方式时，该特性可能将不再被支持。
+Marathon 自0.7.6版本开始，新增了两个字段：`privileged` 和 `parameters`。privileged字段允许用户以特权模式运行容器，默认值为false。parameters字段允许用户为`docker run`提供自定义的命令行参数，使用该特性时要注意，随着Mesos容器化的发展，当Mesos与Docker引擎的交互不通过CLI方式时，该特性可能将不再被支持。
 
 ```json
 { 
@@ -274,7 +276,7 @@ Mesos容器化提供了新的属性字段“credential”定义访问容器镜�
 }
 ```
 
-在Mesos容器化（type:MESOS）中，Mesos使用CURL从容器仓库拉取Docker镜像。CURL默认会校验服务器端SSL证书，DCOS中的CURL使用CAfile（而不是CApath）来查找信任的证书列表。默认CAfile的位置为：
+在Mesos容器化（**type:MESOS**）中，Mesos使用CURL从容器仓库拉取Docker镜像。CURL默认会校验服务器端SSL证书，DC/OS中的CURL使用CAfile（而不是CApath）来查找信任的证书列表。默认CAfile的位置为：
 
 ```
 /opt/mesosphere/active/python-requests/lib/python3.5/site-packages/requests/cacert.pem
