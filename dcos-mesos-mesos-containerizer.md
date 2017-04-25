@@ -8,7 +8,7 @@ MesosContainerizer使用特定于Linux的功能（如控制cgroup和命名空间
 
 `ContainerInfo`中指定的卷以读写（`RW`）或只读（`RO`）方式将共享文件系统（`host_path`）的部分映射到容器的文件系统（`container_path`）中。`host_path`可以是绝对路径，在这种情况下，它将使以`host_path`为根目录的文件系统子树也可以在每个容器的`container_path`下访问。如果host\_path是相对路径，则它被认为是相对于executor的工作目录。目录将被创建，并从共享文件系统中的相应目录（必须存在）中复制权限。
 
-**SharedFilesystem**隔离器的主要目的是使共享文件系统能够选择性地的为每个容器分配部分私有资源。例如，可以使用`host_path ="tmp"`和`container_path ="/ tmp"`来实现私有的“`/tmp`”目录，其将在执行器的工作目录（模式1777）内创建目录“tmp”，并同时将其在容器内安装为`/tmp`。
+**SharedFilesystem**隔离器的主要目的是使共享文件系统能够选择性地的为每个容器分配部分私有资源。例如，可以使用`host_path ="tmp"`和`container_path ="/tmp"`来实现私有的“`/tmp`”目录，其将在执行器的工作目录（模式1777）内创建目录“tmp”，并同时将其在容器内安装为`/tmp`。
 
 ### **Pid Namespace**
 
@@ -18,7 +18,7 @@ Pid命名空间隔离器可用于将每个容器隔离到单独pid命名空间�
 
 优雅的终止：在pid命名空间中终止引导进程内核会确保终止命名空间中的所有其他进程。
 
-Launcher将在销毁容器期间会优先使用上述（2）而不是 freezer cgroup，以避免在OOM条件下出现与 freezer cgroup相关的已知内核问题。
+Launcher将在销毁容器期间会优先使用上述（2）而不是 `freezer cgroup`，以避免在OOM条件下出现与 `freezer cgroup`相关的已知内核问题。
 
 `/proc`将被用于容器挂载，所以诸如'`ps`'之类的工具将正常工作。
 
@@ -36,9 +36,9 @@ Posix Disk隔离器通过定期运行du命令来报告每个沙箱的磁盘使�
 
 ### **XFS Disk Isolator**
 
-XFS Disk隔离器使用XFS项目配额来跟踪每个容器沙箱使用的磁盘空间，并强制执行相应的磁盘空间分配。超过其磁盘分配的任务执行的写操作将失败，并出现EDQUOT错误。但是任务不会被容器化器终止。
+XFS Disk隔离器使用XFS项目配额来跟踪每个容器沙箱使用的磁盘空间，并强制执行相应的磁盘空间分配。超过其磁盘分配的任务执行的写操作将失败，并出现`EDQUOT`错误。但是任务不会被容器化器终止。
 
-XFS磁盘隔离器在功能上类似于Posix磁盘隔离器，但是避免了重复运行du的成本。虽然它们不会相互干扰，但不建议一起使用它们。
+XFS磁盘隔离器在功能上类似于Posix磁盘隔离器，但是避免了重复运行`du`的成本。虽然它们不会相互干扰，但不建议一起使用它们。
 
 要启用XFS Disk隔离器，在启动Agent时将`disk/xfs`附加到`--isolation`参数。
 
