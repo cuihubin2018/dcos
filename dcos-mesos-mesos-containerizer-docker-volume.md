@@ -6,19 +6,19 @@
 
 ![](/assets/docker-volume-isolator.png)
 
-docker\/volume隔离器使用dvdcli（来自EMC的开源命令行工具）与Docker卷插件交互。
+`docker/volume`隔离器使用dvdcli（来自EMC的开源命令行工具）与Docker卷插件交互。
 
-当启动使用Docker卷的新任务时，docker\/volume隔离器将调用dvdcli将相应的Docker卷挂载到主机上，然后挂载到容器上。
+当启动使用Docker卷的新任务时，`docker/volume`隔离器将调用dvdcli将相应的Docker卷挂载到主机上，然后挂载到容器上。
 
-当任务完成或被杀死时，docker\/volume隔离器将调用dvdcli以卸载相应的Docker卷。
+当任务完成或被杀死时，`docker/volume`隔离器将调用dvdcli以卸载相应的Docker卷。
 
-docker\/volume隔离器的详细工作流程如下：
+`docker/volume`隔离器的详细工作流程如下：
 
 * 框架在启动任务时在ContainerInfo中指定外部卷。
 
 * Master向Agent发送启动任务的消息。
 
-* Agent接收消息，并要求所有隔离器（包括docker\/volume隔离器）为提供了ContainerInfo的容器做准备。
+* Agent接收消息，并要求所有隔离器（包括`docker/volume`隔离器）为提供了ContainerInfo的容器做准备。
 
 * 隔离器调用dvdcli将相应的外部卷挂载到主机上的挂载点。
 

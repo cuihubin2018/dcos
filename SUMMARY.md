@@ -54,7 +54,7 @@
   * [容器化实现细节](dcos-mesos-containerizer-internals.md)
   * [Mesos容器化](dcos-mesos-mesos-containerizer.md)
     * [Docker卷支持](dcos-mesos-mesos-containerizer-docker-volume.md)
-    * [容器网络接口](dcos-mesos-containerizer-cni.md)
+    * [容器网络接口](dcos-network-virtual-networks-isolation.md)
   * [Docker容器化](dcos-mesos-docker-containerizer.md)
   * [容器运行管理](dcos-marathon-container.md)
 * [容器网络](dcos-network.md)
