@@ -4,7 +4,7 @@
 
 ### 容器化器的创建与启动
 
-Mesos agent根据--containerizers参数创建容器化器。如果指定了多个容器化器，Mesos agent会创建一个组合的容器化器。
+Mesos agent根据`--containerizers`参数创建容器化器。如果指定了多个容器化器，Mesos agent会创建一个组合的容器化器。
 
 如果在TaskInfo中没有指定executor，Mesos agent将使用任务的默认executor（取决于代理使用的Containerizer，它可能是mesos-executor或mesos-docker-executor）。在Mesos的JIRA列表上有一条[MESOS-1718](https://issues.apache.org/jira/browse/MESOS-1718) BUG记录，该记录指出Command executor会导致过量使用Slave的资源，该BUG修复后，Mesos master将负责生成executor的信息。
 
@@ -28,7 +28,7 @@ Executor将以两种方式之一启动：
 
 1）Mesos agent在docker容器中运行
 
-> 这通过Agent参数--docker\_mesos\_image是否存在来指示。在这种情况下，参数 --docker\_mesos\_image的值被假定为用于启动Mesos agent的docker镜像。
+> 这通过Agent参数`--docker_mesos_image`是否存在来指示。在这种情况下，参数 `--docker_mesos_image`的值被假定为用于启动Mesos agent的docker镜像。
 > 
 > 如果任务包含一个executor（或自定义的executor），这个executor会在容器内启动。
 > 
@@ -38,11 +38,11 @@ Executor将以两种方式之一启动：
 
 > 如果任务包含一个executor（或自定义的executor），这个executor会在容器内启动。
 > 
-> 如果任务不包含一个executor，如定义了一个command，任务会分出一个子进程来执行默认的mesos-docker-executor，mesos-docker-executor然后生成一个shell并通过Docker CLI来执行这个command。
+> 如果任务不包含一个executor，如定义了一个command，任务会分出一个子进程来执行默认的`mesos-docker-executor`，mesos-docker-executor然后生成一个shell并通过Docker CLI来执行这个command。
 
 #### **Mesos Containerizer**
 
-Mesos containerizer是原生的Mesos容器化器。 Mesos Containerizer将处理任何未指定ContainerInfo :: DockerInfo的executor\/task。
+Mesos containerizer是原生的Mesos容器化器。 Mesos Containerizer将处理任何未指定`ContainerInfo :: DockerInfo`的executor/task。
 
 **容器启动**
 
@@ -58,11 +58,11 @@ Mesos containerizer是原生的Mesos容器化器。 Mesos Containerizer将处理
 
 **启动器（Launcher）**
 
-启动器负责复制\/销毁容器。
+启动器负责复制/销毁容器。
 
 在容器化上下文中创建一个新的进程。子进程将使用给定的argv，flags和环境在给定的路径上执行程序。
 
-子进程的I \/ O将根据指定的I \/ O描述符进行重定向。
+子进程的**I/O**将根据指定的**I/O**描述符进行重定向。
 
 **Linux启动器**
 
