@@ -68,7 +68,7 @@ Docker Runtime隔离器为docker镜像的运行时配置（例如，`Entrypoint/
 
 目前，Docker运行时隔离器支持对docker镜像默认的Entrypoint，Cmd，Env和WorkingDir指令进行配置。用户可以使用CommandInfo来覆盖镜像中的默认Entrypoint和Cmd（有关详细信息，请参见下文）。CommandInfo应该位于TaskInfo或ExecutorInfo内部（取决于任务是command task还是custom executor）。
 
-如果用户在CommandInfo中指定了一个命令，该命令将覆盖docker镜像中的默认Entrypoint\/Cmd。否则，将使用默认Entrypoint\/Cmd并为其附加CommandInfo中指定的参数。详细信息如下表所示。
+如果用户在CommandInfo中指定了一个命令，该命令将覆盖docker镜像中的默认`Entrypoint/Cmd`。否则，将使用默认`Entrypoint/Cmd`并为其附加CommandInfo中指定的参数。详细信息如下表所示。
 
 用户可以在CommandInfo中指定shell，value和arguments，它们表示在下表的第一列中。0表示未指定，1表示指定。第一行表示Entrypoint和Cmd如何在docker镜像中定义。列表中除了第一行和第一列以及标识为Error的单元格，其它的格子内第一个元素为可执行命令，其余的为附加的参数。
 
@@ -76,9 +76,9 @@ Docker Runtime隔离器为docker镜像的运行时配置（例如，`Entrypoint/
 
 ### **The **`cgroups/net_cls`** Isolator**
 
-cgroups\/net\_cls隔离器允许用户为Mesos集群中的容器提供网络性能隔离和网络分段。要启用cgroups\/net\_cls isolator，在启动Agent时将`cgroups/net_cls`附加到`--isolation`参数。
+`cgroups/net_cls`隔离器允许用户为Mesos集群中的容器提供网络性能隔离和网络分段。要启用`cgroups/net_cls` isolator，在启动Agent时将`cgroups/net_cls`附加到`--isolation`参数。
 
-顾名思义，该隔离器为Linux cgroups启用net\_cls子系统，并为MesosContainerizer启动的每个容器分配一个net\_cls cgroup。net\_cls子系统的目标是允许内核使用32位句柄标记来自容器的数据包。这些句柄可以由诸如qdisc（用于流量工程）和net-filter（用于防火墙）的内核模块使用，以实施用户指定的网络性能和安全策略。基于net\_cls句柄的策略可以由用户通过用户空间的工具（如[tc](http://tldp.org/HOWTO/Traffic-Control-HOWTO/software.html#s-iproute2-tc)和[iptables](http://linux.die.net/man/8/iptables)）指定。
+顾名思义，该隔离器为Linux cgroups启用`net_cls`子系统，并为MesosContainerizer启动的每个容器分配一个`net_cls` cgroup。`net_cls`子系统的目标是允许内核使用32位句柄标记来自容器的数据包。这些句柄可以由诸如`qdisc`（用于流量工程）和`net-filter`（用于防火墙）的内核模块使用，以实施用户指定的网络性能和安全策略。基于`net_cls`句柄的策略可以由用户通过用户空间的工具（如[tc](http://tldp.org/HOWTO/Traffic-Control-HOWTO/software.html#s-iproute2-tc)和[iptables](http://linux.die.net/man/8/iptables)）指定。
 
 The 32-bit handle associated with a net\_cls cgroup can be specified by writing the handle to the `net_cls.classid`file, present within the net\_cls cgroup. The 32-bit handle is of the form `0xAAAABBBB`, and consists of a 16-bit primary handle 0xAAAA and a 16-bit secondary handle 0xBBBB. You can read more about the use cases for the primary and secondary handles in the [Linux kernel documentation for net\_cls](https://www.kernel.org/doc/Documentation/cgroup-v1/net_cls.txt).
 
@@ -88,7 +88,11 @@ Once a primary handle has been specified for an agent, for each container the cg
 
 ### **The **`docker/volume`** Isolator**
 
+参考[Docker卷支持](/dcos-mesos-mesos-containerizer-docker-volume.md)
+
 ### **The **`network/cni`** Isolator**
+
+参考 [容器网络接口](/dcos-network-virtual-networks-isolation.md)
 
 ### **The **`linux/capabilities`** Isolator**
 

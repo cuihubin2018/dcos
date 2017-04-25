@@ -23,9 +23,7 @@ Mesos实现了以下containerizer：
 
 * Docker
 
-* Mesos
-
-* External（deprecated）
+* Mesos（默认）
 
 
 可以在Agent上通过标志--containerizers指定要使用的容器化器的类型
