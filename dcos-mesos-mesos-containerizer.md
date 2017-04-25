@@ -96,10 +96,26 @@ Once a primary handle has been specified for an agent, for each container the cg
 
 ### **The **`linux/capabilities`** Isolator**
 
-`linux/capabilities`隔离器为Mesos容器化控制容器所能够操作的主机的[LINUX操作系统功能](http://man7.org/linux/man-pages/man7/capabilities.7.html)边界提供了支持。运维人员可以限定运行在某Agent主机上的容器所操作的Linux系统功能范围；容器也可以表明其正常运行所需的Linux系统功能范围列表。
+隔离器`linux/capabilities`为Mesos容器化控制容器所能够操作的主机的[LINUX操作系统功能](http://man7.org/linux/man-pages/man7/capabilities.7.html)边界提供了支持。运维人员可以限定运行在某Agent主机上的容器所操作的Linux系统功能范围；容器也可以表明其正常运行所需的Linux系统功能范围列表。
 
 可以通过protobuf定义的`CapabilityInfo::Capability`中公开的Linux系统功能列表。
 
 #### Agent配置
 
 启动Agent时通过`--isolation`参数指定加载`linux/capabilities`隔离器。Agent主机所允许容器操作的Linux功能通过`--allowed_capabilities`参数设定。
+
+隔离器功能运行时其本身需要Linux系统的`CAP_SETPCAP`能力，因此Agent上的Mesos进程通常以root用户启动，示例如下：
+
+```
+sudo mesos-agent --master=<master ip> --ip=<agent ip>
+  --work_dir=/var/lib/mesos
+  --isolation=linux/capabilities[,other isolation flags]
+  --allowed_capabilities='{"capabilities":[NET_RAW,MKNOD]}'
+```
+如果参数`--allowed_capabilities`的值为一个空列表，则表明容器无权操作Linux的任何核心能力；如果未指定`--allowed_capabilities`参数则表明容器有权使用任何Linux的核心能力。
+
+#### 任务配置
+
+Mesos的任务需要使用被允许的Linux核心能力时，必须在`ContainerInfo`内的`LinuxInfo`中进行声明。Mesos任务只能使用Agent所允许的Linux核心能力，尝试使用其它能力时都会被拒绝。
+
+如果`ContainerInfo`内的`LinuxInfo`中进行声明的`capability_info`为空列表，Mesos任务放弃所有Agent所允许的Linux核心能力；如果未定义`capability_info`则可以访问所允许的所有Linux核心能力。
