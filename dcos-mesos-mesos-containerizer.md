@@ -96,3 +96,10 @@ Once a primary handle has been specified for an agent, for each container the cg
 
 ### **The **`linux/capabilities`** Isolator**
 
+`linux/capabilities`隔离器为Mesos容器化控制容器所能够操作的主机的[LINUX操作系统功能](http://man7.org/linux/man-pages/man7/capabilities.7.html)边界提供了支持。运维人员可以限定运行在某Agent主机上的容器所操作的Linux系统功能范围；容器也可以表明其正常运行所需的Linux系统功能范围列表。
+
+可以通过protobuf定义的`CapabilityInfo::Capability`中公开的Linux系统功能列表。
+
+#### Agent配置
+
+启动Agent时通过`--isolation`参数指定加载`linux/capabilities`隔离器。Agent主机所允许容器操作的Linux功能通过`--allowed_capabilities`参数设定。
