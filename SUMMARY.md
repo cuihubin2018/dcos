@@ -61,7 +61,7 @@
   * [服务端口配置](dcos-network-marathon-ports.md)
   * [虚拟网络](dcos-network-virtual-networks.md)
     * [配置IP-per-Container](dcos-network-virtual-networks-ippc.md)
-    * [隔离](dcos-network-virtual-networks-isolation.md)
+    * [CNI for Mesos 容器](dcos-network-virtual-networks-isolation.md)
   * [Docker 网络](dcos-network-docker-network.md)
 * [服务发现与负载](dcos-service-discovery.md)
   * [VIPs](dcos-network-vips.md)
