@@ -54,13 +54,13 @@ Mesos自1.0版本开始支持使用Docker的config.json文件设置访问私有�
 或
 
 ```
---docker_config="{ \
-  \"auths\": { \
-    \"https://index.docker.io/v1/\": { \
-      \"auth\": \"xXxXxXxXxXx=\", \
-      \"email\": \"username@example.com\" \
-    } \
-  } \
+--docker_config="{ 
+  "auths": { 
+    "https://index.docker.io/v1/": { 
+      "auth": "xXxXxXxXxXx=", 
+      "email": "username@example.com" 
+    } 
+  } 
 }"
 ```
 
@@ -72,5 +72,5 @@ Mesos自1.0版本开始支持使用Docker的config.json文件设置访问私有�
 
 ### 在Agent恢复时恢复Docker容器
 
-无论Agent节点本身是否在Docker容器中运行，Docker容器化器都支持在Agent节点重新启动时恢复Docker容器。当启用--docker\_mesos\_image参数时，Docker容器化器假定其本身在容器中运行，并相应地修改其恢复的机制来启动docker容器。
+无论Agent节点本身是否在Docker容器中运行，Docker容器化器都支持在Agent节点重新启动时恢复Docker容器。当启用`--docker_mesos_image`参数时，Docker容器化器假定其本身在容器中运行，并相应地修改其恢复的机制来启动docker容器。
 
