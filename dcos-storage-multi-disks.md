@@ -22,15 +22,13 @@ Mesos目前支持三种`Disk`磁盘资源，包括：
 Root磁盘是Mesos中的基本磁盘资源。通常它是指启动该Agent的操作系统的磁盘空间。使用Root磁盘时，数据会保存在Agent的`work_dir`参数指定的存储位置(在DC/OS中默认为`/var/lib/dcos/mesos-resources`)。Root磁盘定义示例如下：
 
 ```json
-{ 
-    "resources": [ 
-        { 
-            "name": "disk", 
-            "type": "SCALAR", 
-            "scalar": { "value": 2048 } 
-        } 
-    ]
-}
+[ 
+    { 
+        "name": "disk", 
+        "type": "SCALAR", 
+        "scalar": { "value": 2048 } 
+    } 
+]
 ```
 
 为Agent节点设置磁盘资源时，可以给一个磁盘资源指定一个role，当进行资源分配时，可以在指定了role的磁盘资源上进行资源静态预留（statically reserving）。
@@ -40,16 +38,14 @@ Root磁盘是Mesos中的基本磁盘资源。通常它是指启动该Agent的操
 Path磁盘是一种辅助类型的磁盘资源。它通过将磁盘分割成小块的方式，在其上创建使用小于磁盘上的总可用空间的持久卷。Path磁盘通常用于额外的日志存储空间，文件归档存储，缓存或者直接用于一些非性能关键的应用。通过在`DiskInfo`的`source`标签下指定`root`指向所创建目录的路径，即可将该路径下的存储资源提交给Agent节点。
 
 ```json
-{ 
-    "resources": [ 
-        { 
-            "name": "disk", 
-            "type": "SCALAR", 
-            "scalar": { "value": 2048 }, 
-            "disk": { "source": { "type": "PATH", "path": { "root": "/mnt/data" } } } 
-        } 
-    ]
-}
+[ 
+    { 
+        "name": "disk", 
+        "type": "SCALAR", 
+        "scalar": { "value": 2048 }, 
+        "disk": { "source": { "type": "PATH", "path": { "root": "/mnt/data" } } } 
+    } 
+]
 ```
 
 可以在操作系统磁盘空间下创建多个目录，并把这些目录挂载到Path磁盘资源下，但是这种用法最好仅限于测试环境。在同一个操作系统下创建多个Path磁盘资源时，需要对磁盘资源（空闲空间）进行静态分区。例如，在`/foo`下面挂载了10G的存储空间，Agent节点配置了两个Path磁盘分别为`/foo/disk1`和`/foo/disk2`。为避免空间资源不足的情况发生，Agent节点启动时，disk1和disk2需要进行特定配置，两者总的存储空间之和不应超过10G。
@@ -65,16 +61,14 @@ Mount磁盘是一种辅助类型的磁盘资源。它不能被应用框架切割
 Mount磁盘除了性能优势之外，运行在这些磁盘之上的应用可以依靠磁盘空间不足时的磁盘错误进行故障处理。基于这种预期，Mesos禁用了对Mount磁盘资源的`disk/du`隔离。
 
 ```json
-{ 
-    "resources": [ 
-        { 
-            "name": "disk", 
-            "type": "SCALAR", 
-            "scalar": { "value": 2048 }, 
-            "disk": { "source": { "type": "MOUNT", "mount": { "root": "/mnt/data" } } } 
-        } 
-    ]
-}
+[ 
+    { 
+        "name": "disk", 
+        "type": "SCALAR", 
+        "scalar": { "value": 2048 }, 
+        "disk": { "source": { "type": "MOUNT", "mount": { "root": "/mnt/data" } } } 
+    } 
+]
 ```
 
 #### Block磁盘
