@@ -59,7 +59,7 @@
   * [容器运行管理](dcos-marathon-container.md)
 * [容器网络](dcos-network.md)
   * [服务端口配置](dcos-network-marathon-ports.md)
-  * [虚拟网络](dcos-network-virtual-networks.md)
+  * [容器网络方案](dcos-network-virtual-networks.md)
     * [IP-per-Container](dcos-network-virtual-networks-ippc.md)
     * [CNI for Mesos 容器](dcos-network-virtual-networks-isolation.md)
   * [Docker 网络](dcos-network-docker-network.md)
