@@ -31,7 +31,7 @@
 }
 ```
 
-**containerPath：**应用读取和写入数据的路径。它必须是相对于容器的单级路径;它不能包含正斜杠（\/）（可以是“`data`”，但不能是“`/data`”，“`/var/ data`”或“`var/data`”）。如果应用程序需要绝对路径或带斜杠的相对路径，请使用此配置。
+**containerPath：**应用读取和写入数据的路径。它必须是相对于容器的单级路径;它不能包含正斜杠（`/`）（可以是“`data`”，但不能是“`/data`”，“`/var/ data`”或“`var/data`”）。如果应用程序需要绝对路径或带斜杠的相对路径，请使用此配置。
 
 **mode： **卷的访问模式。目前，“RW”是唯一可选的值，可以让应用从卷读取和写入卷。
 
@@ -45,7 +45,7 @@
 
 #### 设置不受支持的容器路径
 
-`containerPath`的值必须是相对的，以便于向运行的容器动态添加本地持久性卷，并确保跨操作系统的一致性。但是，应用程序有时可能需要绝对路径或容器路径，或含有斜线（\/）的相对路径。
+`containerPath`的值必须是相对的，以便于向运行的容器动态添加本地持久性卷，并确保跨操作系统的一致性。但是，应用程序有时可能需要绝对路径或容器路径，或含有斜线（`/`）的相对路径。
 
 如果应用程序需要上述不受支持的`containerPath`，则可以通过配置两个卷的方式实现。首先，第一个卷具有所需的绝对容器路径，并且没有`persistent`参数，而且第一个卷的hostPath参数将与第二个卷的containerPath值所定义的相对路径相匹配。如下所示：
 
@@ -60,6 +60,6 @@
 
 * [有状态应用服务](/dcos-service-stateful.md)
 
-* https:\/\/mesosphere.github.io\/marathon\/docs\/persistent-volumes.html
+* https://mesosphere.github.io/marathon/docs/persistent-volumes.html
 
 
