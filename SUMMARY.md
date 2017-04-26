@@ -82,6 +82,7 @@
   * [持久化卷](dcos-storage-persistent-volume.md)
     * [本地持久化卷](dcos-storage-persistent-volume-local.md)
     * [外部持久化卷](dcos-storage-external-volume.md)
+    * [共享持久化卷](dcos-storage-persistent-volume-sharedmd.md)
   * [SAN/SDS](dcos-storage-sansds.md)
     * [Rex-Ray](dcos-storage-sansds-rexray.md)
     * [Flocker](dcos-storage-sansds-flocker.md)
