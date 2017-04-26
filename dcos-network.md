@@ -62,7 +62,7 @@ message DockerInfo {
 
 ### VIPs
 
-DCOS提供了一个名为Minuteman的服务器端内部微服务之间的东-西向（区分于Client-Server的南-北向）4层负载均衡。为了易于服务的配置和发现，DCOS采用**命名（name-based）VIPs**来定位服务。因此，客户端访问服务时连接的是一个服务地址而不是具体的IP地址，同时DCOS可以很容易的将指向一个命名VIP的调用请求映射到多个具体的IP地址和端口，从而实现负载调度。采用命名VIPs的另一个好处是可以避免与基于IP的VIP产生冲突，在服务安装时可以自动创建。
+DC/OS提供了一个名为Minuteman的服务器端内部微服务之间的东-西向（区分于Client-Server的南-北向）4层负载均衡。为了易于服务的配置和发现，DC/OS采用**命名（name-based）VIPs**来定位服务。因此，客户端访问服务时连接的是一个服务地址而不是具体的IP地址，同时DC/OS可以很容易的将指向一个命名VIP的调用请求映射到多个具体的IP地址和端口，从而实现负载调度。采用命名VIPs的另一个好处是可以避免与基于IP的VIP产生冲突，在服务安装时可以自动创建。
 
 一个命名VIP包含3个组成部分：
 
@@ -108,9 +108,9 @@ VIPs的命名遵循如下规则：
 * `myservice.marathon.l4lb.thisdcos.directory:7777`
 
 
-客户端（注：此处指DCOS集群中的其他服务）可以通过调用端口为6666的VIP访问服务提供的JMX管理功能，可以通过调用端口为7777的VIP访问服务提供的业务API。
+客户端（注：此处指DC/OS集群中的其他服务）可以通过调用端口为6666的VIP访问服务提供的JMX管理功能，可以通过调用端口为7777的VIP访问服务提供的业务API。
 
-上述配置也可以通过DCOS的WEB管理控制台进行配置：
+上述配置也可以通过DC/OS的WEB管理控制台进行配置：
 
 ![](/assets/dcos_network_vip_appc.png)
 
@@ -146,14 +146,14 @@ VIPs的命名遵循如下规则：
 }
 ```
 
-如上示例，该配置定义了一个名为myservice的服务，该服务通过Docker镜像`chrisrc/myservice`提供。与上例类似，该服务也定义了两个客户端（注：此处指DCOS集群中的其他服务）可以直接访问的VIP：
+如上示例，该配置定义了一个名为myservice的服务，该服务通过Docker镜像`chrisrc/myservice`提供。与上例类似，该服务也定义了两个客户端（注：此处指DC/OS集群中的其他服务）可以直接访问的VIP：
 
 * `myservice.marathon.l4lb.thisdcos.directory:6666`
 
 * `myservice.marathon.l4lb.thisdcos.directory:7777`
 
 
-上述配置也可以通过DCOS的WEB管理控制台进行配置：
+上述配置也可以通过DC/OS的WEB管理控制台进行配置：
 
 ![](/assets/dcos_network_vip_docker.png)
 
