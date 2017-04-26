@@ -8,11 +8,13 @@ Mesos提供了一种机制可以从磁盘资源创建一个持久化卷。因此
 
 通过预留多个[磁盘资源（multiple disk resources）](http://mesos.apache.org/documentation/latest/multiple-disk)，持久化卷也可以在隔离的和辅助的磁盘上创建。
 
+默认情况下，持久化卷不能在不同Executor管理的运行任务之间共享：即，一旦使用持久化卷启动任务，该卷将不会出现在任何资源提供中，直到任务完成运行。**共享持久化卷**是一种可以由同一Agent上的多个任务同时访问的持久化卷，有关详细信息，请参阅[共享持久化卷(shared volumes)](https://github.com/apache/mesos/blob/master/docs/shared-resources.md)。
+
 持久化卷可以由操作员或授权的框架来创建。默认情况下，框架和操作员可以为任意角色创建持久化卷，也可以销毁任意持久化卷。Mesos授权服务将上述行为限制给特定的角色进行操作。框架或操作者执行这些操作时必须提供可证明自己的principal。要对预留、取消预留、创建和销毁操作使用授权机制，Mesos的Master节点必须配置适当的ACLs，详细信息请参考[相关文档](http://mesos.apache.org/documentation/latest/authorization/)。
 
-框架在接收到资源供给时，调用acceptOffers接口，将`Offer::Operation::Create` 和 `Offer::Operation::Destroy`消息作为响应回传给Mesos。
+- 框架在接收到资源供给时，调用acceptOffers接口，将`Offer::Operation::Create` 和 `Offer::Operation::Destroy`消息作为响应回传给Mesos。
 
-操作员通过Master提供的`/create-volumes` 和 `/destroy-volumes`两个HTTP服务管理持久化卷。
+- 操作员通过Master提供的`/create-volumes` 和 `/destroy-volumes`两个HTTP服务管理持久化卷。
 
 当一个持久化卷被销毁时，该卷上的所有数据将从Agent节点的文件系统移除。注意，在挂载（Mount）磁盘上创建的持久化卷，根（root）目录是不会被移除的，因为它通常被用作独立存储设备的挂载点。
 
