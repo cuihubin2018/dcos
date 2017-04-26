@@ -1,8 +1,52 @@
 ## 容器网络方案
 
-容器网络需要面对的最重要的一个问题是容器的IP地址。DCOS的容器网络在Mesos V0.25版本（2015年10月）之前没有明确的方案，需要手动维护创建。在Mesos V0.25到V1.0（2016年7月）这段时期，Docker容器技术推出了网络扩展功能，Docker容器有了原生的网络扩展支持，典型的第三方插件有Weave，Calico等，此阶段可以通过Marathon的API在创建容器的同时赋予一个IP地址。在Mesos V1.0之后，Mesos原生支持了CNI网络，无论是Docker容器还是AppC容器，一容器一IP变得非常简单。
+容器网络需要面对的最重要的一个问题是容器的IP地址。DC/OS的容器网络在Mesos V0.25版本（2015年10月）之前没有明确的方案，需要手动维护创建。在Mesos V0.25到V1.0（2016年7月）这段时期，Docker容器技术推出了网络扩展功能，Docker容器有了原生的网络扩展支持，典型的第三方插件有Weave，Calico等，此阶段可以通过Marathon的API在创建容器的同时赋予一个IP地址。在Mesos V1.0之后，Mesos原生支持了CNI网络，无论是Docker容器还是AppC容器，**IP-per-container**变得非常简单。
 
-当前Marathon支持三种网络模式：
+总之，Mesos支持_Mesos容器化_和_Docker容器化_两种容器运行时方案，这两种运行时都支持**IP-per-container**，允许容器绑定到不同的IP网络，不同的是两种运行时支持的IP-per-container的实现机制。Mesos容器化使用network/cni隔离器实现的[CNI](https://github.com/containernetworking/cni/blob/master/SPEC.md)为容器提供网络支持；Docker容器化依赖Docker Daemon通过Docker的[容器网络模型](https://github.com/docker/libnetwork)提供网络支持。
+
+**IP-per-container**仅是为容器隔离提供网络支持方案中的一种，Mesos容器化还可以通过其它方案为容器提供网络支持，如：[端口映射隔离器](https://github.com/apache/mesos/blob/master/docs/port-mapping-isolator.md)。
+
+Mesos容器化和Docker容器化在Mesos中使用相同的网络配置描述：
+
+```
+message NetworkInfo {
+  enum Protocol {
+    IPv4 = 1;
+    IPv6 = 2;
+  }
+
+  message IPAddress {
+    optional Protocol protocol = 1;
+    optional string ip_address = 2;
+  }
+
+  repeated IPAddress ip_addresses = 5;
+  optional string name = 6;
+  repeated string groups = 3;
+  optional Labels labels = 4;
+};
+```
+
+此外，Docker容器化在描述网络配置的同时还需要对容器进行定义：
+
+```
+message DockerInfo {
+  // The docker image that is going to be passed to the registry.
+  required string image = 1;
+
+  // Network options.
+  enum Network {
+    HOST = 1;
+    BRIDGE = 2;
+    NONE = 3;
+    USER = 4;
+  }
+
+  optional Network network = 2 [default = HOST];
+ };
+```
+
+在DC/OS中，通过Marathon管理容器（AppC或Docker）时，当前支持三种网络模式配置：
 
 * **BRIDGE**
 
@@ -14,7 +58,7 @@
 
 * **HOST**
 
-> 同时适用于Marathon AppC容器应用和Docker应用。在该模式下，应用直接绑定到宿主机的一个或多个端口。
+> 同时适用于AppC容器应用和Docker容器应用。在该模式下，应用直接绑定到宿主机的一个或多个端口。
 
 ### VIPs
 
@@ -102,7 +146,7 @@ VIPs的命名遵循如下规则：
 }
 ```
 
-如上示例，该配置定义了一个名为myservice的服务，该服务通过Docker镜像chrisrc\/myservice提供。与上例类似，该服务也定义了两个客户端（注：此处指DCOS集群中的其他服务）可以直接访问的VIP：
+如上示例，该配置定义了一个名为myservice的服务，该服务通过Docker镜像`chrisrc/myservice`提供。与上例类似，该服务也定义了两个客户端（注：此处指DCOS集群中的其他服务）可以直接访问的VIP：
 
 * `myservice.marathon.l4lb.thisdcos.directory:6666`
 
