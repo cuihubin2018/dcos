@@ -6,7 +6,7 @@ Marathon有一个内部事件总线，用于捕获所有API请求并发布对应
 
 事件总线有两个API：
 
-- 事件流。有关详细信息，请参阅[Marathon REST API](https://mesosphere.github.io/marathon/docs/generated/api.html)参考中的`/v2 /events`条目。
+- 事件流。有关详细信息，请参阅[Marathon REST API](https://mesosphere.github.io/marathon/docs/generated/api.html)参考中的`/v2/events`条目。
 
 -回调接口，以JSON格式将事件POST到一个或多个端点。
 

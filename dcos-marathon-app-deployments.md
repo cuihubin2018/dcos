@@ -103,6 +103,24 @@
 
 * **KillAllOldTasksOf** 删除指定应用程序之外的其余任务
 
+### 单应用部署
+
+通常，一些遗留的应用服务无法同时运行多个实例，通过**标签**：`MARATHON_SINGLE_INSTANCE_APP`可以确保这类服务只有一个实例运行。
+
+1. 在应用定义中，将标签`MARATHON_SINGLE_INSTANCE_APP`的值设置为true：
+```
+"labels":{
+    "MARATHON_SINGLE_INSTANCE_APP": "true",
+  }
+```
+
+2. 设置`upgradeStrategy`，在调整实例部署时让Marathon可以杀死服务实例进程：
+```
+"upgradeStrategy":{
+    "minimumHealthCapacity": 0,
+    "maximumOverCapacity": 0
+  }
+```
 
 ### 参考
 
