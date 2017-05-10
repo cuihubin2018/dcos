@@ -74,3 +74,6 @@ Mesos自1.0版本开始支持使用Docker的config.json文件设置访问私有�
 
 无论Agent节点本身是否在Docker容器中运行，Docker容器化器都支持在Agent节点重新启动时恢复Docker容器。当启用`--docker_mesos_image`参数时，Docker容器化器假定其本身在容器中运行，并相应地修改其恢复的机制来启动docker容器。
 
+### Docker容器的资源限定
+
+注意，默认情况下，使用Docker引擎运行容器镜像时，是没有存储资源限制的。而且Docker的容器日志默认使用json-file驱动，如果不加以限定可能会耗尽宿主机的存储资源。
