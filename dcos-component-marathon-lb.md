@@ -157,3 +157,6 @@ $ curl -vH "X-Marathon-App-Id: /tweeter" marathon-lb.marathon.mesos:9091/
 
 * 可以考虑为环境变量`HAPROXY_RELOAD_SIGTERM_DELAY`设置为一个值，例如5m。这个值会直接传递给每次HAProxy重新加载之后执行的sleep命令，待达到延迟时间设定后再向旧的HAProxy的PID发送SIGTERM（参见[service/haproxy/run](https://github.com/mesosphere/marathon-lb/blob/master/service/haproxy/run)）。特别是对于需要TCP长连接的情况，更希望在所有连接完成之后再终止HAProxy。如果过于频繁地重新加载HAProxy，因PID会在指定的延迟内被重复使用，则可能导致SIGTERM发送给错误的PID。有关HAProxy重新加载的更多信息，以及更多相关问题[＃5](https://github.com/mesosphere/marathon-lb/issues/5)，[＃71](https://github.com/mesosphere/marathon-lb/issues/71)，[＃267](https://github.com/mesosphere/marathon-lb/issues/267)，[＃276](https://github.com/mesosphere/marathon-lb/issues/276)和[＃318](https://github.com/mesosphere/marathon-lb/issues/318)的更多信息，请参阅[此讨论](http://www.serverphorums.com/read.php?10,862139)。
 
+### 注意事项
+
+在实际运维部署过程中，MLB部署在Public节点时，其他在同一节点部署的容器服务不应使用HOST网络模式，这可能会导致MLB无法更新负载端口的状态。
