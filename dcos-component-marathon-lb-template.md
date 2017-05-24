@@ -2,7 +2,7 @@
 
 - 查看HAProxy的负载端口列表
 
- `http://[PUBLIC_NODE_IP]:9090/proxy?stats`
+ `http://[PUBLIC_NODE_IP]:9090/haproxy?stats`
 
 
 - 获取HAProxy的配置
