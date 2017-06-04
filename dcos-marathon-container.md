@@ -6,8 +6,7 @@ Marathon支持两种运行Docker容器镜像的方式：
 
 * Docker容器化，使用Docker引擎运行容器镜像。
 
-* Mesos容器化，使用通用容器运行时(UCR)运行容器镜像。
-
+* Mesos容器化，使用通用容器运行时\(UCR\)运行容器镜像。
 
 ### Docker容器化
 
@@ -78,7 +77,9 @@ $ echo '10mins' > /etc/mesos-slave/executor_registration_timeout
         } 
     }, 
     "healthChecks": [ 
-        { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } 
+        { "protocol": "HTTP", "portIndex": 0, 
+          "path": "/", "gracePeriodSeconds": 5, 
+          "intervalSeconds": 20, "maxConsecutiveFailures": 3 } 
     ] 
 }
 ```
@@ -99,7 +100,7 @@ $ echo '10mins' > /etc/mesos-slave/executor_registration_timeout
 --resources="ports(*):[8000-9000, 31000-32000]"
 ```
 
-DCOS默认设置的端口资源范围(`/opt/mesosphere/etc/mesos-slave` )为：
+DCOS默认设置的端口资源范围\(`/opt/mesosphere/etc/mesos-slave` \)为：
 
 ```json
 {
