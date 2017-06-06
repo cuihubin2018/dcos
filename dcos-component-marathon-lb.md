@@ -16,13 +16,13 @@ Marathon-LB是一个容器应用，它订阅了Marathon的事件总线，自动�
 
 * 支持Marathon的[健康检查](/dcos-marathon-health-checks.md)
 
-* 多证书TLS \/ SSL支持
+* 多证书TLS / SSL支持
 
 * 零停机部署
 
 * 支持为每个服务提供HAProxy模板
 
-* 与DC\/OS集成
+* 与DC/OS集成
 
 * 可在启动时提供全局HAProxy模板
 
@@ -52,7 +52,7 @@ Marathon-LB是一个容器应用，它订阅了Marathon的事件总线，自动�
 
 **注意：**默认配置下，Marathon-LB部署在Public节点上。如果需要用作内部负载均衡，可参考如下配置：
 
-```
+```json
 {
  "marathon-lb":{
    "name":"marathon-lb-internal",
@@ -73,7 +73,7 @@ Marathon-LB运行时绑定在服务定义的服务端口`servicePort`（如果AP
 
 S1：
 
-```
+```json
 {
  "id": "S1",
  "container": {
@@ -104,7 +104,7 @@ Marathon-LB的另一个重要特性是支持虚拟主机。这一特性可以将
 
 S1:
 
-```
+```json
 {
  "id": "S1",
  "labels":{
@@ -116,7 +116,7 @@ S1:
 
 S2:
 
-```
+```json
 {
  "id": "S2",
  "labels":{

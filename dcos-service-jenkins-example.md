@@ -4,11 +4,11 @@
 
 **Tomcat下载地址**
 
-http:\/\/mirrors.aliyun.com\/apache\/tomcat\/tomcat-8\/v8.5.6\/bin\/apache-tomcat-8.5.6.tar.gz
+http://mirrors.aliyun.com/apache/tomcat/tomcat-8/v8.5.6/bin/apache-tomcat-8.5.6.tar.gz
 
 **War下载地址（本地Nexus仓库）**
 
-http:\/\/192.168.1.54:8081\/nexus\/content\/repositories\/releases\/com\/example\/example\/1.0\/example-1.0.war
+http://192.168.1.54:8081/nexus/content/repositories/releases/com/example/example/1.0/example-1.0.war
 
 ### 定义marathon服务配置
 
@@ -56,7 +56,7 @@ http:\/\/192.168.1.54:8081\/nexus\/content\/repositories\/releases\/com\/example
 }
 ```
 
-**调用DC\/OS的REST接口部署APP**
+**调用DC/OS的REST接口部署APP**
 
 根据上述两种方案，选择其中的一种，执行下述指令部署应用：
 
@@ -302,6 +302,7 @@ Tomcat服务在DCOS中部署后，查看其中的一个服务实例：
 
 2. 通过自定义标签进行实例分组和过滤。
 
-3. 将Jenkins的$BUILD_ID参数作为生成的Docker镜像的Tag，可以通过DC/OS WEB控制台调整服务的Tag，实现服务的降级回滚。详细示例请参考[持续集成与部署](/dcos-usage-cicd.md)
+3. 将Jenkins的$BUILD\_ID参数作为生成的Docker镜像的Tag，可以通过DC/OS WEB控制台调整服务的Tag，实现服务的降级回滚。详细示例请参考[持续集成与部署](/dcos-usage-cicd.md)
+
 
 
