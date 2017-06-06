@@ -45,7 +45,7 @@
 
 在上述编译构建过程中的第3步，生成Universe索引文件的同时，在\`docker\/server\/target\`目录下也生成了一个marathon.json文件。
 
-```
+```json
 { 
   "id": "/universe", 
   "instances": 1, 

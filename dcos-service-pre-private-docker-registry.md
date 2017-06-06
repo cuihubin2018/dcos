@@ -6,7 +6,6 @@
 
 * DCOS集群对容器镜像依赖较重且镜像文件都比较大，可以节省带宽，减少镜像拉取和推送的时间，加快部署速度。
 
-
 ### 私有容器仓库的选择
 
 从容器仓库的实现产品来讲，当前支持容器仓库的产品包括：
@@ -21,7 +20,6 @@
 
 * Nexus3
 
-
 从安全角度，因Docker守护程序默认强制要求仓库处于可信的环境，在具体实践时，根据环境的可信度，通常有三种方案：
 
 * 可信证书颁发机构
@@ -30,7 +28,6 @@
 
 * 非安全
 
-
 容器仓库服务作为DCOS集群内部的一个服务，必须很容易的供内部访问，同时也可能面临来自部分集群外部的访问（如推送部分外部基础镜像到容器仓库）。在DCOS中，服务命名与发现策略有：
 
 * Mesos-DNS
@@ -38,7 +35,6 @@
 * Layer 4 Load Balancer
 
 * Marathon-LB
-
 
 本方案的选择充分结合DCOS集群的特性，采用Docker官方提供的Registry镜像，自签名证书和VIPs + Marathon-LB的方式。
 
@@ -57,7 +53,6 @@
 6. 在集群内部使用容器仓库。
 
 7. 在集群外部访问容器仓库。
-
 
 ### 集群环境准备
 
@@ -81,9 +76,14 @@ for i in $(curl -sS master.mesos:5050/slaves | jq '.slaves[] | .hostname' | tr -
 cd ~
 mkdir  certs
 cd certs
-cp /opt/mesosphere/packages/openssl--8042860cf76ca9ef965af9ee6d59acace266356e/etc/ssl/openssl.cnf ./openssl.cnf
+
+cp /opt/mesosphere/packages/openssl--8042860cf76ca9ef965af9ee6d59acace266356e/etc/ssl/openssl.cnf \
+./openssl.cnf
+
 sed -i "/\[ v3_ca \]/a subjectAltName = IP:192.168.0.1" ./openssl.cnf
-openssl req -config ./openssl.cnf -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 -out domain.crt -subj "/C=CN/ST=SH/L=Shang Hai/O=example.com/CN=192.168.0.1"
+
+openssl req -config ./openssl.cnf -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 \
+-out domain.crt -subj "/C=CN/ST=SH/L=Shang Hai/O=example.com/CN=192.168.0.1"
 ```
 
 使用与Docker配合工作的VIP创建自签名证书有点复杂，因为必须要修改OpenSSL的配置以将VIP包含在证书的主题备用名称中。
@@ -95,13 +95,17 @@ openssl req -config ./openssl.cnf -newkey rsa:2048 -nodes -keyout domain.key -x5
 使用Mesos DNS：
 
 ```
-openssl req -config ./openssl.cnf -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 -out domain.crt -subj "/C=CN/ST=SH/L=Shang Hai/O=example.com/CN=registry.marathon.mesos"
+openssl req -config ./openssl.cnf -newkey rsa:2048 -nodes \
+-keyout domain.key -x509 -days 365 \
+-out domain.crt -subj "/C=CN/ST=SH/L=Shang Hai/O=example.com/CN=registry.marathon.mesos"
 ```
 
 使用引用VIP的主机名：
 
 ```
-openssl req -config ./openssl.cnf -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 -out domain.crt -subj "/C=CN/ST=SH/L=Shang Hai/O=example.com/CN=registry.example.com"
+openssl req -config ./openssl.cnf -newkey rsa:2048 -nodes \
+-keyout domain.key -x509 -days 365 -out domain.crt \
+-subj "/C=CN/ST=SH/L=Shang Hai/O=example.com/CN=registry.example.com"
 ```
 
 #### 拷贝证书和私钥到所有Agent节点
@@ -111,11 +115,13 @@ openssl req -config ./openssl.cnf -newkey rsa:2048 -nodes -keyout domain.key -x5
 ```
 MESOS_AGENTS=$(curl -sS master.mesos:5050/slaves | jq '.slaves[] | .hostname' | tr -d '"'); 
 
-for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no "sudo mkdir --parent /etc/privateregistry/certs/"; done 
+for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no \
+"sudo mkdir --parent /etc/privateregistry/certs/"; done 
 
 for i in $MESOS_AGENTS; do scp -o StrictHostKeyChecking=no ./domain.* "$i":~/; done 
 
-for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no "sudo mv ./domain.* /etc/privateregistry/certs/"; done
+for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no \
+"sudo mv ./domain.* /etc/privateregistry/certs/"; done
 ```
 
 配置所有Agent节点上的Docker守护程序信任为私有容器仓库创建的自签名证书。
@@ -123,14 +129,16 @@ for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no "sudo mv ./domain
 ```
 MESOS_AGENTS=$(curl -sS master.mesos:5050/slaves | jq '.slaves[] | .hostname' | tr -d '"');
 
-for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no "sudo mkdir --parent /etc/docker/certs.d/192.168.0.1"; done 
+for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no \
+"sudo mkdir --parent /etc/docker/certs.d/192.168.0.1"; done 
 
-for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no "sudo cp /etc/privateregistry/certs/domain.crt /etc/docker/certs.d/192.168.0.1/ca.crt"; done 
+for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no \
+"sudo cp /etc/privateregistry/certs/domain.crt /etc/docker/certs.d/192.168.0.1/ca.crt"; done 
 
 for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no "sudo systemctl restart docker"; done
 ```
 
-**注1：**上述命令重启Docker引擎服务时会导致当前正在运行的容器服务重启。
+**注1：**上述命令重启Docker引擎服务时会导致当前正在运行的容器服务重启。  
 **注2：**对于Docker in Docker（DnD），可以将容器的`/etc/docker/certs.d`映射到Agent节点宿主机的相同路径。
 
 #### 部署Registry到DCOS集群
@@ -172,7 +180,9 @@ for i in $MESOS_AGENTS; do ssh "$i" -oStrictHostKeyChecking=no "sudo systemctl r
 WEB API
 
 ```
-curl -i -H "Content-type: application/json" -X POST http://192.168.1.69:8080/v2/apps --data @docker-registry.json
+curl -i -H "Content-type: application/json" \
+-X POST http://192.168.1.69:8080/v2/apps \
+--data @docker-registry.json
 ```
 
 或 CLI
@@ -197,13 +207,14 @@ FROM 192.168.0.1/base/docker-tomcat-base
 
 另外，除了前述提到的DnD需要映射主机的`/etc/docker/certs.d`来使用私有容器的签名证书外，对于一些由服务动态创建的容器也需要添加映射配置，如Jenkins动态创建的Slave容器主机。否则，可能会碰到类似`x509: certificate signed by unknown authority`的异常。
 
-__注意__，使用自签名证书时，要在DC/OS集群内部访问镜像仓库，因为Marathon使用__CURL__拉取镜像，因此必须将自签名证书附加到所有Agent节点的：
+**注意**，使用自签名证书时，要在DC/OS集群内部访问镜像仓库，因为Marathon使用**CURL**拉取镜像，因此必须将自签名证书附加到所有Agent节点的：
 
 ```
 /opt/mesosphere/active/python-requests/lib/python3.5/site-packages/requests/cacert.pem
 ```
 
-__注意__，解决UCR用CURL访问采用自签名证书的私有Registry的另一种方案是将签名证书放置于：
+**注意**，解决UCR用CURL访问采用自签名证书的私有Registry的另一种方案是将签名证书放置于：
+
 ```
 /var/lib/dcos/pki/tls/certs
 ```
@@ -240,5 +251,5 @@ FROM 192.168.1.50：5000/base/docker-tomcat-base
 
 ### 参考
 
-https://dcos.io/docs/1.9/usage/tutorials/registry
+[https://dcos.io/docs/1.9/usage/tutorials/registry](https://dcos.io/docs/1.9/usage/tutorials/registry)
 
