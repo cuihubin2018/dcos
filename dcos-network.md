@@ -8,7 +8,7 @@
 
 Mesos容器化和Docker容器化在Mesos中使用相同的网络配置描述：
 
-```
+```protobuf
 message NetworkInfo {
   enum Protocol {
     IPv4 = 1;
@@ -29,7 +29,7 @@ message NetworkInfo {
 
 此外，Docker容器化在描述网络配置的同时还需要对容器进行定义：
 
-```
+```protobuf
 message DockerInfo {
   // The docker image that is going to be passed to the registry.
   required string image = 1;
@@ -72,7 +72,6 @@ DC/OS提供了一个名为Minuteman的服务器端内部微服务之间的东-�
 
 * 服务名称
 
-
 VIPs的命名遵循如下规则：
 
 `<service-name>.marathon.l4lb.thisdcos.directory:<port>`
@@ -81,7 +80,7 @@ VIPs的命名遵循如下规则：
 
 **AppC容器配置**
 
-```
+```json
 {
     "id": "myservice",
     "portDefinitions": [ 
@@ -107,7 +106,6 @@ VIPs的命名遵循如下规则：
 
 * `myservice.marathon.l4lb.thisdcos.directory:7777`
 
-
 客户端（注：此处指DC/OS集群中的其他服务）可以通过调用端口为6666的VIP访问服务提供的JMX管理功能，可以通过调用端口为7777的VIP访问服务提供的业务API。
 
 上述配置也可以通过DC/OS的WEB管理控制台进行配置：
@@ -116,7 +114,7 @@ VIPs的命名遵循如下规则：
 
 **Docker容器配置**
 
-```
+```json
 { 
     "id": "myservice", 
     "container": { 
@@ -151,7 +149,6 @@ VIPs的命名遵循如下规则：
 * `myservice.marathon.l4lb.thisdcos.directory:6666`
 
 * `myservice.marathon.l4lb.thisdcos.directory:7777`
-
 
 上述配置也可以通过DC/OS的WEB管理控制台进行配置：
 

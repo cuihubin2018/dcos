@@ -35,8 +35,11 @@ HOST网络模式是Docker容器应用服务的默认网络模式，也是非Dock
 
 对Docker容器来说，HOST模式默认是启用的，如果想显式配置，可用通过`network属性配置：`
 
-```
-"container": { "type": "DOCKER", "docker": { "image": "my-image:1.0", "network": "HOST" } },
+```json
+"container": { 
+    "type": "DOCKER", 
+    "docker": { "image": "my-image:1.0", "network": "HOST" } 
+},
 ```
 
 对非Docker容器应用，不需要做任何设置。
@@ -45,13 +48,13 @@ HOST网络模式是Docker容器应用服务的默认网络模式，也是非Dock
 
 通过“ports”设置端口：
 
-```
+```json
 "ports": [ 0, 0, 0 ],
 ```
 
 或通过“portDefinitions”设置端口：
 
-```
+```json
 "portDefinitions": [ {"port": 0}, {"port": 0}, {"port": 0} ],
 ```
 
@@ -59,11 +62,11 @@ HOST网络模式是Docker容器应用服务的默认网络模式，也是非Dock
 
 如果要明确指定服务端口，则可以使用如下配置：
 
-```
+```json
 "ports": [ 2001, 2002, 3000 ],
 ```
 
-```
+```json
 "portDefinitions": [ {"port": 2001}, {"port": 2002}, {"port": 3000} ],
 ```
 
@@ -71,7 +74,7 @@ HOST网络模式是Docker容器应用服务的默认网络模式，也是非Dock
 
 **如果想让应用服务的服务端口与主机端口一致，可以将“requirePorts”参数值设置为“true”（默认值为“false”）。**Marathon在调度应用时会确保调度到三个服务端口都可用的Agent主机上：
 
-```
+```json
 "ports": [ 2001, 2002, 3000 ], "requirePorts" : true
 ```
 
@@ -79,8 +82,14 @@ HOST网络模式是Docker容器应用服务的默认网络模式，也是非Dock
 
 属性参数“portDefinitions”数组可以为每一个端口指定一个协议，一个名称和一组标签。当启动新任务时，Marathon会将这些元数据信息提交给Mesos，Mesos会将这些信息添加到任务的“discovery”字段中，自定义网络发现服务实现就可以使用这些信息。
 
-```
-"portDefinitions": [ { "port": 0, "protocol": "tcp", "name": "http", "labels": {"VIP_0": "10.0.0.1:80"} } ],
+```json
+"portDefinitions": [ 
+    { 
+        "port": 0, 
+        "protocol": "tcp",
+        "name": "http",
+        "labels": {"VIP_0": "10.0.0.1:80"} } 
+],
 ```
 
 **引用端口**  
@@ -102,40 +111,82 @@ BRIDGE网络模式允许在主机端口与容器内端口建立映射，这种�
 
 **启用BRIDGE网络模式**
 
-```
-"container": { "type": "DOCKER", "docker": { "image": "my-image:1.0", "network": "BRIDGE" } },
+```json
+"container": { 
+    "type": "DOCKER", 
+    "docker": { "image": "my-image:1.0", "network": "BRIDGE" } },
 ```
 
 **启用USER网络模式**
 
-```
-"container": { "type": "DOCKER", "docker": { "image": "my-image:1.0", "network": "USER" } }, "ipAddress": { "networkName": "someUserNetwork" }
+```json
+"container": { 
+    "type": "DOCKER", 
+    "docker": { "image": "my-image:1.0", "network": "USER" }
+}, 
+"ipAddress": { "networkName": "someUserNetwork" }
 ```
 
 **设置端口**
 
-```
-"container": { "type": "DOCKER", "docker": { "image": "my-image:1.0", "network": "BRIDGE", "portMappings": [ { "containerPort": 0, "hostPort": 0 }, { "containerPort": 0, "hostPort": 0 }, { "containerPort": 0, "hostPort": 0 } ] } },
+```json
+"container": { 
+    "type": "DOCKER", 
+    "docker": { "image": "my-image:1.0", "network": "BRIDGE",
+        "portMappings": [
+            { "containerPort": 0, "hostPort": 0 }, 
+            { "containerPort": 0, "hostPort": 0 }, 
+            { "containerPort": 0, "hostPort": 0 } 
+        ] 
+    } 
+},
 ```
 
 此示例中，“containerPort”和“hostPort”端口值相同。
 
-```
-"container": { "type": "DOCKER", "docker": { "image": "my-image:1.0", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0 }, { "containerPort": 443, "hostPort": 0 }, { "containerPort": 4000, "hostPort": 0 } ] } },
+```json
+"container": { 
+    "type": "DOCKER", 
+    "docker": { "image": "my-image:1.0", "network": "BRIDGE",
+        "portMappings": [ 
+            { "containerPort": 80, "hostPort": 0 }, 
+            { "containerPort": 443, "hostPort": 0 }, 
+            { "containerPort": 4000, "hostPort": 0 } 
+        ] 
+    } 
+},
 ```
 
 此示例中，Marathon会为这三个容器端口随机分配三个主机端口。
 
 也可以显式指定端口的协议，默认值是“tcp”：
 
-```
-"container": { "type": "DOCKER", "docker": { "image": "my-image:1.0", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "protocol": "tcp" }, { "containerPort": 443, "hostPort": 0, "protocol": "tcp" }, { "containerPort": 4000, "hostPort": 0, "protocol": "udp" } ] } },
+```json
+"container": { 
+    "type": "DOCKER", 
+    "docker": { "image": "my-image:1.0", "network": "BRIDGE",
+        "portMappings": [ 
+            { "containerPort": 80, "hostPort": 0, "protocol": "tcp" }, 
+            { "containerPort": 443, "hostPort": 0, "protocol": "tcp" }, 
+            { "containerPort": 4000, "hostPort": 0, "protocol": "udp" } 
+        ] 
+    } 
+},
 ```
 
 显式指定服务端口：
 
-```
-"container": { "type": "DOCKER", "docker": { "image": "my-image:1.0", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "protocol": "tcp", "servicePort": 2000 }, { "containerPort": 443, "hostPort": 0, "protocol": "tcp", "servicePort": 2001 }, { "containerPort": 4000, "hostPort": 0, "protocol": "udp", "servicePort": 3000} ] } },
+```json
+"container": { 
+    "type": "DOCKER", 
+    "docker": { "image": "my-image:1.0", "network": "BRIDGE",
+        "portMappings": [ 
+            { "containerPort": 80, "hostPort": 0, "protocol": "tcp", "servicePort": 2000 }, 
+            { "containerPort": 443, "hostPort": 0, "protocol": "tcp", "servicePort": 2001 }, 
+            { "containerPort": 4000, "hostPort": 0, "protocol": "udp", "servicePort": 3000} 
+        ] 
+    }
+ },
 ```
 
 **引用端口**
