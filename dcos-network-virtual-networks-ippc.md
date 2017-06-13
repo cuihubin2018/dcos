@@ -12,7 +12,7 @@ DC/OS的Overlay设计做出以下假设/约束：
 
 - 由于集中式IPAM缺乏对可用性和可靠性的保证，方案无法使用集中的IPAM。
 
-- 需要避免第2层的单播泛滥，使网络可扩展。这意味着方案不能依赖广播ARP来获取容器的MAC地址。
+- 需要避免第2层的单播泛洪，使网络可扩展。这意味着方案不能依赖广播ARP来获取容器的MAC地址。
 
 - 该解决方案需要支持`MesosContainerizer`和`DockerContainerizer`，即在同一个Overlay上，方案应该能够同时运行Docker和Mesos容器，并允许它们相互通信。
 
@@ -120,6 +120,22 @@ Agent节点上的Overlay组件：
 **使用复制的日志来协调Master中的子网分配**
 
 **配置MesosContainerizer和DockerContainerizer以使用已分配的子网**
+一旦DC/OS模块从主DC/OS模块检索子网信息，它将执行以下操作，以允许MesosContainerizer和DockerContainerizer在叠加层上启动容器：
+
+对于MesosContainerizer，DC/OS模块可以在指定位置生成CNI配置。 CNI配置将具有network/cni隔离器的桥接信息和IPAM信息，以在m-[虚拟网络名称]桥上配置容器。
+
+对于DockerContainerizer，DC/OS模块在检索子网后，将通过docker network命令创建一个具有规范名称d-[虚拟网络名称]的容器网络。它将使用以下docker命令执行此操作：
+```
+docker network create \
+--driver=bridge \
+--subnet=<CIDR> \
+--opt=com.docker.network.bridge.name=d-<virtual network name>
+--opt=com.docker.network.bridge.enable_ip_masquerade=false
+--opt=com.docker.network.driver.mtu=<overlay MTU>
+<virtual network name>
+```
+注意：DockerContainerizer使用DC / OS覆盖的假设是主机正在运行Docker v1.11或更高版本。 
+注意：默认的<overlay MTU> = 1420字节。
 
 #### 虚拟网络服务（叠加网络编排）
 
